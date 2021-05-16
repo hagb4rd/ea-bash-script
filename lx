@@ -1,0 +1,26 @@
+#!/bin/bash
+
+declare -A search=( \
+	[g]='https://google.com/search?q=' \
+	[d]='https://duckduckgo.com/?q=' \
+)
+
+searchengine=$1
+if [ "ZZ$searchengineZZ" = "ZZZZ" ]; then
+	searchengine=g
+fi
+
+
+
+
+url=${search[$searchengine]}
+
+shift
+
+query="$url$*"
+
+echo lynx $query
+lynx "$query"
+
+
+

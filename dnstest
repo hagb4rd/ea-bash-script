@@ -1,0 +1,3 @@
+#!/bin/bash
+echo dig @127.0.0.1 -p 53 google.com
+dig @127.0.0.1 -p 53 google.com

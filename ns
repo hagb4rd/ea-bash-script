@@ -1,0 +1,19 @@
+#!/bin/bash
+
+dns1=$1
+dns2=$2
+
+#dns1=192.168.42.10
+dns1=8.8.8.8
+dns2=8.8.4.4
+echo "nameserver $dns1" > /etc/resolv.conf
+#echo "nameserver $dns2" >> /etc/resolv.conf
+
+cat /etc/resolv.conf
+
+
+sleep 0.5s
+
+echo dig google.com ...
+dig google.com
+

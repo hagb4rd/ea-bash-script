@@ -1,0 +1,44 @@
+#!/bin/sh
+set -x
+
+
+# PREPARE HOST FIRST:
+#--------------------
+# > ip link add br0 type bridge ; ifconfig br0 up
+
+
+# Add to /etc/network/interfaces
+# Replace old eth0 config with br0
+
+#auto usb0
+#iface usb0 inet manual
+
+#auto usb br0
+#iface br0 inet dhcp
+#   bridge_ports    usb0
+#   bridge_maxwait  0
+#   bridge_fd       0
+
+
+switch=br0
+
+if [ -n "$1" ];then
+        ip tuntap add $1 mode tap user `whoami`
+        ip link set $1 up
+        sleep 0.5s
+        ip link set $1 master $switch
+        exit 0
+else
+        echo "Error: no interface specified"
+        exit 1
+fi
+
+
+# QEMU NETWORK PARAMETERS
+#--------------------------
+# > QEMU_NETDEV="-device e1000,netdev=net0,mac=$( printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256)) ) -netdev tap,id=net0 
+
+# > qemu-system-x86_64 -hda /path/to/hda.img $QEMU_NETDEV
+
+
+

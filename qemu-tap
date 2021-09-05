@@ -1,0 +1,27 @@
+#!/bin/bash
+bridge=br0
+
+
+tap=$(sudo tunctl -u $(whoami) -b)
+
+
+sudo ip link set $tap up
+
+
+sleep 1s
+
+
+sudo brctl addif $bridge $tap
+
+
+qemu-kvm -m 512 -hda /images/sles11sp1_base.raw \
+-net nic,vlan=0,model=virtio,macaddr=00:16:35:AF:94:4B \
+-net tap,vlan=0,ifname=$tap,script=no,downscript=no
+
+sudo brctl delif $bridge $tap
+
+
+sudo ip link set $tap down
+
+
+sudo tunctl -d $tap

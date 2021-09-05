@@ -1,0 +1,2 @@
+#!/bin/bash
+prev=""; cat $* | sort | while read line; do if [[ !  $line = $prev ]]; then echo $line; fi; prev=$line; done

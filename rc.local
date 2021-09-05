@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+sudo rm -rf /usr/local/bin
+cd /usr/local
+sudo ln -s /tmp/shared0/bin
+#cd /tmp/shared0
+
+
+shopt -s extglob
+# export PATH="/user/local/sbin:/user/local/bin:/user/sbin:/user/bin:/sbin:/bin"
+
+sudo rm -rf /home/earendel/.cache/mozilla
+sudo rm -rf /home/earendel/.mozilla
+sudo cp -r -a /tmp/shared0/backup0/.cache/mozilla /home/earendel/.cache
+sudo  cp -r -a /tmp/shared0/backup0/.mozilla /home/earendel
+sudo cp /tmp/shared0/Documents/bookmarks* /home/earendel/Desktop
+sudo chown -hR earendel:earendel /home/earendel/Desktop
+sudo chown -hR earendel:earendel /home/earendel/.cache/mozilla
+sudo chown -hR earendel:earendel /home/earendel/.cache/mozilla
+

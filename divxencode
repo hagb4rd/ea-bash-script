@@ -1,0 +1,2 @@
+#!/bin/bash
+ffmpeg  -i "$1" -f avi -c:v mpeg4 -b:v 2M -g 300 -bf 2 -c:a libmp3lame -b:a 128k "$2"

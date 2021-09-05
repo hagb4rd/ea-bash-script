@@ -1,0 +1,4 @@
+#!/bin/bash
+RAND_MAC=$(printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256)))
+   
+/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3014 -snapshot -hda "/media/iso/linux.derived-2.qcow2" -virtfs local,id=shared_folder_dev_0,path=/shared,security_model=none,mount_tag=shared0 -boot once=c,menu=on -device virtio-net-pci,netdev=network0,mac=$RAND_MAC -netdev  tap,id=network0,ifname=tap0,script=no,downscript=no -rtc base=utc,driftfix=slew -name "Linux" $*

@@ -1,0 +1,2 @@
+#!/bin/bash
+firejail --name=ff --profile=openbox --x11=xephyr --net=ens5 --dns=192.168.42.10 --netfilter --private-home=.mozilla,.config,.local,.cache --noroot --nodbus --private-dev --read-write=/tmp/shared0  --machine-id  --nou2f --nodvd  --notv --ipc-namespace openbox-session

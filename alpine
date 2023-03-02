@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script created by AQEMU
+# -device virtio-net-pci,netdev=netw0,mac=D4:A6:88:EA:5E:D9 
+# -netdev tap,id=netw0,ifname=tap0,script=no,downscript=no
+
+# -hda "/home/e/.aqemu/xubuntu.qcow2"
+#cdrom=(-cdrom "/home/e/linuxwelt/Image-Dateien/alpine-extended-3.17.0-x86_64.iso")
+bios=(-bios "/home/e/.aqemu/OVMF.fd")
+hda=(-hda "/home/e/.aqemu/alpinelinux.qcow")
+#cdrom=("")
+snapshot="-snapshot"
+firejail --net=eth0 --netfilter=/home/e/.firejail/nolocal.net --netfilter6=/home/e/.firejail/ip6tables.net  --profile="qemu-system-x86_64" /usr/bin/qemu-system-x86_64  -monitor stdio -soundhw ac97 -machine accel=kvm -m 1024 "${bios[@]}" "${cdrom[@]}" "${hda[@]}" -boot once=c,menu=on  -net nic -net user -rtc base=localtime "$snapshot" -name "alpine" $*

@@ -1,0 +1,111 @@
+#!/bin/bash
+
+tuntap=tap0
+mode=tap
+user=e
+netdev=eth0
+sudo=""
+
+#echo setting set -x
+#set -x
+#ifconfig br0 down
+#ifconfig $netdev down
+#ifconfig $tuntap down
+#sleep 1s
+
+#$sudo ip link set dev $netdev down
+#$sudo ip link set dev tap0 down
+#$sudo ip link set dev br0 down
+#$sudo ip link del dev tap0
+#$sudo ip link del dev br0
+#$sudo ifbr0down
+
+
+
+
+echo -------------------
+echo setting up $netdev
+echo ===================
+$sudo ip link set dev $netdev down
+ 
+sleep 1s
+
+$sudo ip link set dev $netdev up
+#$sudo dhclient $netdev
+$sudo ip addr add 192.168.8.10/24 brd + $netdev
+$sudo ip route add default via 192.168.8.1 dev $netdev
+
+echo -----------------------
+echo configuring bridge br0
+echo =======================
+
+sleep 1s
+
+if [[ ! -e /sys/class/net/br0 ]]; then 
+	$sudo ip link add dev br0 type bridge
+fi
+	$sudo ip link set dev br0 up
+	sleep 1s
+	$sudo ip link set dev $netdev master br0
+	sleep 1s
+#ip link add dev br1 type bridge
+#ip link set dev br1 up
+#sleep 1s
+#ip link set dev $netdev master br1
+
+$sudo ip addr flush dev $netdev
+
+
+#$sudo dhclient br0
+
+sleep 1s
+
+ip addr add 192.168.8.123/24 brd + dev br0
+#ip addr add 192.168.42.11/24 brd + dev br1
+#ip addr add 192.168.42.169/24 brd + dev $netdev
+ip route add default via 192.168.8.1 dev br0
+
+
+##tap tap0
+
+#tuntap=tap0
+#$sudo ip tuntap add dev $tuntap mode $mode user $user
+#$sudo ip link set dev $tuntap up
+#$sudo ip link set dev $tuntap master br0
+
+#tuntap=tap1
+#ip tuntap add dev $tuntap mode $mode user $user
+#ip link set dev $tuntap up
+#ip link set dev $tuntap master br1
+
+##ip addr flush dev tap0
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+#echo nameserver 9.9.9.9 > /etc/resolv.conf
+#dig facebook.com
+
+
+#ip -6 addr flush br0
+#ip -6 addr flush tap0
+#ip -6 addr flush lo
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+# iptables -F
+# iptables -X
+# iptables -Z
+# iptables -t nat -F
+# iptables -t nat -X
+# iptables -t nat -Z
+# ip6tables -F
+# ip6tables -X
+# ip6tables -Z
+# ip6tables-restore /root/ip6tables.save
+# iptables-restore /root/iptables.save
+
+echo -
+echo =======================
+
+ip addr show
+ip route list
+netstat -tulpn
+netstat -tupne

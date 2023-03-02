@@ -1,0 +1,11 @@
+#!/bin/bash
+if which "$1"; then 
+	fullpath=$(which "$1");
+else
+	fullpath="$HOME/.local/bin/$1"
+	echo '#!/bin/bash' >  "$fullpath"
+	chmod +x "$fullpath"
+fi
+
+xed "$fullpath" > /dev/null 2> /dev/null  &
+

@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo lsblk -o name,fstype,uuid,size,type,mountpoint,label #list hdd hard disks

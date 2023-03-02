@@ -1,0 +1,20 @@
+#!/bin/bash
+q="$*"
+mkdir -p "$HOME/.cache/"
+mkdir -p "$HOME/.cache/cht.sh"
+
+qcachefile="$HOME/.cache/cht.sh/$q"
+
+if [[ ! -f "$qcachefile" ]]; then
+	netbox sh -c "curl https://cht.sh/$q ^| tee -a $qcachefile"
+else 
+
+
+	echo === cached: $q ===== 
+	echo .
+	cat "$qcachefile"
+fi
+
+
+
+

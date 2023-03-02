@@ -1,0 +1,12 @@
+#!/bin/bash
+export WINEPREFIX="/home/e/.wine";
+export WINEARCH="win32"
+dir="${WINEPREFIX}/drive_c/Program Files/Microsoft Games/Halo Custom Edition"
+cd "$dir"
+firejail --profile=wine --name=haloce --net="$netdev" --dns="192.168.8.1" --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" --netfilter wine start "C:\\Program Files\\Microsoft Games\\Halo Custom Edition\\haloce.exe" &
+sleep 3s
+firejail --join=haloce wine start AutoHotkey.exe taxi.ahk &
+sleep 1s
+rm ~/.wine/dosdevices/com*
+rm ~/.wine/dosdevices/lpt*
+rm ~/.wine/dosdevices/d::

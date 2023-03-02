@@ -1,0 +1,4 @@
+#!/bin/bash
+xorriso -indev $* -toc
+
+echo see isohybrid _file.iso_ for making iso files boot-able

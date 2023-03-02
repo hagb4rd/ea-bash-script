@@ -1,0 +1,80 @@
+#!/bin/bash
+
+tuntap=tap0
+mode=tap
+user=eagle
+
+#echo setting set -x
+#set -x
+#ifconfig br0 down
+#ifconfig $dev down
+#ifconfig $tuntap down
+#sleep 1s
+
+ip link set dev $dev down
+ip link set dev br0 down
+ip link set dev tap0 down
+sleep 1s
+
+
+
+ip link del br0
+ip link del tap0
+sleep 1s
+
+dhclient -r -v
+
+
+ip link set dev $dev up && dhclient $dev
+sleep 1s
+
+ip link add dev br0 type bridge
+ip link set dev br0 up
+sleep 1s
+ip link set dev $dev master br0
+sleep 1s
+#ip link add dev br1 type bridge
+#ip link set dev br1 up
+#sleep 1s
+#ip link set dev $dev master br1
+
+
+ip addr flush dev $dev
+
+#ip addr add 192.168.42.10/24 brd + dev br0
+#ip addr add 192.168.42.169/24 brd + dev $dev
+#ip route add default via 192.168.42.129 dev br0
+
+
+##tap tap0
+
+tuntap=tap0
+ip tuntap add dev $tuntap mode $mode user $user
+ip link set dev $tuntap up
+ip link set dev $tuntap master br0
+
+#tuntap=tap1
+#ip tuntap add dev $tuntap mode $mode user $user
+#ip link set dev $tuntap up
+#ip link set dev $tuntap master br1
+
+##ip addr flush dev tap0
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+#echo nameserver 9.9.9.9 > /etc/resolv.conf
+#dig facebook.com
+
+
+ip -6 addr flush br0
+ip -6 addr flush tap0
+ip -6 addr flush lo
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+echo -----------------------------------------
+ip addr show
+echo -----------------------------------------
+ip route list
+echo -----------------------------------------
+n -e
+
+iptables-restore /root/iptables.block

@@ -1,0 +1,7 @@
+#!/usr/bin/node
+var fs=require('fs');
+var path=require('path');
+var util=require('util')
+var {execSync,exec,spawn}=require('child_process');
+var es=require('event-stream');
+

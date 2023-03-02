@@ -1,0 +1,29 @@
+{
+  "name": "ea-bash-script",
+  "version": "1.0.0",
+  "description": "a collection of bash script",
+  "main": "list-json.js",
+  "bin": {
+    "listjson": ".bin/list-json.js",
+    "encodeuri": ".bin/encodeuri.js",
+    "readdir": ".bin/readdir.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagb4rd/ea-bash-script.git"
+  },
+  "keywords": [
+    "shell",
+    "cli",
+    "tools"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hagb4rd/ea-bash-script/issues"
+  },
+  "homepage": "https://github.com/hagb4rd/ea-bash-script#readme"
+}

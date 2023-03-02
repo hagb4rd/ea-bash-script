@@ -1,0 +1,11 @@
+
+#!/bin/bash
+# https://github.com/twitterdev/search-tweets-python
+# https://developer.twitter.com/en/docs/basics/authentication/overview/application-only
+export SEARCHTWEETS_ENDPOINT=
+export SEARCHTWEETS_USERNAME=
+export SEARCHTWEETS_PASSWORD=
+export SEARCHTWEETS_BEARER_TOKEN=
+export SEARCHTWEETS_ACCOUNT_TYPE=
+export SEARCHTWEETS_CONSUMER_KEY=
+export SEARCHTWEETS_CONSUMER_SECRET=

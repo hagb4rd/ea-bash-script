@@ -1,0 +1,2 @@
+#!/bin/bash
+jailid="$1"; firejail --ls=$jailid ~/Downloads/ | while read a b c d line; do re='\.{1,2}'; if [[ ! $re =~ $line ]]; then firejail --get=$jailid "~/Downloads/$line"; fi; done

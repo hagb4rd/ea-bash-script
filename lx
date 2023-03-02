@@ -2,25 +2,28 @@
 
 declare -A search=( \
 	[g]='https://google.com/search?q=' \
-	[d]='https://duckduckgo.com/?q=' \
+	[d]='https://html.duckduckgo.com/html/?q=' \
 )
 
 searchengine=$1
-if [ "ZZ$searchengineZZ" = "ZZZZ" ]; then
-	searchengine=g
+
+url=${search[$searchengine]}
+if [[ ! -z_$url ]]; then
+#	url=${search[g]};
+	echo "[ $1 ] ${url}"
+	shift;
+else
+ echo 'starting lynx $*'
 fi
 
 
-
-
-url=${search[$searchengine]}
-
-shift
-
 query="$url$*"
 
-echo lynx $query
-lynx "$query"
+echo 'torsocks lynx "$query"'
+# || lynx "$query"'
+
+TORSOCKS_USERNAME=eagle1 TORSOCKS_PASSWORD=foxforcefive torsocks lynx "$query"
+#lynx "$query"
 
 
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo ip link set enx001e101f0000 up
+sudo ip addr add 192.168.8.2/24 brd + dev enx001e101f0000
+sudo ip route add default via 192.168.8.1 dev enx001e101f0000

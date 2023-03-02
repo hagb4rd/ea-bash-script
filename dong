@@ -1,0 +1,8 @@
+#!/bin/bash
+pendev=/dev/sdb1
+if [[ ! -f $pendev ]]; then
+#pendev=/dev/sdc1
+echo $pendev
+fi
+sudo cryptsetup luksOpen -d /root/lukskey $pendev dong
+sudo mount -o ro /dev/mapper/dong /media/e/bbR7qvRSTN4BmaJ

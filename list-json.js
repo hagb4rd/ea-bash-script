@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+var fs=require('fs');
+var path=require('path');
+var util=require('util')
+//var {execSync,exec,spawn}=require('child_process');
+var es=require('event-stream');
+//var lib = require('../index');
+//var argv = require('minimist')(process.argv.slice(2));
+
+
+//console.log('hello')
+//just change that function to implement transformations on whole line
+var f=(data)=>data;
+//*
+process.stdin
+    .pipe(es.split(/\r?\n/))
+    .pipe(es.map((data,cb)=>{
+        cb(null,f(data));    
+    }))
+    .pipe(es.writeArray((err,array)=>{ console.log(JSON.stringify(array)); }))
+//    .pipe(es.stringify())
+//    .pipe(process.stdout)
+
+/* */

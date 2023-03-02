@@ -1,0 +1,3 @@
+#!/bin/sh
+# This script created by AQEMU
+firejail --net=eth0 --netfilter=/home/e/.firejail/nolocal.net --netfilter6=/home/e/.firejail/ip6tables.net  --profile="qemu-system-x86_64" /usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 2048 -snapshot -drive file=/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/linuxwelt.iso -boot once=d,menu=off -net nic -net user -rtc base=localtime -name "Linux x86_64" $*

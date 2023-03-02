@@ -1,0 +1,12 @@
+#!/bin/bash
+#sudo mkdir /home/e
+sudo chown mint:mint /home/e
+sudo mkdir /media/mint/be57cdbd-3c3a-40f7-adbf-fd4153b5bbdf
+sudo chown mint:mint /media/mint/be57cdbd-3c3a-40f7-adbf-fd4153b5bbdf
+#sudo cryptsetup luksOpen /dev/sda3 sda3_crypt
+#sudo mount /dev/mapper/sda3_crypt /media/mint/be57cdbd-3c3a-40f7-adbf-fd4153b5bbdf
+sudo ln -s  /media/mint/be57cdbd-3c3a-40f7-adbf-fd4153b5bbdf/home/e /home/e
+#sudo chown mint:mint /home/e
+export PATH=$PATH:/home/e/node/bin:/home/e/.local/bin
+
+

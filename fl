@@ -1,0 +1,2 @@
+#!/bin/bash
+firejail --name=box --profile=openbox --x11=xephyr --net=none  --noroot --nodbus --private-dev --read-write=/tmp/shared0  --machine-id  --nou2f --nodvd  --notv --ipc-namespace wmaker

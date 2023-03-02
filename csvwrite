@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+var es=require('event-stream')
+var args=process.argv.slice(2).join(' ').split(',').map(arg=>arg.replaceAll(/^\"|\"$/g, ""));
+
+const createCsvStringifier = require('csv-writer').createObjectCsvStringifier;
+const csvStringifier = createCsvStringifier({
+    header: args.map(arg=>({ id: arg, title: arg }))
+});
+
+process.stdout.write(csvStringifier.getHeaderString());
+//process.stdout.write("\n");
+
+process.openStdin()
+	.pipe(es.split())
+	.pipe(es.map(function (data,cb) {
+		try {
+			if(data) {
+				var parsed=JSON.parse(data)
+				var csvString=csvStringifier.stringifyRecords([parsed]);
+				cb(null, csvString);
+			} else {
+				return cb(null)
+			}
+		} catch(e) {
+			cb(e)
+		}
+	}))
+	.pipe(process.stdout)
+

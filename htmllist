@@ -1,0 +1,8 @@
+#!/bin/bash
+#tmpf=$(mktemp)
+#tohtml "$*" > "$tmpf"
+#firefox "file://${tmpf}" &
+f="/tmp/tmplist.html"
+rm "$f" 2> /dev/null
+tohtml $* | tee -a "$f" 
+exec firefox "$f"

@@ -1,0 +1,15 @@
+#!/bin/bash
+/usr/bin/qemu-system-x86_64 \
+    -monitor stdio \
+    -soundhw hda \
+    -vga qxl \
+    -machine accel=xen \
+    -m 3069 \
+    -snapshot \
+    -hda /media/iso/win10.qcow2 \
+    -boot once=c,menu=off \
+    -net nic \
+    -net user \
+    -rtc base=utc \
+    -name "Windows 10"
+#    -spice port=5929,tls-port=1,image-compression=on,renderer=cairo+oglpbuf+oglpixmap,disable-ticketing

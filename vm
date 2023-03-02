@@ -1,4 +1,45 @@
 #!/bin/bash
-RAND_MAC=$(printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256)))
-   
-/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3014 -snapshot -hda "/media/iso/linux.derived-2.qcow2" -virtfs local,id=shared_folder_dev_0,path=/shared,security_model=none,mount_tag=shared0 -boot once=c,menu=on -device virtio-net-pci,netdev=network0,mac=$RAND_MAC -netdev  tap,id=network0,ifname=tap0,script=no,downscript=no -rtc base=utc,driftfix=slew -name "Linux" $*
+MAC=$(printf '%02X:%02X:%02X:EA:%02X:%02X' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)))
+HDA="/home/eagle/.aqemu/buster1.qcow2"
+
+
+
+#/usr/bin/qemu-system-x86_64 \
+#  -rtc base=utc,driftfix=slew \
+#  -name "Buster"
+
+#/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3014 -snapshot -hda "/media/iso/buster.qcow2" -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 -boot once=c,menu=on \
+#    -monitor stdout \
+
+
+
+
+# VM Networking
+# ----
+# new style
+#NIC="device virtio-net-pci,netdev=network0,mac=00:d1:96:f8:c4:11"
+#NIC="device virtio-net-pci,netdev=network0,mac=$MAC"
+#TAP='netdev  tap,id=network0,ifname=tap0,script=no'
+# old style
+NIC="net nic,macaddr=$MAC,model=virtio-net-pci"
+TAP='net tap,ifname=tap0,script=no'
+
+##    -soundhw hda \
+
+args=("-machine accel=kvm" \
+    "-m 1024" \
+		"-cdrom" "/home/e/linuxwelt/Image-Dateien/alpine-extended-3.17.0-x86_64.iso" \
+		"-hda" "/home/e/.aqemu/xubuntu.qcow2" \
+#    -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 \
+    -device virtio-net-pci,netdev=netw0,mac=$MAC \
+    -netdev tap,id=netw0,ifname=tap0,script=no,downscript=no \
+    -rtc base=utc \
+    -name "$MAC" \
+    "$*")
+
+echo /usr/bin/qemu-system-x86_64 "${args[@]}"
+
+#    -usb \
+#    -usbdevice mouse \
+#    -usbdevice keyboard \
+

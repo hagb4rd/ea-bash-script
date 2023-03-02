@@ -1,0 +1,15 @@
+#!/bin/bash
+param=$1
+netparam="ens4"
+if [[ ! -z $param ]]
+then
+	netparam="$param"
+fi
+
+#tmppolicy='--private-tmp'
+tmppolicy='--read-write=/tmp/shared0'
+
+firejail --name=torbox --profile=openbox --x11=xephyr --net="${netparam}" --dns=192.168.42.10 --netfilter=/etc/firejail/nolocal.net --private-home=tor-browser_en-US,.cache,.mozilla --noroot --nodbus --private-dev "$tmppolicy"   --machine-id  --nou2f --nodvd  --notv --ipc-namespace openbox-session || firejail --name=torbrowserbox --profile=openbox --x11=xephyr --net=ens5 --dns=192.168.42.10 --netfilter=/etc/firejail/nolocal.net --private-home=tor-browser_en-US,.cache,.mozilla --noroot --nodbus --private-dev --read-write=/tmp/shared0  --machine-id  --nou2f --nodvd  --notv --ipc-namespace openbox-session || firejail --name=torbrowserbox --profile=openbox --x11=xephyr --net=ens4 --dns=192.168.42.10 --netfilter=/etc/firejail/nolocal.net --private-home=tor-browser_en-US,.cache,.mozilla --noroot --nodbus --private-dev "$tmppolicy"  --machine-id  --nou2f --nodvd  --notv --ipc-namespace openbox-session 
+
+
+

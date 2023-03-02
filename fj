@@ -1,0 +1,13 @@
+#!/bin/bash
+rx='kill'
+
+if [[ -z "$1" ]]; then
+	firejail --tree
+elif [[ $rx =~ $1 ]]; then
+	echo shutting down firejail containers
+	echo ----------------------------------
+	firejail --list
+	firejail --list | while IFS=: read  a b c d; do firejail --shutdown="$a"; done
+else
+	firejail "$*"
+fi

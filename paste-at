@@ -1,0 +1,6 @@
+#!/bin/bash
+et=$(at)
+clipit "$et"
+clipit -c
+
+

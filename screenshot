@@ -1,0 +1,5 @@
+#!/bin/bash
+R=$(printf '%02X%02X%02X%02X' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)))
+
+scrot '$wx$h.png'  -q -a -e  'mv $f /tmp/shared0/pics/screenshots/$f.'"$R"'.png' >> ~/Desktop/screenshots.txt 2>&1
+#scrot '$wx$h-$n.jpg' -q -e -a 'mv $f /tmp/shared0/pics/screenshots/'

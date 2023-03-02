@@ -1,0 +1,4 @@
+#!/bin/bash
+firejail --join-or-start=cbox --noprofile --net=none --x11=xephyr  --disable-mnt --private-cache openbox-session &
+sleep 5
+firejail --join=cbox /usr/bin/chromium "$*"

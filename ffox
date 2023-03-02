@@ -1,0 +1,12 @@
+#!/bin/bash
+newtab="$1"
+if [[ ! -z "$newtab" ]]; then
+    #newtab="file:///home/e"
+    newtabparam="-new-tab"
+else
+    shift
+fi
+box twitter tor -f ~/.tor/torrc  < /dev/null &
+#printf '[%s]\n' "$@"
+sleep 3s
+box twitter firefox -P < /dev/null

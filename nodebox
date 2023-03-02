@@ -1,0 +1,19 @@
+#!/bin/bash
+args=(	--net="$netdev" \
+	--dns="192.168.8.1" \
+	--netfilter="/etc/firejail/nolocal.net" \
+	--netfilter6="/etc/firejail/nolocal6.net" \
+	--disable-mnt \
+	--private-dev \
+	--private-tmp \
+	--caps.drop=all \
+	--nodbus \
+	--noroot \
+	--novideo \
+	--notv \
+	--noautopulse \
+	--nodvd \
+	--ipc-namespace \
+	"$@")
+
+firejail "${args[@]}"

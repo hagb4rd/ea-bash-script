@@ -1,0 +1,35 @@
+#!/bin/bash
+fiile="$1"
+
+if [[ -z "$fiile" ]]; then
+	fiile="${HOME}/Pictures/_exported/1.jpg"
+fi
+
+f=$(realpath "$fiile")
+echo "$f"
+
+if [[ -d "$f" ]]
+	then d="$f"
+elif [[ -f "$f" ]] 
+	then startat="--start-at $f"
+ 	d=$(dirname "$f")
+else 
+	d="${HOME}/Pictures/_exported"
+	f="${HOME}/Pictures/_exported"
+fi    
+
+
+# --min-dimension 256x256
+
+
+args=(-Z \
+#  -p \
+	--action1 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \
+	--action2 ";[twitter]cp -f %F /home/e/firejail/twitter/%N" \
+	--action3 ";[beauty]cp -f %F /home/e/firejail/twitter/%N" \
+	--action4 ";[drawing]drawing %F" \
+  --geometry 720x900+720+0 \
+  --start-at "$f")
+
+
+feh "${args[@]}" 

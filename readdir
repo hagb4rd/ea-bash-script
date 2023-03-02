@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+var { opendir, stat, rename } = require('node:fs/promises');
+var path = require('path');
+
+
+async function* subdir(target) {
+    
+    var traversing=[target];
+    var nextDir;
+
+    while(nextDir=traversing.pop()) {
+
+        var dir = await opendir(nextDir);
+
+        
+
+        for await (dirent of dir) {
+            if(dirent.isDirectory()) {
+                traversing.push(path.resolve(nextDir,dirent.name));
+            }
+            yield dirent;
+        }
+    }
+}
+
+
+(async()=>{
+    for await(dir of subdir(process.argv[2]||process.cwd())) {
+        console.log(dir);
+    }
+
+})()
+

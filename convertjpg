@@ -1,0 +1,6 @@
+#!/bin/bash
+target="$1";
+target="${target:-$HOME/Pictures}";
+#IFS= while read line; do convert "$line" "${line}.jpg" && rm "$line"; done
+find "${target}" -type f -name "*webp" -exec convimg jpg '{}' \;
+find "${target}" -type f -name "*png" -exec convimg jpg '{}' \;

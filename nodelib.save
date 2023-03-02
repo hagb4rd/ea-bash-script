@@ -1,0 +1,5 @@
+#!/bin/bash
+node_modules="$NPM_PREFIX/lib/node_modules"
+pushd "$node_modules"
+find "$node_modules" -type d -print
+

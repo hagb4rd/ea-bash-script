@@ -1,0 +1,23 @@
+#!/bin/bash
+args=(	--net=eth0 \
+	--dns=192.168.8.1 \
+	--netfilter=/home/e/.firejail/nolocal.net \
+	--netfilter6=/home/e/.firejail/rules-ipv6.net \
+	--nogroups \
+	--nonewprivs \
+	--disable-mnt \
+	--private-tmp \
+	--seccomp \
+	--caps.drop=all \
+	--private-dev \
+	--private-tmp \
+	--disable-mnt \
+	--noroot \
+	--nogroups \
+	--ipc-namespace \
+	--nosound \
+	--nodbus \
+	--deterministic-exit-code \
+	 "$@")
+#netbox --noprofile curl $*
+firejail "${args[@]}"

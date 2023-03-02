@@ -1,0 +1,3 @@
+#!/bin/sh
+# This script created by AQEMU
+/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 2048 -snapshot -cdrom "/home/e/linuxwelt/Image-Dateien/xubuntu-22.10-core-lw-amd64.iso" -hda "/home/e/.aqemu/xubuntu.qcow2" -boot once=d,menu=off -net nic -net user -rtc base=localtime -name "xubuntu" $*

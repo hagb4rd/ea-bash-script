@@ -1,0 +1,29 @@
+#!/bin/bash
+declare -A f
+i="0"
+for x in "$*"
+do
+	printf '[%s]="%s" ' "$i" "${f[$i]}"
+#	f["$i"]="$x"
+	let "i++"
+done
+ 
+#let len="${#*}"
+len="0";
+#for ((i=len;i-->0;0)) 
+#for i in $*;
+#do
+#	$f[$len]="$i"
+#	let "len++"
+#done
+
+
+for ((j="${#f[*]}";i-->0;))
+do 
+	printf '[%s]="%s" ' "$j" "${f[$j]}"
+done
+printf '\n' 
+#while read -a files
+#do
+#	enumf "${files[*]}"
+#done

@@ -8,4 +8,4 @@ s='sudo';
 
 #$s apt update
 
-$s apt install ./realtek-rtl88xxau-dkms_5.6.4.2~git20210327.c0ce817-0kali2_all.deb ./realtek-rtl8814au-dkms_5.8.5.1~git20210331.bdf80b5-0kali1_all.deb
+apt install ./realtek-rtl88xxau-dkms_5.6.4.2~git20210327.c0ce817-0kali2_all.deb ./realtek-rtl8814au-dkms_5.8.5.1~git20210331.bdf80b5-0kali1_all.deb

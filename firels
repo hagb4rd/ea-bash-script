@@ -1,0 +1,19 @@
+#!/bin/bash
+jailid="$1";
+directory="$2"
+directory="${directory:-~/Downloads}"
+
+if [[ -z $jailid ]]; then
+	firejail --list
+	echo 'usage: firels [firejailpid] <directory>'
+	exit 1;
+fi
+
+
+firejail "--ls=$jailid" "${directory}" | while read a b c d line; do 
+	re='\.{1,2}'; 
+	if [[ ! $re =~ $line ]]; then 
+		printf '%s/%s\n' "${directory}" "${line}"
+#		firejail "--get=$jailid" "${directory:-~/Downloads/$line}"; 
+	fi; 
+done 

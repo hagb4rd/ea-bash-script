@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var xs="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("")
+//var xs="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("")
+console.log(Math.random()*Number.MAX_SAFE_INTEGER|0)
+

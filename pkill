@@ -1,3 +1,4 @@
 #!/bin/bash 
-ps aux | grep $1 | awk '{print $2}' | while read id; do kill -9 $id; done;
-ps aux | grep $1
+ps aux | grep $1 | while read id rest; do kill -9 "$id"; done;
+# ps a | grep $1
+#killall -w -s KILL $*

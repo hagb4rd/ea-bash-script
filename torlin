@@ -1,0 +1,2 @@
+#!/bin/bash
+netbox sh -c '(tor > /dev/null) & torsocks elinks "https://html.duckduckgo.com/html"'

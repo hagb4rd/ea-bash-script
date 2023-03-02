@@ -1,0 +1,6 @@
+#!/bin/bash
+#iptables-save /root/iptables.save
+nano /tmp/shared0/bin/iptables.sh
+source /tmp/shared0/bin/iptables.sh
+#iptables-restore /root/iptables.save
+iptables -L -n -v | less

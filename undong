@@ -1,0 +1,8 @@
+#!/bin/bash
+pendev=/dev/sdb1
+#if [[ ! -x $pendev ]]; then
+#pendev=/dev/sdc1
+#fi
+sudo umount /dev/mapper/dong
+sudo cryptsetup close dong
+

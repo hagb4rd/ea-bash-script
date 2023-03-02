@@ -1,0 +1,2 @@
+#!/bin/bash
+firejail --x11=xpra --net --private=/home/eagle/toroverlay /home/eagle/tor-browser_en-US/Browser/start-tor-browser

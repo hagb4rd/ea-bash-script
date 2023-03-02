@@ -1,0 +1,6 @@
+#!/bin/bash
+find "$NPM_PREFIX/lib/node_modules" -type f -name "package.json"  | while read line; do  
+	dir="${line%%/package.json}"
+    packagename=$(node -e "console.log(JSON.parse(require('fs').readFileSync('${line}','utf8')).name)")
+    printf '%s\t%s' "$packagename" "$dir"
+done

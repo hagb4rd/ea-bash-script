@@ -1,6 +1,6 @@
 #!/bin/bash
 # 
-i="$s iptables"
+i="iptables"
 
 # Policy
 $i -P INPUT DROP 
@@ -14,12 +14,29 @@ $i -Z
 
 
 # Erlaubt Loopback-Verbindungen: 
-#$i -A INPUT -i lo -j ACCEPT 
-#$i -A OUTPUT -o lo -j ACCEPT
+$i -A INPUT -i lo -p tcp -m tcp --dport 8118 -j ACCEPT 
+$i -A INPUT -i lo -p udp -m udp --dport 8118 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 9050 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 9051 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 9150 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 9151 -j ACCEPT 
+
+$i -A INPUT -i lo -p udp -m udp --dport 9053 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 9053 -j ACCEPT 
+$i -A INPUT -i lo -p tcp -m tcp --dport 53 -j ACCEPT 
+$i -A INPUT -i lo -p udp -m udp --dport 53 -j ACCEPT 
+
+$i -N SYNFLOOD 
+$i -A SYNFLOOD -p tcp --syn -m limit --limit 40/s -j ACCEPT 
+$i -A SYNFLOOD -p tcp -j REJECT --reject-with tcp-reset 
+$i -A INPUT -p tcp --syn -j SYNFLOOD
+
+$i -A OUTPUT -o lo -j ACCEPT
 
 # Bestehende Verbindung erlauben: 
 $i -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT 
 $i -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
 
 # Ping erlauben: 
 $i -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT 
@@ -43,24 +60,33 @@ $i -A INPUT -p tcp -j PORTSCAN
 # Blockiert fragmentierte Pakete: 
 $i -A INPUT -f -j DROP
 # Stoppt SYN-Floods 
-$i -N SYNFLOOD 
-$i -A SYNFLOOD -p tcp --syn -m limit --limit 40/s -j RETURN 
-$i -A SYNFLOOD -p tcp -j REJECT --reject-with tcp-reset 
-$i -A INPUT -p tcp -m state --state NEW -j SYNFLOOD
 
 # SYN-Pakete erlauben: 
-$i -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
+# $i -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
 # Öffnet ausgehene Ports (DNS): 
 #$i -A OUTPUT -j ACCEPT
 $i -A OUTPUT -p tcp --dport 53 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 5353 -j ACCEPT
 $i -A OUTPUT -p udp --dport 53 -j ACCEPT
+$i -A OUTPUT -p udp --dport 5353 -j ACCEPT
 $i -A OUTPUT -p tcp --dport 67 -j ACCEPT
 $i -A OUTPUT -p udp --dport 67 -j ACCEPT
-#$i -A OUTPUT -p tcp --dport 80 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 80 -j ACCEPT
 #$i -A OUTPUT -p tcp --dport 21 -j ACCEPT
 $i -A OUTPUT -p tcp --dport 443 -j ACCEPT
 #$i -A OUTPUT -p tcp --dport 43 -j ACCEPT
-$i -A OUTPUT -p tcp --dport 6697 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 6979 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 6999 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 8118 -j ACCEPT
+$i -A OUTPUT -p tcp --dport 9001 -j ACCEPT
+
+$i -A OUTPUT -p tcp --dport 8443 -j ACCEPT
+
+
+
+#$i -A OUTPUT -j ACCEPT
+
+
 #$i -A OUTPUT -p tcp --dport 9001 -j ACCEPT
 #$i -A OUTPUT -p tcp --dport 8443 -j ACCEPT
 # Öffnet eingehenden TCP-Port 22 (SSH): 
@@ -76,24 +102,17 @@ $i -A OUTPUT -j DROP
 
 
 
-i="$s iptables -t nat"
+i="iptables -t nat"
 $i -F
 $i -X
+$i -Z
 #$i -A POSTROUTING -o usb0 -j MASQUERADE
 
-
-i="$s ip6tables"
-
-# Policy
-$i -P INPUT DROP 
-$i -P OUTPUT DROP
-$i -P FORWARD DROP
-
-# Reset der Regeln: 
+i="ip6tables"
+$i -A INPUT -j DROP  
+$i -A FORWARD -j DROP 
+$i -A OUTPUT -j DROP 
 $i -F
-$i -X 
+$i -X
 $i -Z
 
-$i -A INPUT -j REJECT
-$i -A FORWARD -j REJECT 
-$i -A OUTPUT -j REJECT

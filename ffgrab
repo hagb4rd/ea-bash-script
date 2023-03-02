@@ -1,0 +1,10 @@
+#!/bin/bash
+display=0.0
+offsetx=50
+offsety=20
+framerate=29
+#videosize="cif"
+videosize="700x1030"
+outputfile="$HOME/Pictures/gif/v0.mp4"
+echo ffmpeg -f x11grab -video_size "$videosize" -framerate "$framerate" -i ":${display}+${offsetx},${offsety}" "$outputfile"
+ffmpeg -f x11grab -video_size "$videosize" -framerate "$framerate" -i ":${display}+${offsetx},${offsety}" "$outputfile"

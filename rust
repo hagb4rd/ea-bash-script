@@ -1,0 +1,5 @@
+#!/bin/bash
+WORKDIR=$HOME/git/rust/learn-opengl
+cd "$WORKDIR"
+firefox /usr/local/share/doc/rust/html/book/ch01-02-hello-world.html > /dev/null &
+

@@ -1,0 +1,1 @@
+firejail --name=chromium --noprofile --net=none --protocol=unix chromium

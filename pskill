@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ ! -z "$1" ]]; then
+	ps -ax | grep "$1" | while read pid b c d cmdline; do 
+        re='^grep.*' 
+        if [[ ! $cmdline =~ $re ]]; then 
+            kill -9 $pid;
+            echo "[${pid}] $cmdline ..killed."; 
+        fi; 
+    done;
+else
+    echo "Terminate processes inclusively matching <name>"
+    printf "\n"  
+	echo "USAGE: pskill <name>"
+fi
+

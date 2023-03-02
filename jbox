@@ -1,0 +1,86 @@
+#!/bin/bash
+pid="$1"
+pid="${pid:-jbox}"
+
+#private home directory 
+privdir="${HOME}/firejail/${pid}"
+if [[ ! -d "$privdir" ]]; then
+	mkdir -p "$privdir"
+fi
+
+
+#shift
+shift
+
+
+cmder="$@"
+
+netdev="enx001e101f0000"
+#netdev="bridge0"
+#netfilter="/etc/firejail/nolocal.net"
+netfilter="/home/e/.firejail/nolocal.net"
+netfilter6="/home/e/.firejail/nolocal6.net"
+xephyrscreen="1024x768"
+#enx001e101f0000
+
+#privatehome='.mozilla,.config,.tor,torrc'
+
+
+#if firejail --net.print="$pid"; then 
+#filter="--net=${net} --netfilter=/etc/firejail/nolocal.net --netfilter6=/etc/firejail/nolocal6.net"
+#--netfilter6="$netfilter6"
+#echo $netfilter
+#exit;
+#fi
+
+#if ! firejail --ls="$pid" ~; then
+#	firejail --name="$pid" --profile=firefox --x11=xephyr --net="${netdev}" --netfilter=1olocal --netfilter6=/etc/firejail/nolocal6.net --dns=192.168.8.1 --private="~/twitter" --noroot --caps.drop=all --disable-mnt --private-tmp --nodbus --private-dev --machine-id --noautopulse --nou2f --nodvd --notv --novideo --ipc-namespace -- openbox &
+
+args=(--name="$pid" \
+	--protocol=unix,inet,inet6 \
+#	--private \
+#	--private-home="~/tor-browser_en-US" \
+	--private="~/tor-browser_en-US" \
+	--noprofile \
+	--x11=xephyr \
+	"--xephyr-screen=${xephyrscreen}"
+	--net="${netdev}" \
+	--netfilter \
+	"--netfilter6=${netfilter6}" \
+	--defaultgw=192.168.8.1 \
+	--ip=192.168.8.231 \
+	--dns=192.168.8.1 \
+#	--private="~/firejail/${pid}" \
+	--nonewprivs \
+	--nogroups \
+	--noroot \
+	--caps.drop=all \
+	--disable-mnt  \
+	--private-tmp  \
+	--nodbus \
+	--private-dev \
+	--machine-id  \
+	--noautopulse \
+	--nou2f \
+	--nodvd \
+	--no3d \
+	--notv \
+	--novideo \
+	--nosound \
+	--ipc-namespace \
+	qterminal)
+	
+echo firejail "${args[@]}"
+firejail "${args[@]}"
+
+#firejail --name="$pid" --protocol=unix,inet --profile=firefox --x11=xephyr --net="${netdev}" --netfilter="$netfilter" --dns=192.168.8.1 --private="~/firejail/${pid}" --private-cache --nonewprivs --nogroups --noroot --caps.drop=all --disable-mnt --private-tmp --nodbus --private-dev --machine-id --noautopulse --nou2f --nodvd --no3d --notv --novideo --nosound --ipc-namespace --deterministic-exit-code qterminal
+
+#@	sleep 3s
+#	firejail --bandwidth="$pid" set "$netdev" 24 8
+#else
+#	sleep 3s
+#fi
+#firejail --join="$pid" "$@"
+#firejail --join="$pid" firefox -P "$@" &
+#firejail --join="$pid" firefox "$@" &
+

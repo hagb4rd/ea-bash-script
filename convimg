@@ -1,0 +1,25 @@
+#!/bin/bash
+addext="$1";
+
+print_error() {
+    local msg="$*"
+    echo "${msg:-usage: convimg <imgageformat> <imagefile>}";
+    return 1;
+}
+
+
+while shift; do
+file="$*";
+
+#echo "conv $addext $file";
+
+if [[ -z "$addext" ]]; then
+    print_error;
+elif [[ ! -e "$file" ]]; then
+    print_error "$file doesn't extist.";
+else 
+    rmext='.*'; targetfile="${file%$rmext}.${addext}";
+    printf '%s -> %s ' "$file" "$targetfile";
+    convert "${file}" "$targetfile" && rm "$file" && printf '[%s]\n' "OK" || printf '[%s]\n' "ERROR";
+fi
+done

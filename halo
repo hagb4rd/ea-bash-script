@@ -1,26 +1,12 @@
-dpkg --add-architecture i386 && sudo apt update
-apt install \
-      wine \
-      wine32 \
-      wine64 \
-      libwine \
-      libwine:i386 \
-      fonts-wine
-apt install winetricks # openal libpulse alsa-plugins mpg123 alsa-lib
-
-# apt install nvidia nvidia-utils nvidia-settings
-
-wineboot
-
-# needed by Halo's PidGen.dll to generate a product ID from CD key
-winetricks mfc42
-# if not installed, multiplayer chat messages will not show up ingame
-winetricks msxml4
-
-export WINEDLLOVERRIDES=mscoree=d;mshtml=d
-export WINEDEBUG=-all
-export WINEPREFIX=/home/eagle/prefix/halo
-export HALO_HOME="$WINEPREFIX/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition"
-export HALO_OPTS="-console -screenshot"
-cd "$HALO_HOME"
-# nohup wine haloce.exe $HALO_OPTS &
+#!/bin/bash
+export WINEPREFIX="/home/e/.wine";
+export WINEARCH="win32"
+dir="${WINEPREFIX}/drive_c/Program Files/Microsoft Games/Halo Custom Edition"
+cd "$dir"
+wine start AutoHotkey.exe taxi.ahk < /dev/null &
+sleep 3s
+wine start haloce.exe < /dev/null &
+sleep 1s
+rm ~/.wine/dosdevices/com*
+rm ~/.wine/dosdevices/lpt*
+rm ~/.wine/dosdevices/d::

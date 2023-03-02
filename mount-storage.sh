@@ -1,4 +1,4 @@
 #!/bin/sh
-mkdir /storage
-cryptsetup luksOpen /dev/sda6 storage
-mount /dev/mapper/storage /storage
+mkdir -p /media/iso
+cryptsetup luksOpen /dev/sda5 storage
+mount /dev/mapper/storage /media/iso

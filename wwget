@@ -1,0 +1,2 @@
+#!/bin/bash
+netbox wget --connect-timeout 5 --dns-timeout 5 --max-redirect 0 -t 1 --https-only $*

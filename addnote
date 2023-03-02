@@ -1,0 +1,3 @@
+#!/bin/bash
+note=$(zenity  --title "Add Note" --entry --text "Add a quick note")
+log "$note"

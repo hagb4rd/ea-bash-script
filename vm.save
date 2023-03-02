@@ -1,0 +1,54 @@
+#!/bin/bash
+MAC=$(printf 'DE:AD:BE:EF:%02X:%02X' $((RANDOM%256)) $((RANDOM%256)))
+
+
+
+#/usr/bin/qemu-system-x86_64 \
+#  -monitor stdio \
+#  -monitor tcp:127.0.0.1:6001,server,nowait \
+#  -soundhw hda \
+#  -rtc base=utc,driftfix=slew \
+#  -name "Buster"
+
+#/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3014 -snapshot -hda "/media/iso/buster.qcow2" -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 -boot once=c,menu=on \
+#    -monitor stdout \
+
+
+
+
+# VM Networking
+# ----
+# old style
+NIC='device virtio-net-pci,netdev=network0,mac=00:d1:96:f8:c4:11'
+TAP='netdev  tap,id=network0,ifname=tap0,script=no,downscript=no'
+# new style
+NIC="net nic,macaddr=$MAC,model=virtio-net-pci"
+TAP='net tap,ifname=tap0,script=no'
+
+
+name=$1
+if [[ -z "$name" ]]; then
+	name = "vm";
+else
+	shift
+fi
+
+/usr/bin/qemu-system-x86_64 \
+    -monitor stdio \
+    -smp 2 \
+    -soundhw hda \
+    -machine accel=kvm \
+    -m 1446 \
+    -hda /media/iso/buster0.qcow2 \
+    -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 \
+    -boot once=c,menu=on \
+    -net nic,macaddr=00:5a:ff:53:e4:04,model=virtio-net-pci \
+    -net tap,ifname=tap1,script=no \
+    -rtc base=utc \
+    -snapshot \
+    -name "$name"
+    $*
+#    -usb \
+#    -usbdevice mouse \
+#    -usbdevice keyboard \
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+interface='org.freedesktop.resolve1.Manager'
+member='Resolve{Address,Hostname,Record,Service}'
+
+dbus-monitor "interface='${interface}', member='${member}'"
+
+

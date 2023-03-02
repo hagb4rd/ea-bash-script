@@ -1,0 +1,1 @@
+ls_torbrowser | tail -n 2 | while read m user group size name; do echo "$name"; firejail --get=torbox "~/tor-browser_en-US/Browser/Downloads/$name";  done

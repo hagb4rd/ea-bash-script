@@ -1,0 +1,43 @@
+#!/bin/bash
+
+
+sudo ifconfig tap0 down
+#ip link set dev tap0 down
+sudo ifconfig br0 down
+#ip link set dev br0 down
+sudo ifconfig $dev down
+#ip link set dev $dev down
+
+#dhclient -r $dev
+
+#ip link delete br0 
+#ip link delete tap0
+
+#ifconfig $dev up && dhclient $dev
+sudo ifconfig $dev up 
+
+
+sudo ip link add br0 type bridge
+sudo ip link set br0 up
+sleep 1s
+sudo ip link set $dev master br0
+# Drop existing IP from eth0
+sleep 1s
+sudo ip addr flush dev $dev
+
+sudo ip addr add 192.168.42.10/24 brd + dev br0
+#ip addr add 192.168.42.169/24 brd + dev $dev
+sudo ip route add default via 192.168.42.129 dev br0
+
+sudo ip tuntap add dev tap0 mode tap user mint
+sudo ip link set dev tap0 up
+sudo ip link set tap0 master br0
+##ip addr flush dev tap0
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+#dig facebook.com 
+
+cat /etc/resolv.conf
+sudo ip addr show 
+sudo ip route list
+#sudo netstat -tulpn

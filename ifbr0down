@@ -1,0 +1,29 @@
+#!/bin/bash
+
+tuntap=tap0
+mode=tap
+user=e
+netdev=eth0
+
+#echo setting set -x
+#set -x
+#ifconfig br0 down
+#ifconfig $netdev down
+#ifconfig $tuntap down
+#sleep 1s
+
+sudo ip link set dev $netdev down
+sudo ip link set dev tap0 down
+sudo ip link set dev br0 down
+sudo ip link del dev tap0
+sudo ip link del dev br0
+
+#sleep 1s
+
+#sudo /etc/init.d/networking restart
+
+echo -----------------------
+echo shutting down netlinks
+echo =======================
+ip addr
+ip r

@@ -1,0 +1,6 @@
+#!/bin/bash
+execdir="~/.wine/drive_c/GOG Games/System Shock 2"
+cd "$execdir"
+wine ss2.exe
+wineserver -k
+

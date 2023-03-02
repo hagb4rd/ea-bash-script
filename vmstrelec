@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script created by AQEMU
+bios=(-bios "/home/e/.aqemu/OVMF.fd")
+
+firejail --name="vmstrelec" --net=eth0 --netfilter=/home/e/.firejail/nolocal.net --netfilter6=/home/e/.firejail/ip6tables.net  --profile="qemu-system-x86_64" --disable-mnt --noroot --ipc-namespace --nodbus --nonewprivs /usr/bin/qemu-system-x86_64 "${bios[@]}" -soundhw sb16 -machine accel=kvm -m 2044 -cdrom "/media/iso/strelec.iso" -boot once=d,menu=off -net nic -net user -rtc base=localtime -name "WinPE Strelec" $*
+
+/usr/bin/qemu-system-x86_64 -bios "/home/e/.aqemu/OVMF.fd" -soundhw sb16 -machine accel=kvm -m 2044 -cdrom "/media/iso/strelec.iso" -boot once=d,menu=off -net nic -net user -rtc base=localtime -name "WinPE Strelec" $*

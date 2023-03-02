@@ -1,0 +1,2 @@
+#!/bin/bash
+dosbox -conf "/home/e/.dosbox/dosbox-0.74-3.conf" -conf "/home/e/dos/BIING/dosbox_single.conf" -no

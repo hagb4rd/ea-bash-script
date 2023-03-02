@@ -1,0 +1,20 @@
+#!/bin/bash
+#hhash() { local alphanum=($(echo {a..z} {A..Z} {2..9})); local abclen="${#alphanum[*]}"; local c=$1; while ((c--)); do rnd=$((RANDOM%abclen)); printf "%s" "${alphanum[$rnd]}"; done; }
+
+#parameter: number of positions/digits
+c=$1;
+#default count 6
+if [[ -z $c ]]; then
+	 c=6;
+fi
+
+#dictionary of elements
+alphanum=($(echo {a..z} {A..Z} {2..9}));
+#dictionary of elements count
+abclen="${#alphanum[*]}";
+
+
+while ((c--)); do
+	rnd=$((RANDOM%abclen));
+	printf "%s" "${alphanum[$rnd]}";
+done;

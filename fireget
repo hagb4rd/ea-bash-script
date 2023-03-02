@@ -1,0 +1,15 @@
+#!/bin/bash
+jailid="$1";
+directory="$2"
+directory="${directory:-~/Downloads}"
+
+if [[ -z $jailid ]]; then
+	firejail --list
+	echo 'usage: fireget [firejailpid] <directory>'
+	exit 1;
+fi
+
+firels "$jailid" "${directory}" | while read filename; do 
+		#		printf '%s/%s\n' "${directory}" "${line}}"
+		firejail "--get=$jailid" "$filename"
+done 

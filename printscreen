@@ -1,0 +1,4 @@
+#!/bin/bash
+SCREENSHOT_FOLDER="$HOME/Pictures"
+
+scrot -s -f "$SCREENSHOT_FOLDER/screenshot/$(hhash 6).jpg"

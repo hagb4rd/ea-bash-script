@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+file="$1"
+# openssl x509 -in "$file" -outform der | sha1sum -b | cut -d \  -f1
+#penssl x509 -in "$file" -noout -fingerprint -sha512 | awk -F= '{gsub(":","");'
+openssl x509 -in "$file" -noout -fingerprint -sha512 | awk -F= '{gsub(":",""); print tolower($2)}'

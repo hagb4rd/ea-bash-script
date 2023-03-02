@@ -1,0 +1,40 @@
+#!/bin/bash
+SERVERPATH="/home/e/git/http"
+SERVERKEY="/home/e/git/newkey.pem"
+SERVERCERT="/home/e/git/newcert.pem"
+SERVERIP="0.0.0.0"
+SERVERPORT="8000"
+
+#cd "$SERVERPATH"
+
+#http-server -a "$SERVERIP" -p "																																																		$SERVERPORT" -S -K "$SERVERKET" -C "$SERVERCERT" --cors "$SERVERPATH"  &
+cd /home/e/git/http
+args=(firejail 
+    --name="localhost" \
+	#--profile="bash" \
+	#--protocol="unix,inet" \
+    #--read-only="/home/e" \
+    #--read-only="/home/e/.local" \
+    #--whitelist="/home/e/.local/bin" \
+    #--whitelist="/home/e/git" \
+    #--whitelist="/home/e/git/http" \
+    #--whitelist="/home/e/node" \
+    #--whitelist="/home/e/.firejail" \
+	--net="$netdev" \
+	--netfilter="/home/e/.firejail/localhost.net" \
+    --dns="8.8.8.8" \
+    --env="PATH=/home/e/.local/bin:/home/e/node/bin:/usr/bin:/bin" \
+	#--read-only="$SERVERPATH" \ec
+	#--caps.drop=all \
+	#--noroot \
+    #--nonewprivs \
+	#--seccomp \
+	#--private-tmp \
+	#--disable-mnt \
+	#--private-dev \
+	#--private-bin="node,http-server,iptables-restore" \
+	--private-cwd="$SERVERPATH" \
+	#http-server -a "$SERVERIP" -p "$SERVERPORT" 
+)
+
+"${args[@]}" "$@"

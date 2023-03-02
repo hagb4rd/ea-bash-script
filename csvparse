@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var es=require('event-stream')
+var csv=require('csv-parser')
+
+var args=process.argv.slice(2);
+
+process.openStdin()
+	.pipe(args.length?csv(args):csv())
+	.pipe(es.stringify())
+	.pipe(process.stdout)
+

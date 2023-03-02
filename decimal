@@ -1,0 +1,2 @@
+#!/bin/bash
+while IFS= LC_CTYPE=C read -rn 1 -d '' c; do LC_CTYPE=C printf '%d ' "'$c"; done

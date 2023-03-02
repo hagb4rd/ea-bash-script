@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var fs=require('fs')
+var path=require('path')
+//var es=require('event-stream')
+
+/*
+var d=process.argv[2]||process.cwd();
+var f=(process.argv[3]||'jpg,gif,png,mp4').split(",")
+var fg=(p=process.env["HOME"],filter=x=>f.some(ext=>x.includes(ext)),transform=url=>url)=>JSON.stringify(fs.readdirSync(p).map(filename=>path.join(p,filename)).filter(filter).map(transform).map(u=>encodeURI(u)))
+//var videos=(dir=d)=>JSON.stringify(fs.readdirSync(dir).map(f=>'file://'+dir+'/'+f).map(f=>encodeURI(f)))
+console.log(fg(d));
+
+/* */
+var list=process.argv.slice(2)
+
+var n="\n";
+var t="\t";
+
+process.stdout.write(`<ul>${n}`);
+list.forEach(item=>{
+	process.stdout.write(`${t}<li><a href="${item}">${item}</a></li>${n}`)	
+})
+process.stdout.end(`</ul>`);
+

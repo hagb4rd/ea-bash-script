@@ -1,0 +1,33 @@
+#!/bin/bash
+url="$1"
+name="torbox"
+
+if [[ -z "$url" ]]
+ then url=$(clipit -c)
+ if [[ -z "$url" ]]
+ 	then url='https://html.duckduckgo.com/html'
+ fi
+fi
+
+if [[ -z "$dev" ]]
+	then net=ens3
+else 
+	net=br0
+fi
+
+torbrowser=torbrowser
+#torbrowser=tor-browser_en-US
+
+box() {
+	name="$1"
+	shift 
+	app=("$@")
+	if ! firejail --net.print="$name"; then  
+		firejail --noprofile --name="$name" --x11=xephyr --net="$net" --netfilter=/etc/firejail/filter.net  --caps.drop=all --disable-mnt --nonewprivs --private --private-cache --private-home="${torbrowser}",.mozilla  --nodbus --private-dev --private-tmp  --machine-id  --nosound --noautopulse --nou2f --nodvd  --notv --ipc-namespace --blacklist=~/.XAuthority openbox &
+		sleep 3
+	fi
+	if [[ ! -z "${app[@]}" ]]; then
+		firejail --join="$name" "${app[@]}"
+	fi
+}
+box "$name" "$HOME/$torbrowser/start-tor-browser.desktop"

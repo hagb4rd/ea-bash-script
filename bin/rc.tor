@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#source ~/.bashrc
+
+
+#sleep=120s
+errors=0
+
+#if [[ ! -z $1 ]]; then
+#	sleep=$1
+#fi
+
+#isbroken() {
+#	##(tail -n 4 ~/dnsproxy.log | grep -q ERROR) || (tail -n 4 ~/dnsproxy.log | grep -q REJECT)
+#	tail -n 4 ~/dnsproxy.log | grep ERROR
+#}
+
+
+
+export true=1
+export false=0
+
+evalerr() {
+	local line
+	local errors
+	errors=0
+	while read line; do
+		if ((errors > 0)); then
+			echo -----------------
+			echo killing tor..
+			echo =================
+			#pkill -x --signal 9 tor
+			pkill -9 tor
+			sleep 2
+			break
+		fi
+		echo "$line"
+		re='.*tried.*' 
+		if [[ $line =~ $re ]]; then
+			((errors=errors+1));
+			echo .   
+			echo ERRORS: "$errors"
+			echo -------------------
+		fi
+	done
+}
+
+while ((1))
+	do 
+		evalerr < <( tor -f ~/torrc )  
+	done
+

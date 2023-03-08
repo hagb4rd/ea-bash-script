@@ -1,0 +1,21 @@
+#!/bin/bash
+url="$1"
+name="torbox"
+
+if [[ -z "$url" ]]
+ then url=$(clipit -c)
+ if [[ -z "$url" ]]
+ 	then url='https://html.duckduckgo.com/html'
+ fi
+fi
+
+if [[ -z "$dev" ]]
+	then dev=ens4
+else 
+	dev=br0
+fi
+
+#app=(~/torbrowser/Browser/firefox --new-tab "$url")
+app=("$HOME/tor-browser_en-US/Browser/firefox" "--new-tab" "$url")
+#app=(~/tor-browser_en-US/Browser/firefox)
+f "$name" ""$HOME/tor-browser_en-US/Browser/firefox" "--new-tab" "$url""

@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ -d "$1" ]]
+  then p="$1"
+  else p=$(pwd)
+fi
+shopt -extglob
+feh -r -z -Z --min-dimension 256x256 --geometry 720x900+720+0  "$p"/* "$p"/**/*
+#do <1	
+#curdir=$(pwd);
+#cd "$1" || cd "$curdir"
+
+

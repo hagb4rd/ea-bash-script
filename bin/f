@@ -1,0 +1,23 @@
+#!/bin/bash
+name="$1"
+shift
+cmder="$@"
+
+if [[ -z "$name" ]]
+ then name="firebox"
+fi
+if [[ -z "$dev" ]]
+	then net=ens4
+else 
+	net=br0
+fi
+
+privatehome='.mozilla'
+
+if ! firejail --net.print="$name"; then  
+	firejail --noprofile --name="$name" --net="$net" --netfilter --noroot  --private-tmp --private-dev --x11=xephyr --caps.drop=all --disable-mnt --nonewprivs   --private-home=".mozilla" --nodbus --private-tmp --private-dev --machine-id  --nosound --noautopulse --nou2f --nodvd  --notv --ipc-namespace openbox-session &
+	sleep 3
+fi
+if [[ ! -z "$cmd" ]]; then
+	firejail --join="$name" "${cmder[@]}" &
+fi

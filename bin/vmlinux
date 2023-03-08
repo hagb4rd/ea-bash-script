@@ -1,0 +1,11 @@
+#!/bin/sh
+# This script created by AQEMU
+/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3183 -snapshot \
+-hda "/media/iso/linux.derived.qcow2" \
+-virtfs local,id=shared_folder_dev_0,path=/shared,security_model=none,mount_tag=shared0 \
+-boot once=c,menu=on \
+-rtc base=utc,driftfix=slew \
+-name "Linux"  \
+-net nic,vlan=0,model=virtio,macaddr=00:16:35:AF:94:4B \
+-net tap,vlan=0,ifname=$tap,script=no,downscript=no \
+ $*

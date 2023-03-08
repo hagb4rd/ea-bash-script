@@ -1,0 +1,43 @@
+#!/bin/bash
+MAC=$(printf '%02X:%02X:%02X:EA:%02X:%02X' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)))
+HDA="/home/eagle/.aqemu/buster1.qcow2"
+
+
+
+#/usr/bin/qemu-system-x86_64 \
+#  -rtc base=utc,driftfix=slew \
+#  -name "Buster"
+
+#/usr/bin/qemu-system-x86_64  -smp 2 -soundhw ac97 -machine accel=kvm -m 3014 -snapshot -hda "/media/iso/buster.qcow2" -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 -boot once=c,menu=on \
+#    -monitor stdout \
+
+
+
+
+# VM Networking
+# ----
+# new style
+#NIC="device virtio-net-pci,netdev=network0,mac=00:d1:96:f8:c4:11"
+#NIC="device virtio-net-pci,netdev=network0,mac=$MAC"
+#TAP='netdev  tap,id=network0,ifname=tap0,script=no'
+# old style
+NIC="net nic,macaddr=$MAC,model=virtio-net-pci"
+TAP='net tap,ifname=tap0,script=no'
+
+##    -soundhw hda \
+
+(/usr/bin/qemu-system-x86_64 \
+    -machine accel=kvm \
+    -m 3000 \
+    -hda /home/eagle/.aqemu/buster1.qcow2 \
+    -virtfs local,id=shared_folder_dev_0,path=/tmp/shared0,security_model=none,mount_tag=shared0 \
+    -device virtio-net-pci,netdev=net0,mac=$MAC \
+    -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
+    -rtc base=utc \
+    -name "$MAC" \
+    "$@") < /dev/null
+
+#    -usb \
+#    -usbdevice mouse \
+#    -usbdevice keyboard \
+

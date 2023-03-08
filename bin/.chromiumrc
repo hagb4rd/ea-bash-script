@@ -1,0 +1,16 @@
+#!/bin/nash
+
+#cp -f /tmp/shared0/backup0/bookmarks.html /usr/share/chromium/initial_bookmarks
+#chown -hR earendel:earendel /usr/share/chromium/initial_bookmarks
+
+
+PROFILE=/tmp/shared0/backup0/chromium-$(whoami)-profile
+if [[ ! -d $PROFILE ]]; then
+	PROFILE=$(mktemp -d)
+fi 
+#mkdir -p "$PROFILE"
+
+CHROMIUM_FLAGS="$CHROMIUM_FLAGS --disable-background-networking"
+CHROMIUM_FLAGS="$CHROMIUM_FLAGS --allow-file-access-from-files"
+CHROMIUM_FLAGS="$CHROMIUM_FLAGS --user-data-dir=$PROFILE"
+export CHROMIUM_FLAGS

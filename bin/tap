@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+tuntap=tor0
+mode=tap
+user=eagle
+
+#ip addr add 192.168.42.10/24 brd + dev br0
+#ip addr add 192.168.42.169/24 brd + dev $dev
+#ip route add default via 192.168.42.129 dev br0
+
+ip tuntap add dev $tuntap mode $mode user $user
+ip link set dev $tuntap up
+ip link set $tuntap master br0
+##ip addr flush dev tap0
+
+#echo nameserver 127.0.0.1 > /etc/resolv.conf
+#dig facebook.com 
+
+ip addr show 
+ip route list
+n -e

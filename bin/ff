@@ -1,0 +1,6 @@
+#!/bin/bash
+name=$1
+if [[ -z "$name" ]]
+ then name="ff"
+fi
+firejail --name="$name" --noprofile --protocol=unix,netlink,packet,inet --caps.drop=all --nonewprivs --seccomp --x11=xephyr --private-cache --private-home=.mozilla --noroot --nodbus --private-dev --read-write=/tmp/shared0  --machine-id  --nosound --noautopulse --nou2f --nodvd  --notv --ipc-namespace  openbox-session

@@ -1,0 +1,2 @@
+#/bin/bash
+TORSOCKS_USERNAME=eagle1 TORSOCKS_PASSWORD=foxforcefive torsocks lynx https://onion.torproject.org

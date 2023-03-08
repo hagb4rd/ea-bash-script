@@ -1,0 +1,6 @@
+#!/bin/bash
+server=/shared/git/http
+
+cd "$server"
+python2 -m http &
+

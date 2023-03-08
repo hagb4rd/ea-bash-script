@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ -z "$dev" ]]; then 
+	dev=enx021f451e3602
+fi
+sudo ifconfig $dev down 
+sleep 1s
+sudo ifconfig $dev 192.168.42.199 netmask 255.255.255.0 broadcast 192.168.42.255 
+sleep 1s
+sudo ip route delete default
+sudo ip addr show
+(sudo ip route add default via 192.168.42.129 dev $dev && sudo ip route list)
+

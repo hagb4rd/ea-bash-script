@@ -1,5 +1,9 @@
 #!/bin/bash
-R=$(printf '%02X%02X%02X%02X' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)))
-
-scrot '$wx$h.png'  -q -a -e  'mv $f /tmp/shared0/pics/screenshots/$f.'"$R"'.png' >> ~/Desktop/screenshots.txt 2>&1
-#scrot '$wx$h-$n.jpg' -q -e -a 'mv $f /tmp/shared0/pics/screenshots/'
+dir="$HOME/Pictures/screenshot"
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir" 2>  /dev/null
+fi
+hsh=$(hhash)
+filename="${dir}/${hsh}.png"
+fileconv="$HOME/firejail/twitter/${hsh}.jpg"
+scrot --focused "$filename" && convert "$filename" "$fileconv" && zenity --notification --text="Clipboard:\n $fileconv" && printf %s "$fileconv" | xsel -ib

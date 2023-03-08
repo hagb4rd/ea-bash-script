@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo /home/earendel/bin/mount9p.sh
+sudo /tmp/shared0/bin/iptables.sh
+sudo /tmp/shared0/bin/restore-firefox/sh
+

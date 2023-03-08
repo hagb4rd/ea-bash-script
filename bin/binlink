@@ -1,0 +1,22 @@
+#!/bin/bash
+
+target="$1"
+name="$2"
+
+if [[ -z "$name" ]]
+then
+	name=$(basename "$target")
+fi
+
+realtarget=$(realpath "$target")
+
+if [[ -f "$realtarget" ]]
+then
+	chmod -v +x "$realtarget"
+	ln -f -v -s "$realtarget" "/usr/local/bin/$name"
+else
+	echo "usage: binlink TARGET LINKNAME"
+	exit 1;
+fi
+
+

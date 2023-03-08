@@ -1,0 +1,26 @@
+#!/bin/bash
+#ffmpeg  $3 -i "$1" -ss  00:10:00 -to 00:11:00 -f avi -c:v mpeg4 -b:v 2M -g 300 -bf 2 -pass 1 -c:a libmp3lame -b:a 128k "$2"
+#ffmpeg  $3 -i "$1" -ss 00:10:00 -to 00:11:00 -f avi -c:v mpeg4 -b:v 2M -g 300 -bf 2 -pass 2 -c:a libmp3lame -b:a 128k "$2"
+
+one=(
+    -i "$1" \
+    -f avi \
+    -c:v mpeg4      -b:v 2M -g 300 -bf 2 -pass 1 \
+    -c:a libmp3lame -b:a 128k \
+    "$2.firstpass.avi"
+)
+
+two=(
+    -i "$2.firstpass.avi" \
+    -f avi \
+    -c:v mpeg4      -b:v 2M -g 300 -bf 2 -pass 2 \
+    -c:a libmp3lame -b:a 128k \
+    "$2"
+)
+
+ffmpeg ${one[*]} && ffmpeg ${two[*]} && rm "$2.firstpass.avi"
+
+
+
+
+#ffmpeg  $3 -i "$2" -f avi -c:v mpeg4 -b:v 2M -g 300 -bf 2 -pass 2 -c:a libmp3lame -b:a 128k "$2.final.avi"

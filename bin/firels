@@ -1,0 +1,8 @@
+#!/bin/bash
+join="$1"
+join="${join=torbrowser}"
+dir="$2"
+#dir="${dir=/home/earendel/tor-browser_en-US/Browser/Downloads}"
+dir="${dir=~/Downloads}"
+
+firejail --ls="$join" "$dir"

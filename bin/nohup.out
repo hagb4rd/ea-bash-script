@@ -1,0 +1,1487 @@
+
+(lxpanel:2359): GLib-GObject-CRITICAL **: 23:42:20.862: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(lxpanel:2359): GLib-GObject-CRITICAL **: 23:42:20.863: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(lxpanel:2359): GLib-GObject-CRITICAL **: 23:42:20.863: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.917: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.919: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.920: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.921: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.923: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.924: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.925: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.926: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.927: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.929: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.930: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.931: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.932: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:42:20.933: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:43:05.804: Unhandled action type _OB_WM_ACTION_UNDECORATE
+Select the window whose client you wish to kill with button 1....
+xkill:  killing creator of resource 0x1015a46
+
+** (lxpanel:2359): WARNING **: 23:43:12.153: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.153: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.154: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.154: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.154: lxpanel : X error: BadWindow (invalid Window parameter)
+
+(lxpanel:2359): Gdk-CRITICAL **: 23:43:12.155: IA__gdk_window_get_screen: assertion 'GDK_IS_WINDOW (window)' failed
+
+(lxpanel:2359): Gdk-CRITICAL **: 23:43:12.155: IA__gdk_screen_get_monitor_at_window: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(lxpanel:2359): GLib-GObject-CRITICAL **: 23:43:12.155: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+** (lxpanel:2359): WARNING **: 23:43:12.155: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.155: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.155: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.155: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 23:43:12.155: lxpanel : X error: BadWindow (invalid Window parameter)
+
+(lxpanel:2359): GLib-CRITICAL **: 23:43:12.155: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(lxpanel:2359): Wnck-WARNING **: 23:43:47.333: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:43:47.345: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:45:12.928: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:45:26.967: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:46:49.691: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 23:47:31.829: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:47:31.883: Unhandled action type _OB_WM_ACTION_UNDECORATE
+! SyncTeX Error : No file?
+eom 'file:///home/eagle/Pictures/smplayer_screenshots/cap_0_00:09:22_12680.jpg' 
+
+(eom:2501): EOM-WARNING **: 23:50:06.593: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 23:50:06.754: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:50:14.825: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:50:16.280: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:52:25.791: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///home/eagle/pics/C5c6nj-WAAAWFvh.jpeg' 
+
+(eom:2524): EOM-WARNING **: 23:54:44.092: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 23:54:44.255: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:54:57.496: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:54:57.551: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:54:59.430: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:55:25.536: Unhandled action type _OB_WM_ACTION_UNDECORATE
+lxinput
+
+(lxpanel:2359): Wnck-WARNING **: 23:55:33.768: Unhandled action type _OB_WM_ACTION_UNDECORATE
+lxhotkey --gui=gtk
+
+(lxpanel:2359): Wnck-WARNING **: 23:55:42.049: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pluma 'file:///tmp/shared0/bin/screenshot' 
+
+(lxpanel:2359): Wnck-WARNING **: 23:56:28.601: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:56:28.736: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:56:28.737: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:56:31.595: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:58:26.664: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:58:26.679: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:58:29.640: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:59:46.404: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:00:28.540: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:00:28.551: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:00:31.520: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:01:09.409: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:01:13.720: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:01:13.803: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:01:16.720: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:03.927: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:05.901: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:05.915: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:08.884: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:52.959: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:52.984: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:03:55.939: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:05:23.680: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:05:23.695: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:05:26.672: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/screenshots/1440x900-.jpg77FA71A7.jpg' 
+
+(eom:2716): EOM-WARNING **: 00:05:33.433: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 00:05:33.495: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:05:44.556: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:06:11.729: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:06:11.745: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:06:14.709: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:06:29.038: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(pcmanfm:2410): GLib-CRITICAL **: 00:06:30.762: Source ID 51 was not found when attempting to remove it
+
+(pcmanfm:2410): GLib-CRITICAL **: 00:06:30.771: Source ID 38216 was not found when attempting to remove it
+
+(pcmanfm:2410): GLib-CRITICAL **: 00:06:30.774: Source ID 38226 was not found when attempting to remove it
+
+(lxpanel:2359): Wnck-WARNING **: 00:07:21.955: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:07:21.966: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:07:24.936: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/screenshots/1440x900-.jpg70A50AC4.jpg' 
+
+(eom:2754): EOM-WARNING **: 00:07:29.346: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 00:07:29.411: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:08:28.113: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:08:28.129: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:08:31.107: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:08:38.824: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(pcmanfm:2410): GLib-CRITICAL **: 00:08:40.417: Source ID 38236 was not found when attempting to remove it
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:24.212: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:24.228: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:27.201: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:43.019: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:43.036: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:09:46.006: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:00.989: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:01.007: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:03.977: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:17.876: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:17.892: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:20.877: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/screenshots/1440x900-.jpg48E11022.jpg' 
+
+(eom:2814): EOM-WARNING **: 00:10:23.621: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:23.687: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:44.927: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/screenshots/1440x900-.jpg569E3B44.jpg' 
+
+(eom:2830): EOM-WARNING **: 00:10:47.721: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 00:10:47.783: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:11:06.133: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:12:56.632: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:12:56.657: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:12:59.623: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:13:03.961: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:13:03.975: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:13:06.944: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.pngABC70305.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 00:13:13.868: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:13:38.276: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:16.078: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:16.094: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:19.074: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:38.994: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:39.020: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:41.975: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.F297AC35.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:50.596: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:14:54.679: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:16:24.760: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.96FEDB84.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 00:16:28.411: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:16:40.998: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:17:36.429: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:17:36.441: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:17:39.406: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:05.371: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:05.394: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:06.929: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:06.943: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:08.284: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:08.299: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:11.281: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/938x716.png.66AC14F1.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:19.389: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:41.419: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/screenshots/1440x900-.jpg569E3B44.jpg' 
+
+(eom:2985): EOM-WARNING **: 00:18:55.912: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 00:18:55.973: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:06.131: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:06.148: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:09.127: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:13.453: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:13.474: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:16.452: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:42.982: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.CD369D31.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:46.362: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 00:19:59.434: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+** (gdk-pixbuf-thumbnailer:3202): WARNING **: 00:28:21.561: Could not thumbnail 'file:///tmp/shared0/pics/screenshots/1440x900.png.45A23870.png': Fatal error reading PNG image file: IDAT: CRC error
+
+(eom:2524): MateDesktop-WARNING **: 00:28:21.582: Error creating thumbnail for file:///tmp/shared0/pics/screenshots/1440x900.png.45A23870.png: Fatal error reading PNG image file: IDAT: CRC error
+
+(lxpanel:2359): Wnck-WARNING **: 00:33:32.130: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:10:34.494: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:10:34.495: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.2B907B3D.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 01:23:43.916: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:24:55.350: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:25:17.325: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:25:21.917: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:27:18.997: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:27:22.018: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:27:35.465: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:27:41.458: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/bin/chromium 
+[4372:4491:1201/012759.929866:ERROR:web_database_backend.cc(113)] Cannot initialize the web database: 2
+[4372:4491:1201/012759.981035:ERROR:object_proxy.cc(621)] Failed to call method: org.freedesktop.Notifications.GetCapabilities: object_path= /org/freedesktop/Notifications: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[4372:4404:1201/012800.016982:ERROR:login_database.cc(624)] Password store database is too new, kCurrentVersionNumber=21, GetCompatibleVersionNumber=28
+[4372:4404:1201/012800.017292:ERROR:password_store_default.cc(42)] Could not create/open login database.
+
+(lxpanel:2359): Wnck-WARNING **: 01:28:00.135: Unhandled action type _OB_WM_ACTION_UNDECORATE
+[4372:4372:1201/012800.143702:ERROR:desktop_window_tree_host_x11.cc(1120)] Not implemented reached in virtual void views::DesktopWindowTreeHostX11::InitModalType(ui::ModalType)
+
+(lxpanel:2359): Wnck-WARNING **: 01:28:00.931: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:30.269: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:31.000: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:31.004: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:31.876: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:31.900: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): GLib-GObject-WARNING **: 01:28:32.596: ../../../gobject/gsignal.c:3492: signal name 'selection_changed' is invalid for instance '0x7fc9b8036a00' of type 'GailMenuItem'
+
+(lxpanel:2359): Wnck-WARNING **: 01:28:43.079: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:28:46.374: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:29:07.215: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pavucontrol
+
+(lxpanel:2359): Wnck-WARNING **: 01:29:37.401: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:29:39.582: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:44:38.039: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 01:46:31.620: Unhandled action type _OB_WM_ACTION_UNDECORATE
+[4372:4372:1201/014643.287542:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.287998:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288042:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288089:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288126:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288164:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288187:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288211:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288227:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288247:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288263:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288283:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288316:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288337:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/014643.288352:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[5:54:1201/021955.668420:ERROR:render_media_log.cc(30)] MediaEvent: MEDIA_ERROR_LOG_ENTRY {"error":"FFmpegDemuxer: no supported streams"}
+[5:5:1201/021955.670777:ERROR:render_media_log.cc(30)] MediaEvent: PIPELINE_ERROR DEMUXER_ERROR_NO_SUPPORTED_STREAMS
+
+(lxpanel:2359): Wnck-WARNING **: 02:32:37.831: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:33:08.453: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:33:19.795: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:33:33.562: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:33:45.999: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:34:06.003: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:34:25.352: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:34:39.627: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:36:53.669: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:37:10.473: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:37:40.981: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:38:08.156: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:38:15.645: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:43:55.446: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:44:24.813: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:45:19.773: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:49:04.694: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:49:31.807: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:49:41.342: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:58:00.642: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:59:45.717: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 02:59:53.249: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:00:02.149: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:07:59.789: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:10:40.860: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:12:00.406: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:12:37.202: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:41:22.858: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 03:42:46.771: Unhandled action type _OB_WM_ACTION_UNDECORATE
+[4372:4372:1201/034345.903376:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904583:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904703:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904840:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904898:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904928:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904967:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.904994:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.905040:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.905090:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.905154:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.905203:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/034345.905269:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/041533.174853:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/041534.371242:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/041610.625432:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/041611.852649:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/041613.434198:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[5:54:1201/041813.285345:ERROR:render_media_log.cc(30)] MediaEvent: MEDIA_ERROR_LOG_ENTRY {"error":"Failed to send audio packet for decoding: timestamp=40054422 duration=23220 size=95 side_data_size=0 is_key_frame=1 encrypted=0 discard_padding (us)=(0, 0)"}
+[5:54:1201/041813.285552:ERROR:render_media_log.cc(30)] MediaEvent: MEDIA_ERROR_LOG_ENTRY {"error":"audio decode error"}
+[5:54:1201/041813.332420:ERROR:render_media_log.cc(30)] MediaEvent: MEDIA_ERROR_LOG_ENTRY {"error":"audio error during playing, status: PIPELINE_ERROR_DECODE"}
+[5:5:1201/041813.332863:ERROR:render_media_log.cc(30)] MediaEvent: PIPELINE_ERROR PIPELINE_ERROR_DECODE
+[4372:4372:1201/043136.778311:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778467:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778557:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778599:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778650:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778687:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778776:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778846:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.778937:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.779017:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.779090:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.779160:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.779247:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043136.779288:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043554.724376:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043557.008187:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043558.227741:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043947.307127:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/043949.196896:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/044922.233559:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/044924.111062:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045710.871196:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045714.310363:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045715.440119:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045717.021668:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045725.060253:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045725.085232:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045738.386783:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045740.581303:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+[4372:4372:1201/045741.847266:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Invalid or unexpected token", source: chrome-devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@909ee014fcea6828f9a610e6716145bc0b3ebf4a/&can_dock=true&dockSide=undocked (1)
+
+(lxpanel:2359): Wnck-WARNING **: 05:03:20.128: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:03:28.269: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:04:07.076: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 05:10:34.443: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:10:34.557: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:10:40.677: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:10:47.367: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:11:05.386: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/local/bin/i: line 2: shift: shift count out of range
+/usr/local/bin/ir: line 6: shopt: -e: invalid option
+shopt: usage: shopt [-pqsu] [-o] [optname ...]
+feh WARNING: feh WARNING: /tmp/shared0/pics/candid/**/* does not exist - skipping/tmp/shared0/pics/candid/**/* does not exist - skipping
+
+
+(lxpanel:2359): Wnck-WARNING **: 05:11:09.284: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:11:09.301: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:11:26.678: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:11:28.871: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.75B2CB53.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 05:14:08.217: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:14:13.554: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/1440x900.png.7F3AD0C0.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 05:15:46.787: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:19:16.503: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/pics/screenshots/friends5.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 05:19:27.724: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:20:34.656: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:20:38.815: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:20:43.145: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:20:45.708: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:20:51.702: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:21:15.330: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:21:25.535: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:22:17.203: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:22:20.417: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:22:22.492: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:22:29.149: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:22:38.349: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:23:09.496: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:23:37.365: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:23:42.694: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:23:56.193: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:24:05.179: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:25:21.441: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:45:28.564: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:45:48.724: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:58:08.658: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 05:58:14.757: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:04:25.518: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:04:31.237: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:04:50.006: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:04:52.303: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:04:55.456: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:07:32.069: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:17:54.593: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pluma 'file:///tmp/shared0/git/ea-twitter/search-tweets-python' 
+
+(lxpanel:2359): Wnck-WARNING **: 06:19:47.357: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:19:50.282: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pluma 'file:///tmp/shared0/git/ea-twitter/openapi.json' 
+
+(lxpanel:2359): Wnck-WARNING **: 06:20:57.441: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:20:57.697: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:21:00.421: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:32:45.757: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:00.656: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:26.113: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:27.812: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:33.878: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:48.464: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:55.892: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:55.994: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:33:58.891: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:18.739: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:18.759: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:20.418: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:21.722: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:51.360: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:56.696: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:56.725: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:37:59.692: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:38:02.760: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 06:38:03.779: Unhandled action type _OB_WM_ACTION_UNDECORATE
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+! SyncTeX Error : No file?
+pavucontrol
+
+(lxpanel:2359): Wnck-WARNING **: 12:52:42.099: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 12:52:42.222: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/gif/annika1.gif' 
+
+(eom:8148): EOM-WARNING **: 12:53:15.151: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:15.353: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:31.776: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:37.232: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/local/bin/i: line 2: shift: shift count out of range
+/usr/local/bin/ir: line 6: shopt: -e: invalid option
+shopt: usage: shopt [-pqsu] [-o] [optname ...]
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:41.060: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:41.072: Unhandled action type _OB_WM_ACTION_UNDECORATE
+feh WARNING: /tmp/shared0/pics/gif/clips/dolores2b.mpeg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/gif/clips/dolores2b.mpg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/gif/clips/dolores2b.avi - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/gif/clips/dolores2b.avi - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/gif/clips/dolores2.mp4 - No Imlib2 loader for that file format
+eom 'file:///tmp/shared0/pics/gif/annika1.gif' 
+
+(eom:8165): EOM-WARNING **: 12:53:59.611: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 12:53:59.778: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 12:54:03.052: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:04:46.601: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:10:43.954: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/brazil/00C8EC5.jpg' 
+
+(eom:8191): EOM-WARNING **: 13:10:54.758: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 13:10:55.083: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:11:02.861: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/local/bin/i: line 2: shift: shift count out of range
+/usr/local/bin/ir: line 6: shopt: -e: invalid option
+shopt: usage: shopt [-pqsu] [-o] [optname ...]
+feh WARNING: /tmp/shared0/pics/brazil/**/* does not exist - skipping
+feh WARNING: /tmp/shared0/pics/brazil/**/* does not exist - skipping
+
+(lxpanel:2359): Wnck-WARNING **: 13:11:07.193: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:11:07.206: Unhandled action type _OB_WM_ACTION_UNDECORATE
+feh WARNING: /tmp/shared0/pics/brazil/icon-play(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-1(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-fullscreen(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-expand.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-fullscreen(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-forward(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/12B1ED.bmp - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-forward(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/player-gear.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-0(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-0.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-expand(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/Background(2).jpg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/player-gear(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-download(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat(6).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab(6).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-forward.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/player-gear(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/player-gear(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-backward(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-fullscreen(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com-shemale(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-1(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-0(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-full(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-play.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-0(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/Background(3).jpg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-mute-bold.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-0(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/search.jpg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com-shemale.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/Background.jpg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-play(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com-shemale(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-fullscreen(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-fullscreen.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-1(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-backward(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-full.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-full(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar-empty(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar-empty(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-backward(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-expand(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-expand(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-play(6).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/player-gear(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar-empty(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-pause(6).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-backward.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-download.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-forward(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-mute-bold(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xvideos.com(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-mute-bold(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-download(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-download(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-mute-bold(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-play(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-full(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/safari-pinned-tab(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-1(5).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar-empty.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-repeat(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-forward(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-full(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/xv-icons-sprite.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-screen-expand(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/volume-bar-empty(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/thick-1.svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-download(3).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-chromecast(6).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-volume-mute-bold(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-play(4).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/notif1.mp3 - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/icon-step-backward(2).svg - No Imlib2 loader for that file format
+feh WARNING: /tmp/shared0/pics/brazil/Background(4).jpg - No Imlib2 loader for that file format
+eom 'file:///tmp/shared0/pics/luma/1.jpg' 
+
+(eom:8214): EOM-WARNING **: 13:20:22.563: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 13:20:22.735: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 13:20:31.573: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:20:31.627: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:20:53.438: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/local/bin/ir: line 6: shopt: -e: invalid option
+shopt: usage: shopt [-pqsu] [-o] [optname ...]
+feh WARNING: /tmp/shared0/pics/serwrr/**/* does not exist - skipping
+
+(lxpanel:2359): Wnck-WARNING **: 13:20:57.793: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:32:48.187: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:33:04.154: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:33:04.209: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:33:07.130: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:57:03.780: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:57:04.581: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:57:07.837: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 13:58:21.482: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:06.804: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:07.650: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:10.435: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:15.860: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:15.895: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:23:17.600: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:24:46.899: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:25:20.423: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.145: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.154: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.182: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.245: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.632: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:12.685: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:19.786: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:19.837: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:36.232: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:36.281: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:46.871: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:46.940: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:47.128: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:47.204: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:47.307: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:47.366: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:47.917: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:48.847: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 15:52:48.870: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:06.679: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:07.508: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:10.300: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:13.386: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:13.421: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:15.186: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:25.904: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:16:33.613: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pavucontrol
+
+(lxpanel:2359): Wnck-WARNING **: 22:47:16.326: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 22:47:16.513: Unhandled action type _OB_WM_ACTION_UNDECORATE
+lxhotkey --gui=gtk
+
+(lxpanel:2359): Wnck-WARNING **: 09:07:39.274: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:21:50.945: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 09:25:05.333: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:25:05.418: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:25:18.339: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:26:10.826: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(pcmanfm:10167): GLib-CRITICAL **: 09:26:11.608: Source ID 51 was not found when attempting to remove it
+
+(lxpanel:2359): Wnck-WARNING **: 09:26:30.493: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+** (lxpanel:2359): WARNING **: 09:27:15.277: lxpanel : X error: BadWindow (invalid Window parameter)
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 09:29:31.104: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:29:31.159: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:29:33.790: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(pcmanfm:10227): GLib-CRITICAL **: 09:29:34.705: Source ID 51 was not found when attempting to remove it
+
+(lxpanel:2359): Wnck-WARNING **: 09:30:41.380: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:30:41.485: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:30:41.494: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 09:30:56.710: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:30:56.733: Unhandled action type _OB_WM_ACTION_UNDECORATE
+Error loading document: Error opening file /home/eagle/Downloads/L10214-4320TMP.pdf: Permission denied
+libreoffice --draw 'file:///home/eagle/Downloads/L10214-4320TMP.pdf' 
+
+(soffice:10398): Gdk-WARNING **: 09:33:18.350: gdk_window_set_icon_list: icons too large
+
+(soffice:10398): Gdk-WARNING **: 09:33:18.999: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:33:19.074: Unhandled action type _OB_WM_ACTION_UNDECORATE
+libreoffice --draw 'file:///home/eagle/Downloads/L10214-4320TMP.pdf' 
+
+(lxpanel:2359): Wnck-WARNING **: 09:33:50.248: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10398): Gdk-WARNING **: 09:33:51.106: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:33:51.258: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10398): Gdk-WARNING **: 09:34:10.883: gdk_window_set_icon_list: icons too large
+
+(soffice:10398): Gdk-WARNING **: 09:34:10.927: gdk_window_set_icon_list: icons too large
+
+(soffice:10398): Gdk-WARNING **: 09:34:12.778: gdk_window_set_icon_list: icons too large
+
+(soffice:10398): Gdk-WARNING **: 09:34:12.831: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:34:12.846: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:34:12.864: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10398): Gdk-WARNING **: 09:34:17.950: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:34:17.967: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10398): Gdk-WARNING **: 09:35:08.177: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:08.229: Unhandled action type _OB_WM_ACTION_UNDECORATE
+qpdfview --unique '/home/eagle/Downloads/L10214-4320TMP.pdf' 
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:16.162: Unhandled action type _OB_WM_ACTION_UNDECORATE
+"Error: Invalid XRef entry 1231"
+"Error: Invalid XRef entry 1230"
+"Error: Top-level pages object is wrong type (null)"
+No pages were found in document at "/home/eagle/Downloads/L10214-4320TMP.pdf"
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:16.225: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:16.250: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/bin/display-im6.q16 -nostdin '/home/eagle/Downloads/L10214-4320TMP.pdf' 
+   **** Error:  An error occurred while reading an XREF table.
+   **** The file has been damaged.  This may have been caused
+   **** by a problem while converting or transfering the file.
+   **** Ghostscript will attempt to recover the data.
+   **** However, the output may be incorrect.
+   No pages will be processed (FirstPage > LastPage).
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:27.239: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:35:58.634: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:36:00.404: Unhandled action type _OB_WM_ACTION_UNDECORATE
+libreoffice --draw 'file:///home/eagle/Downloads/L10214-4320TMP.pdf' 
+
+(soffice:10490): Gdk-WARNING **: 09:36:06.859: gdk_window_set_icon_list: icons too large
+
+(soffice:10490): Gdk-WARNING **: 09:36:07.408: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:36:07.434: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10490): Gdk-WARNING **: 09:36:11.887: gdk_window_set_icon_list: icons too large
+
+(soffice:10490): Gdk-WARNING **: 09:36:11.910: gdk_window_set_icon_list: icons too large
+pluma 'file:///tmp/shared0/joker.txt' 
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:44.057: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:44.171: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:44.172: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:47.051: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:54.073: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:54.095: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:38:57.057: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:39:11.217: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:39:11.232: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:39:14.194: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:40:45.504: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm 
+
+(lxpanel:2359): Wnck-WARNING **: 09:41:07.213: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:41:07.224: Unhandled action type _OB_WM_ACTION_UNDECORATE
+! SyncTeX Error : No file?
+/usr/bin/chromium 'file:///tmp/lynxXXXXxC4nMQ/L10214-53TMP.html' 
+[10584:10703:1202/094120.416205:ERROR:web_database_backend.cc(113)] Cannot initialize the web database: 2
+[10584:10703:1202/094120.472976:ERROR:object_proxy.cc(621)] Failed to call method: org.freedesktop.Notifications.GetCapabilities: object_path= /org/freedesktop/Notifications: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[10584:10618:1202/094120.511806:ERROR:login_database.cc(624)] Password store database is too new, kCurrentVersionNumber=21, GetCompatibleVersionNumber=28
+[10584:10618:1202/094120.512009:ERROR:password_store_default.cc(42)] Could not create/open login database.
+
+(lxpanel:2359): Wnck-WARNING **: 09:41:20.628: Unhandled action type _OB_WM_ACTION_UNDECORATE
+[10584:10584:1202/094120.641061:ERROR:desktop_window_tree_host_x11.cc(1120)] Not implemented reached in virtual void views::DesktopWindowTreeHostX11::InitModalType(ui::ModalType)
+
+(lxpanel:2359): Wnck-WARNING **: 09:41:21.288: Unhandled action type _OB_WM_ACTION_UNDECORATE
+libreoffice --draw 'file:///tmp/lynxXXXXxC4nMQ/L10214-4320TMP.pdf' 
+
+(soffice:10848): Gdk-WARNING **: 09:41:29.559: gdk_window_set_icon_list: icons too large
+
+(soffice:10848): Gdk-WARNING **: 09:41:29.983: gdk_window_set_icon_list: icons too large
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+(lxpanel:2359): Gdk-CRITICAL **: 09:41:30.014: IA__gdk_window_get_screen: assertion 'GDK_IS_WINDOW (window)' failed
+
+(lxpanel:2359): Gdk-CRITICAL **: 09:41:30.014: IA__gdk_screen_get_monitor_at_window: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(lxpanel:2359): GLib-GObject-CRITICAL **: 09:41:30.014: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+** (lxpanel:2359): WARNING **: 09:41:30.014: lxpanel : X error: BadWindow (invalid Window parameter)
+
+(lxpanel:2359): GLib-CRITICAL **: 09:41:30.014: g_string_insert_len: assertion 'len == 0 || val != NULL' failed
+
+(lxpanel:2359): Wnck-WARNING **: 09:41:30.021: Unhandled action type _OB_WM_ACTION_UNDECORATE
+xarchiver 0.5.4 ©  2005-2014 Giuseppe Torelli
+xarchiver 0.5.4.14 Ingo Brückl
+
+(soffice:10848): Gdk-WARNING **: 09:41:40.634: gdk_window_set_icon_list: icons too large
+
+(soffice:10848): Gdk-WARNING **: 09:41:40.676: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:43:51.961: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:43:51.962: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 09:45:09.891: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:45:09.950: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:50:34.379: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:50:34.399: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 09:51:41.431: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:51:41.507: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:52:08.556: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:52:08.581: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 09:52:29.738: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:52:29.759: Unhandled action type _OB_WM_ACTION_UNDECORATE
+libreoffice --draw 'file:///home/eagle/wba-thomas-felkel.pdf' 
+! SyncTeX Error : No file?
+
+(soffice:10848): Gdk-WARNING **: 09:52:33.899: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:52:33.931: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 09:52:35.041: gdk_window_set_icon_list: icons too large
+
+(soffice:10848): Gdk-WARNING **: 09:52:35.072: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 09:58:24.723: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:58:24.744: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:58:27.706: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:59:49.465: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:59:49.491: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 09:59:52.446: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:07:20.695: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:07:20.737: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:08:22.142: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:08:22.185: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:15:35.703: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:15:38.679: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:16:18.970: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:16:18.985: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:16:24.039: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:16:24.051: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 10:16:34.227: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 10:16:34.291: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:17:05.729: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:17:05.754: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:17:08.266: Unhandled action type _OB_WM_ACTION_UNDECORATE
+libreoffice --draw 'file:///home/eagle/wba-thomas-felkel.pdf' 
+
+(soffice:10848): Gdk-WARNING **: 10:17:11.766: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 10:17:11.795: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(soffice:10848): Gdk-WARNING **: 10:17:12.872: gdk_window_set_icon_list: icons too large
+
+(soffice:10848): Gdk-WARNING **: 10:17:12.903: gdk_window_set_icon_list: icons too large
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:06.679: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:07.516: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:10.309: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:31.000: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:31.034: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:18:32.710: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:19:02.061: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:07.673: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:10.408: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:19.548: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:19.584: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:21.258: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:35.604: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:43.558: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:47:55.111: Unhandled action type _OB_WM_ACTION_UNDECORATE
+! SyncTeX Error : No file?
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:28.498: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:28.823: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:28.888: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:28.976: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.050: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.140: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.189: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.230: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.340: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.377: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.513: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.533: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.642: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.699: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.738: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-32-50.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.856: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.907: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.914: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:49:29.986: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 10:56:38.309: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/bin/x-terminal-emulator
+
+(lxpanel:2359): Wnck-WARNING **: 10:56:49.920: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 11:53:41.085: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:26:49.935: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 14:28:00.167: Unhandled action type _OB_WM_ACTION_UNDECORATE
+Traceback (most recent call last):
+  File "/usr/lib/x86_64-linux-gnu/pluma/plugins/snippets/Document.py", line 702, in on_view_destroy
+    self.stop()
+  File "/usr/lib/x86_64-linux-gnu/pluma/plugins/snippets/Document.py", line 70, in stop
+    self.set_view(None)
+  File "/usr/lib/x86_64-linux-gnu/pluma/plugins/snippets/Document.py", line 149, in set_view
+    self._set_view(view)
+  File "/usr/lib/x86_64-linux-gnu/pluma/plugins/snippets/Document.py", line 113, in _set_view
+    completion.remove_provider(self.provider)
+gi.repository.GLib.Error: gtk-source-completion-error-quark: Provider is not bound to this completion object (1)
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:03.575: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:04.414: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:07.202: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:10.293: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:10.328: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:12.033: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:34:53.319: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 16:35:00.931: Unhandled action type _OB_WM_ACTION_UNDECORATE
+gpicview '/tmp/shared0/Screenshot from 2021-10-31 06-34-51.png' 
+
+(lxpanel:2359): Wnck-WARNING **: 17:31:52.259: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 17:32:06.841: Unhandled action type _OB_WM_ACTION_UNDECORATE
+eom 'file:///tmp/shared0/pics/feh_010704_000001_ultima-lore.jpg' 
+
+(eom:12706): EOM-WARNING **: 17:49:45.101: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 17:49:45.648: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:01:39.199: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:01:56.053: Unhandled action type _OB_WM_ACTION_UNDECORATE
+/usr/local/bin/i: line 2: shift: shift count out of range
+/usr/local/bin/ir: line 6: shopt: -e: invalid option
+shopt: usage: shopt [-pqsu] [-o] [optname ...]
+feh WARNING: feh WARNING: /tmp/shared0/pics/luma/**/* does not exist - skipping
+/tmp/shared0/pics/luma/**/* does not exist - skipping
+
+(lxpanel:2359): Wnck-WARNING **: 18:02:01.462: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:02:01.463: Unhandled action type _OB_WM_ACTION_UNDECORATE
+feh WARNING: /tmp/shared0/pics/luma/favicon.ico - No Imlib2 loader for that file format
+eom 'file:///tmp/shared0/pics/luma/images1.jpeg' 
+
+(eom:12765): EOM-WARNING **: 18:07:38.325: Error loading Eom typelib: Typelib file for namespace 'Eom', version '1.0' not found
+
+
+(lxpanel:2359): Wnck-WARNING **: 18:07:38.478: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:07:42.546: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:07:49.759: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:20:17.263: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:20:52.291: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 23:52:53.871: Unhandled action type _OB_WM_ACTION_UNDECORATE
+lxhotkey --gui=gtk
+
+(lxpanel:2359): Wnck-WARNING **: 18:25:47.308: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:25:50.345: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:25:53.698: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:26:01.242: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:26:13.428: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:26:49.130: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:27:27.688: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:27:33.998: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:27:47.346: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:27:47.346: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:27:47.346: Unhandled action type _OB_WM_ACTION_UNDECORATE
+lxhotkey --gui=gtk
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:13.669: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:16.289: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:40.907: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:40.907: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:40.907: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:44.016: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:28:53.831: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:29:09.317: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:29:09.318: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:29:09.318: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:30:26.237: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:30:33.245: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:30:51.294: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:31:11.254: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 18:31:28.896: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:08:34.676: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:08:35.541: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:08:38.303: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:08:41.508: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:08:54.595: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:13:26.430: Unhandled action type _OB_WM_ACTION_UNDECORATE
+
+(lxpanel:2359): Wnck-WARNING **: 19:21:36.644: Unhandled action type _OB_WM_ACTION_UNDECORATE
+pcmanfm: Fatal IO error 4 (Interrupted system call) on X server :0.0.
+feh WARNING: Unrecognised sort mode "date". Defaulting to sort by filename
+feh WARNING:  does not exist - skipping
+feh: No loadable images specified.
+See 'man feh' for detailed usage information
+feh WARNING: Unrecognised sort mode "date". Defaulting to sort by filename
+feh WARNING:  does not exist - skipping
+feh: No loadable images specified.
+See 'man feh' for detailed usage information

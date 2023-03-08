@@ -1,0 +1,2 @@
+#!/bin/bash
+xdg-open "file:///home/e/Downloads/backup/rust-1.66.0-x86_64-unknown-linux-gnu/rust-docs/share/doc/rust/html/cargo/getting-started/first-steps.html"

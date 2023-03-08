@@ -1,0 +1,10 @@
+#!/bin/bash
+usb_modeswitch -KW -v 0bda -p 1a2b -V 0bda -P c881
+
+# Just modify the file 
+#   /lib/udev/rules.d/40-usb_modeswitch.rules 
+# appending before the line 
+#   LABEL="modeswitch_rules_end" with:
+# 
+##Realtek 8811CU/8821CU Wifi AC USB
+#ATTR{idVendor}=="0bda", ATTR{idProduct}=="c881", RUN+="usb_modeswitch -K -v 0bda -p 1a2b"

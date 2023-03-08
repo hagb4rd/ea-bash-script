@@ -7,10 +7,15 @@ var es=require('event-stream');
 
 //spawn(process.argv[3], process.argv.slice(3)).stdout
 process.openStdin()
-	.pipe(es.split())
+	.pipe(es.split(/\n/))
 	.pipe(es.map((data,cb)=>{
 		var xs=data.replace(/(\s)+/g,"\t").split(/\t/);
-		cb(null,xs.join("\t")+"\n")
+		if(data.length) {
+			cb(null,xs)
+		} else {
+			cb(null)
+		}
 	}))
+	.pipe(es.stringify())
 	.pipe(process.stdout)
 

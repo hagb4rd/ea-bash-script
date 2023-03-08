@@ -1,0 +1,6 @@
+#!/bin/bash
+firejail --join-or-start=codebox --noprofile --net=none --x11=xephyr --private-cache --noroot openbox-session &
+
+#--- move to code --- #
+#sleep 5
+#firejail --join=codebox ~/vscode/bin/code "$*"

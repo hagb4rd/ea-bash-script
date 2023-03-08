@@ -1,0 +1,10 @@
+#!/bin/bash
+ifconfig $dev down
+dhclient -r $dev
+sleep 1s
+ifconfig $dev up && dhclient $dev
+sleep 1s
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+dig faceboook.com
+ip route list
+ip addr

@@ -1,0 +1,3 @@
+#!/bin/sh
+# This script created by AQEMU
+/usr/bin/qemu-system-x86_64  -soundhw ac97 -machine accel=kvm -m 1024 -snapshot -cdrom "/home/e/linuxwelt/Image-Dateien/alpine-extended-3.17.0-x86_64.iso" -hda "/home/e/.aqemu/xubuntu.qcow2" -boot once=d,menu=off -net nic -net user -rtc base=localtime -name "alpine" $*

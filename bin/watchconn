@@ -1,0 +1,8 @@
+#!/bin/bash
+while echo 'checking connection';
+do
+#  (ping -c 1 104.244.42.1) && echo "OK" || (ifdownup && dig twitter.com)
+  (dig twitter.com) && echo "OK" || (ifdownup && dig twitter.com)
+
+  sleep 30s
+done

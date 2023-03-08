@@ -1,29 +1,56 @@
 #!/usr/bin/env node
 var es=require('event-stream')
-var args=process.argv.slice(2).join(' ').split(',').map(arg=>arg.replaceAll(/^\"|\"$/g, ""));
+var args=process.argv.slice(2).join(' ').split(/(,|\b)/).map(arg=>arg.replaceAll(/^\"|\"$/g, ""));
 
-const createCsvStringifier = require('csv-writer').createObjectCsvStringifier;
-const csvStringifier = createCsvStringifier({
-    header: args.map(arg=>({ id: arg, title: arg }))
-});
+if(!args.length)
+	//args=[1,2,3,4,5,6,7,8,9,9,10]
 
-process.stdout.write(csvStringifier.getHeaderString());
+var csv;
+var createCsvStringifier = require('csv-writer').createObjectCsvStringifier;
+var headersSent=false;
+
+/*
+if(opts.header) {
+	var csvStringifier = createCsvStringifier(opts);
+	process.stdout.write(csvStringifier.getHeaderString());
+} else {
+	var createCsvStringifier = require('csv-writer').createArrayCsvStringifier;
+	var csvStringifier = createCsvStringifier(opts);
+}
+*/
 //process.stdout.write("\n");
 
 process.openStdin()
 	.pipe(es.split())
 	.pipe(es.map(function (data,cb) {
-		try {
 			if(data) {
 				var parsed=JSON.parse(data)
-				var csvString=csvStringifier.stringifyRecords([parsed]);
-				cb(null, csvString);
+				if(typeof (parsed) == "object") {
+				
+					
+					var head="";
+					
+					if(!headersSent) {
+						/*
+						var opts = args.length 
+							? ({ header: args.map(arg=>({ id: arg, title: arg })) }) 
+							: ({ header: Object.keys(parsed).map(arg=>({ id: arg, title: arg })) })
+						/* */
+						var opts = { header: Object.keys(parsed).map(arg=>({ id: arg, title: arg })) };
+						csv = createCsvStringifier(opts);
+						head=csv.getHeaderString();
+						headersSent=true;				
+					}				
+					var csvString=head+csv.stringifyRecords([parsed]);
+					cb(null, csvString);
+					
+				} else {
+					cb(null)
+				}
+				
 			} else {
 				return cb(null)
 			}
-		} catch(e) {
-			cb(e)
-		}
 	}))
 	.pipe(process.stdout)
 

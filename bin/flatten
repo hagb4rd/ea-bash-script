@@ -1,0 +1,1 @@
+for o in **/*; do f=$(realpath $o); [[ ! -d "$f" ]] &&  echo mv "$o" "[$(dirname "$o")]$(basename "$o")"; donefor o in **/*; do f=$(realpath $o); [[ ! -d "$f" ]] &&  echo mv "$o" "[$(dirname "$o")]$(basename "$o")"; done

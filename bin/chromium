@@ -1,0 +1,4 @@
+#!/bin/bash
+firejail --join-or-start=chromiumbox --noprofile --net=none --x11=xephyr  --noroot openbox-session &
+sleep 5
+firejail --join=chromiumbox /usr/bin/chromium "$*"

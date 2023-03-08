@@ -1,0 +1,28 @@
+#!/bin/bash
+
+declare -A search=( \
+	[g]='https://google.com/search?q=' \
+	[d]='https://duckduckgo.com/?q=' \
+)
+
+searchengine=$1
+
+url=${search[$searchengine]}
+if [[ ! -z_$url ]]; then
+	
+	shift;
+
+#elif echo 'ok'; then
+#	shift
+fi
+
+
+query="$url$*"
+
+echo 'torsocks lynx "$query" || lynx "$query"'
+
+torsocks lynx "$query"
+#lynx "$query"
+
+
+

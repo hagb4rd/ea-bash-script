@@ -1,5 +1,5 @@
 #!/bin/bash
-export HOME=/home/fernando
+#export HOME=/home/fernando
 export WINEPREFIX="$HOME/.wine";
 export WINEARCH="win32"
 private="$HOME/firejail/halo"

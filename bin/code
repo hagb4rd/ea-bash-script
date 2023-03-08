@@ -1,0 +1,6 @@
+#!/bin/bash
+#firejail --net=none --x11=xephyr--name=codebox --read-write=/home/eagle --read-write=/tmp/shared0 --private-dev  --noroot /tmp/shared0/bin/codebox
+#firejail --join-or-start=codebox --noprofile --net=none --x11=xephyr  --noroot openbox-session &
+source /tmp/shared0/bin/codebox
+sleep 5
+firejail --join=codebox ~/vscode/bin/code "$*"

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+i=(`zenity --entry --title="Browser" --text=""`)
+
+
+
+declare -A search=( \
+	[g]='https://google.com/search?q=' \
+	[d]='https://duckduckgo.com/?q=' \
+)
+
+searchengine="${i[0]}"
+
+url="${search[$searchengine]}"
+if [[ ! -z $url ]]; then
+	url="${search[g]}";
+#elif echo 'ok'; then
+#	shift
+fi
+
+args=""
+for((a=2;a<${#i[@]};a++)); do
+  args="$args+${i[a]}";
+done
+
+#echo 'torsocks lynx "$query" || lynx "$query"'
+
+#torsocks lynx "$query"
+firefox --new-tab "$url${i[1]}$args"
+
+
+
+

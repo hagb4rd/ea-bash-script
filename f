@@ -1,7 +1,8 @@
 #!/bin/bash
 source "$HOME/.bashrc"
 
-pid="$1"
+url="$1"
+url="${url:-about:blank}"
 pid="${pid:-twitter}"
 #shift
 shift
@@ -33,12 +34,12 @@ netfilter6="/home/e/.firejail/rejectipv6.net"
 
 # clean up firejail working/private-home directory
 firejaildir="$HOME/firejail/twitter"
-#rm -rf "$firejaildir/.tor"
-#cp -a "$HOME/.tor" "$firejaildir"
+rm -rf "$firejaildir/.tor"
+cp -a "$HOME/.tor" "$firejaildir"
 rm $firejaildir/.Xauthority
 rm -rf "${firejaildir}/.local"
 rm -rf "${firejaildir}/.config"
-#rm -rf .cache
+rm -rf "${firejaildir}/.cache"
 rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 rm -rf "${firejaildir}/.mozilla/firefox/twitter.bak"
 cp -a "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter" "${firejaildir}/.mozilla/firefox/twitter.bak"
@@ -58,7 +59,7 @@ args=(--name="$pid" \
 #	--ip=192.168.8.11 \
 	--dns=192.168.8.1 \
 	--private="~/firejail/${pid}" \
-#	--private-bin=firefox,firefox-bin,xterm,bash,sh,blackbox,openbox,openbox-session,tor \
+	--private-bin=ff,firefox,firefox-bin,uxterm,xterm,bash,sh,blackbox,openbox,openbox-session,tor \
 	--shell=none \
 #	--private-cache \
 	--nonewprivs \
@@ -79,7 +80,8 @@ args=(--name="$pid" \
 	--notv \
 	--novideo \
 	--ipc-namespace \
-	sh -c 'tor -f ~/torrc & openbox & firefox -P')
+#	sh -c "retor & openbox & firefox -new-tab $url"  )
+	uxterm -e "tor -f "${HOME}/torrc" & openbox & ff -new-tab $url")
 
 echo firejail "${args[@]}"
 firejail "${args[@]}"

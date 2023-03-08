@@ -1,0 +1,19 @@
+remotehost=$1
+publickeyfile="$HOME/.ssh/id_rsa.pub"
+authorizedkeysfile=".ssh/authorized_keys"
+
+
+if [[ -z "$remotehost" ]] 
+then
+	echo 'Usage: ssh-pushkey <optionalusername>@<remotehost>'
+	exit 1;
+fi
+
+
+if [[ ! -f "$publickeyfile" ]]
+then
+	echo "$publickeyfile" not found .. generating rsa keypair .."
+	ssh-keygen -t rsa
+fi
+
+cat "$publickeyfile" | ssh "$remotehost" "cat - >> $authorizedkeysfile"

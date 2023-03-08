@@ -1,0 +1,31 @@
+#!/bin/bash
+
+name=$2
+if [[ -z "$name" ]]; then
+ name=browser
+fi
+
+url="$1"
+
+if [[ -z "$url" ]]
+ then url=$(clipit -c)
+ if [[ -z "$url" ]]
+ 	then url='https://html.duckduckgo.com/html'
+ fi
+fi
+
+#if [[ -z "$dev" ]]
+#	then net=ens3
+#else 
+#	net=br0
+#fi
+
+#tmppolicy='--private-tmp'
+tmppolicy='--read-write=/tmp/shared0 '
+
+if ! firejail --fs.print="$name"; then
+	firejail --noprofile --x11=xephyr --xephyr-screen=1440x900 --name="$name" --net=ens4 --netfilter=/etc/firejail/nolocal.net --netfilter6 --private-home=torbrowser --noroot --nodbus "$tmppolicy" --machine-id  --nou2f --nodvd  --notv --ipc-namespace openbox &
+	sleep 3
+fi
+firejail --join="$name" ~/torbrowser/Browser/firefox --new-tab "$url" &
+

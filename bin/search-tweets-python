@@ -1,0 +1,30 @@
+#!/bin/bash
+# https://github.com/twitterdev/search-tweets-python
+# https://developer.twitter.com/en/docs/basics/authentication/overview/application-only
+# APIKEY 5lUPhQbZtgq0xDWxi739Xl5nI
+export SEARCHTWEETS_ENDPOINT=
+export SEARCHTWEETS_USERNAME=earend11
+export SEARCHTWEETS_PASSWORD=
+export SEARCHTWEETS_BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAAHggZQEAAAAAmtTInUqm1zXBiu8kOPTR%2BBNeFJw%3DT659xOm04f8bGVOJAD0FtMsdymQq9IyTxGzp3dE6fPPVqAwH9c
+export SEARCHTWEETS_ACCOUNT_TYPE=
+export SEARCHTWEETS_CONSUMER_KEY=5lUPhQbZtgq0xDWxi739Xl5nI
+export SEARCHTWEETS_CONSUMER_SECRET=yuuZfM8mH6M6uVGEm4kWAeVKt2Wbs5SbcAmKaUWLFHI2NaLBeI
+export ACCESS_TOKEN="1353844947913469953-BepSliLFuJzgqVOA9n0un3dWcBNWJX"
+export ACCESS_TOKEN_SECRET="9P43L2gpVpRPDd7qWrcUhV3c2logIsry70nBD79XxwOb5"
+
+
+
+BEARER_TOKEN="$ACCESS_TOKEN"
+
+
+userid=$1
+if [[ -z "$userid" ]]; then
+	userid='earend11'
+fi
+
+#curl "https://api.twitter.com/2/users/$userid/tweets" -H "Authorization: Bearer $SEARCHTWEETS_BEARER_TOKEN"
+#curl "https://api.twitter.com/2/tweets" -H "Authorization: Bearer $BEARER_TOKEN"
+curl "https://api.twitter.com/2/tweets/search/all?query=from%3Aearend11" -u "$ACCESS_TOKEN:$ACCESS_TOKEN_SECRET" -H "Authorization: Bearer $SEARCHTWEETS_BEARER_TOKEN"
+
+# api = twitter.Api(consumer_key='5lUPhQbZtgq0xDWxi739Xl5nI', consumer_secret='yuuZfM8mH6M6uVGEm4kWAeVKt2Wbs5SbcAmKaUWLFHI2NaLBeI', access_token_key='1353844947913469953-BepSliLFuJzgqVOA9n0un3dWcBNWJX', access_token_secret='9P43L2gpVpRPDd7qWrcUhV3c2logIsry70nBD79XxwOb5');
+

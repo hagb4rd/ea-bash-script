@@ -1,0 +1,12 @@
+#!/bin/bash
+name=firebox
+url="$1"
+if [[ -z "$url" ]]
+ then url=$(clipit -c)
+ if [[ -z "$url" ]]
+ 	then url="file:///tmp/shared0/git/http"
+ fi
+fi
+cmder=(/usr/bin/firefox-esr --new-tab "$url")
+#cmd=(/home/eagle/torbrowser/Browser/firefox-esr --new-tab "$url")
+f "$name" "${cmder[@]}" &

@@ -1,0 +1,28 @@
+#!/bin/bash
+fiile="$1"
+
+if [[ -z "$fiile" ]]; then
+	fiile="/shared/pics/screenshots/1.jpg"
+fi
+
+f=$(realpath "$fiile")
+echo "$f"
+
+if [[ -d "$f" ]]
+	then d="$f"
+elif [[ -f "$f" ]] 
+	then startat="--start-at $f"
+ 	d=$(dirname "$f")
+else 
+	d="/shared/pics"
+	f="/shared/pics"
+fi    
+
+
+#--min-dimension 256x256
+feh \
+  -Z \
+  -p \
+  --geometry 720x900+720+0 \
+  --start-at "$f"
+ 

@@ -1,0 +1,2 @@
+#!/bin/bash
+firejail --net=none --x11=xephyr --name=codebox --private-home=vscode,.vscode --read-write=/tmp/shared0 --noroot codebox $*

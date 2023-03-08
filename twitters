@@ -1,0 +1,353 @@
+#!/usr/bin/env node
+// Open a realtime stream of Tweets, filtered according to rules
+// https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/quick-start
+
+//const needle = require('needle');
+var https=require('node:https')
+var { Buffer } = require('node:buffer')
+var fs = require("node:fs/promises")
+var path = ("node:path")
+var qs=require("node:querystring")
+var { replaceShortUrls } =require('./lib/resolveUri')
+
+
+// The code below sets the bearer token from your environment variables
+// To set environment variables on macOS or Linux, run the export command below from the terminal:
+// export BEARER_TOKEN='YOUR-TOKEN'
+const token = process.env.BEARER_TOKEN;
+
+const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules';
+const streamURL = 'https://api.twitter.com/2/tweets/search/stream';
+
+
+var filters=[
+	(s)=>/.*\u2026.*/.test(s)
+	//,(s)=>{ var rx=/.*\b([0-9]{1,2}).*/; return rx.test(s);  }
+	,(s)=>{ var words=["racist","trans","gender","lgbt","gay"]; return words.some(word=>s.toLowerCase().includes(word.toLowerCase())); }
+	//,(s)=>{ var rx=/.*([A-Z]{4,}).*/; return rx.test(s);  }
+]
+
+// this sets up two rules - the value is the search terms to match on, and the tag is an identifier that
+// will be applied to the Tweets return to show which rule they matched
+// with a standard project with Basic Access, you can add up to 25 concurrent rules to your stream, and
+// each rule can be up to 512 characters long
+
+// Edit rules as desired below
+/*
+const rules = [{
+        'value': 'dog has:images -is:retweet',
+        'tag': 'dog pictures'
+    },
+    {
+        'value': 'cat has:images -grumpy',
+        'tag': 'cat pictures'
+    },
+];
+/* */
+
+var getAllRules = exports.getAllRules = () => new Promise((resolve,reject) => {
+
+    https.get(rulesURL, {
+        headers: {
+		      "User-Agent": "v2SampleStreamJS",
+		  "Authorization": `Bearer ${token}`
+	 }
+	    }, (response) => {
+	response.on('data', data => {
+			console.log(data);		
+			resolve(JSON.parse(data));
+			});
+		 }) 
+})
+
+var deleteAllRules = exports.deleteAllRules = (rules) => new Promise((reject,resolve)=>{
+
+	if (!Array.isArray(rules.data)) {
+        return null;
+    }
+
+    const ids = rules.data.map(rule => rule.id);
+
+
+    const data = {
+        "delete": {
+            "ids": ids
+        }
+    }
+    var body = JSON.stringify(data)
+
+    var req = https.request(rulesURL, {
+				method: "POST",
+        headers: {
+
+            "content-type": "application/json",
+            "content-length": body.length,
+            "authorization": `Bearer ${token}`
+        },
+    }, resp=>{
+	resp.on('data', data=>{
+		var obj=JSON.parse(data);
+		console.log("Deleted Rules:");
+		console.log(obj)
+		resolve(obj);
+	});
+    });
+    req.write(body);
+    req.end();
+}) 
+
+    
+    
+
+var setRules = exports.setRules = (params) => new Promise((resolve,reject)=> {
+		
+		var rules = [{
+			"value": params||"why -has:images -is:retweet",
+			"tag": ""
+		}]
+		
+    const data = {
+        "add": rules
+    }
+
+    var body = JSON.stringify(data)
+		var buffer;
+		var response=""
+    var req = https.request(rulesURL, {
+		method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Content-Length": Buffer.byteLength(body),
+            "Authorization": `Bearer ${token}`
+        },
+    }, (resp)=>{
+	resp.on('data',(data)=>{
+    		
+    		//console.log(data)
+    		if(!buffer) {
+ 					buffer=data;   		
+    		} else {
+	    		buffer=Buffer.concat([buffer,data]);    			
+    		}
+
+    		response+=String(data);
+    	})
+     	resp.on('end',(data)=>{
+    		if(!buffer) {
+ 					buffer=data
+    		} else {
+    			if(data) {
+    				buffer=Buffer.concat([buffer,data]);    			
+    			}
+    		}
+    		var msg=buffer.toString("utf8");
+    		console.log(msg);
+    		resolve(msg)    
+    	})
+		});
+		
+		req.write(body);
+		req.end();
+})
+var search = exports.search = (query,nextToken) => new Promise((resolve,reject)=> {
+		
+		var buffer;
+
+		var searchURI=new URL("https://api.twitter.com/2/tweets/search/recent");
+		//var searchURI=new URL("https://api.twitter.com/2/tweets/search/all");
+		
+		searchURI.searchParams.set("query",query);
+		searchURI.searchParams.set("max_results",100);
+		if(nextToken) {
+			searchURI.searchParams.set("next_token",nextToken);
+		}
+		
+    var req = https.request(searchURI, {
+    		method: "get",
+        headers: {
+            "Authorization": `Bearer ${token}`
+            //,"Content-Type": "application/json"
+            //,"Content-Length": Buffer.byteLength(body)
+        },
+    }, (resp)=>{
+    	resp.on('data',(data)=>{    		
+    		//console.log(data)
+    		if(!buffer) {
+ 					buffer=data;   		
+    		} else {
+	    		buffer=Buffer.concat([buffer,data]);    			
+    		}
+    	})
+     	resp.on('end',(data)=>{
+    		if(!buffer) {
+ 					buffer=data
+    		} else {
+    			if(data) {
+    				buffer=Buffer.concat([buffer,data]);    			
+    			}
+    		}
+    		//var msg=buffer.toString("utf8");
+    		var msg=JSON.parse(buffer);
+    		resolve(msg)    
+    	})
+		});
+		
+		//req.write(body);
+		req.end();
+})
+var getTweets = exports.getTweets = (arrayIds) => new Promise((resolve,reject)=> {
+		
+		var buffer;
+
+		var searchURI=new URL("https://api.twitter.com/2/tweets");
+		//var searchURI=new URL("https://api.twitter.com/2/tweets/search/all");
+		var params = {
+        "ids": (arrayIds||["1278747501642657792","1255542774432063488"]).join(","), // Edit Tweet IDs to look up
+        "tweet.fields": "lang,author_id", // Edit optional query parameters here
+        "user.fields": "created_at" // Edit optional query parameters here
+    }
+    var tweetURI=Object.entries(params).reduce((uri,[k,v])=>(uri.searchParams.set(k,v),uri), searchURI)
+
+		//searchURI.searchParams.set("query",query);
+		//searchURI.searchParams.set("max_results",100);
+		
+    var req = https.request(tweetURI, {
+	method: "get",
+        headers: {
+            "Authorization": `Bearer ${token}`
+            //,"Content-Type": "application/json"
+            //,"Content-Length": Buffer.byteLength(body)
+        },
+    }, (resp)=>{
+	resp.on('data',(data)=>{
+	//console.log(data)
+	if(!buffer) {
+	buffer=data;
+	} else {
+	buffer=Buffer.concat([buffer,data]);
+    		}
+    	})
+     	resp.on('end',(data)=>{
+    		if(!buffer) {
+ 					buffer=data
+    		} else {
+    			if(data) {
+    				buffer=Buffer.concat([buffer,data]);    			
+    			}
+    		}
+    		//var msg=buffer.toString("utf8");
+    		var msg=JSON.parse(buffer);
+    		resolve(msg)    
+    	})
+		});
+		
+		//req.write(body);
+		req.end();
+})
+// Listen to the stream.
+count=0;
+
+var params=process.argv.slice(2).join(" ");
+
+//var openapi=await fs.readFile("openapi.json");
+
+
+search(params)
+	.then(async(result)=>{
+	
+		var tweets=result.data.filter(tweet=>!filters.some(filter=>filter(tweet.text))).map(tweet=>{
+			var br="\n"
+			var msg=replaceShortUrls(`[${tweet.id}]${br}${tweet.text}${br}${br}`)
+			return msg;
+		})
+		
+	
+		for await (var nextTweet of tweets) {
+			console.log(nextTweet);
+		}
+	
+		//console.log(result);
+		return search(params,result.meta["next_token"])
+	})
+	/*
+	
+	.then(async(result)=>{
+	
+		var tweets=result.data.map(tweet=>{
+			var br="\n"
+			var msg=replaceShortUrls(`[${tweet.id}]${br}${tweet.text}${br}${br}`)
+			return msg;
+		})
+	
+		for await (var nextTweet of tweets) {
+			console.log(nextTweet);
+		}
+	
+		//console.log(result);
+		return search(params,result.meta["next_token"])
+	})
+	.then(result=>{
+		console.log('###########################################')
+		console.log(result);
+		//return search(params,result.meta["next_token"])
+	})
+	/* */
+	
+
+/*
+
+
+if(params) {
+	console.log("twitter stream / setting rules:" + params)
+	getAllRules()
+		.then(rx=>{
+			console.log(rx);
+			return rx;
+		})
+		
+		.then(rx=>{
+			deleteAllRules(rx)
+		})
+		.then(()=>{
+			setRules(params)
+		})
+		
+} else {
+
+	https.get(streamURL, {
+		headers: {
+			"User-Agent": "v2SampleStreamJS",
+			"Authorization": `Bearer ${token}`
+		},
+		timeout: 20000
+	}, (resp)=>{
+		resp.on('data', (data)=>{
+			if(count==200)
+				process.exit(0);
+			
+			try {
+				var tweet=JSON.parse(data);
+				var br="\n";
+				var msg=`[${tweet.data.id}]${br}${tweet.data.text}${br}${br}`
+				if(filters.some(filter=>filter(tweet.data.text))) {
+					//console.log("------ FILTERED ------- ");
+					//console.log(msg);
+					//console.log("----------------------- \n")
+				} else {
+					//console.log(msg)	
+					//*
+					replaceShortUrls(msg)
+						.then(result=>{
+							console.log(result)							
+						})
+					
+					count++
+				}
+			} catch(e) {
+				console.log(e)
+			}
+		})
+	//resp.pipe(process.stdout);  
+	});
+}
+/* */

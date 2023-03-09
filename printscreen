@@ -1,4 +1,16 @@
 #!/bin/bash
-SCREENSHOT_FOLDER="$HOME/Pictures"
+#SCREENSHOT_FOLDER="$HOME/Pictures"
 
-scrot -s -f "$SCREENSHOT_FOLDER/screenshot/$(hhash 6).jpg"
+#scrot -s -f "$SCREENSHOT_FOLDER/screenshot/$(hhash 6).jpg"
+
+
+
+dir="$HOME/Pictures/screenshot"
+if [[ ! -d "$dir" ]]; then
+        mkdir -p "$dir" 2>  /dev/null
+fi
+hsh=$(hhash)
+filename="${dir}/${hsh}.png"
+fileconv="$HOME/firejail/twitter/${hsh}.jpg"
+scrot -s -f  "$filename" && convert "$filename" "$fileconv" && zenity --notification --text="Clipboard:\n $fileconv" && printf %s "$fileconv" | xsel -ib
+

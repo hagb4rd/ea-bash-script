@@ -1,14 +1,22 @@
 #!/bin/bash
 source "$HOME/.bashrc"
 
-url="$1"
-url="${url:-about:blank}"
+url=$*
+if [[ -z "$url" ]]; then
+	url="about:blank"
+fi
+echo URL: "$url"
+
+
 pid="${pid:-twitter}"
 #shift
 shift
-cmder="$@"
+#cmder="$@"
 
-netdev="eth0"
+
+termcmd="sh -c \"tor -f $HOME/torrc & openbox & ff -new-tab $url\""
+#termcmd="tor -f ${HOME}/torrc & openbox & ff -new-tab $url"
+#netdev="eth0"
 #netdev=br0
 netfilter="/home/e/.firejail/nolocal.net"
 netfilter6="/home/e/.firejail/rejectipv6.net"
@@ -39,12 +47,15 @@ cp -a "$HOME/.tor" "$firejaildir"
 rm $firejaildir/.Xauthority
 rm -rf "${firejaildir}/.local"
 rm -rf "${firejaildir}/.config"
-rm -rf "${firejaildir}/.cache"
 rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 rm -rf "${firejaildir}/.mozilla/firefox/twitter.bak"
 cp -a "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter" "${firejaildir}/.mozilla/firefox/twitter.bak"
 rm -rf "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
-cp -a "${firejaildir}/.mozilla/firefox/proto.twitter" "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
+#cp -a "${firejaildir}/.mozilla/firefox/proto.twitter" "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
+cp -a "$HOME/Downloads/backup/.mozilla/firefox/proto.twitter" "${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
+rm -rf "${firejaildir}/.cache"
+cp -a "$HOME/Downloads/backup/.cache" "${firejaildir}"
+
 
 args=(--name="$pid" \
 	--protocol=unix,inet,inet6 \
@@ -59,7 +70,7 @@ args=(--name="$pid" \
 #	--ip=192.168.8.11 \
 	--dns=192.168.8.1 \
 	--private="~/firejail/${pid}" \
-	--private-bin=ff,firefox,firefox-bin,uxterm,xterm,bash,sh,blackbox,openbox,openbox-session,tor \
+	--private-bin=ff,firefox,firefox-bin,uxterm,xterm,bash,sh,blackbox,openbox,openbox-session,tor,which,pkill,retor \
 	--shell=none \
 #	--private-cache \
 	--nonewprivs \
@@ -80,12 +91,13 @@ args=(--name="$pid" \
 	--notv \
 	--novideo \
 	--ipc-namespace \
-#	sh -c "retor & openbox & firefox -new-tab $url"  )
-	uxterm -e "tor -f "${HOME}/torrc" & openbox & ff -new-tab $url")
+	--env=OPENURI="$url" \
+#	uxterm -e "$termcmd")
+	uxterm)
 
 echo firejail "${args[@]}"
+echo ---------------------------------
 firejail "${args[@]}"
-sleep 2s
 #firejail --bandwidth="$pid" set "$netdev" 24 8
 #firejail --name="$pid" --protocol=unix,inet --profile=firefox --x11=xephyr --net="${netdev}" --netfilter="$netfilter" --dns=8.8.8.8 --defaultgw=192.168.8.1 --ip=192.168.8.11 --private="~/firejail/${pid}" --noroot --nonewprivs --nogroups --noroot --caps.drop=all --disable-mnt --private-tmp --nodbus --private-dev --machine-id --noautopulse --nou2f --nodvd --no3d --notv --novideo --nosound --shell=none --ipc-namespace --deterministic-exit-code qterminal
 

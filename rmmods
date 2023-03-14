@@ -1,23 +1,24 @@
 #!/bin/bash
-sudo rmmod mei_hdcp
-sudo rmmod mei_me
-sudo rmmod mei
-sudo rmmod option
-sudo rmmod btrfs
-sudo rmmod raid6_pq
-sudo rmmod xor
-sudo rmmod option
-sudo rmmod usb_wwan
-sudo rmmod usbserial
-sudo rmmod uas
+#sudo=sudo
+$sudo rmmod mei_hdcp
+$sudo rmmod mei_me
+$sudo rmmod mei
+$sudo rmmod option
+$sudo rmmod btrfs
+$sudo rmmod raid6_pq
+$sudo rmmod xor
+$sudo rmmod option
+$sudo rmmod usb_wwan
+$sudo rmmod usbserial
+$sudo rmmod uas
 #sudo ifbr0
 #netdev=enx001e101f0000
 export netdev=eth0
 #sudo ip link set $netdev down
 sleep 1s
-sudo ip link set dev "$netdev" up
-sudo ip addr add 192.168.8.2/24 brd + dev "$netdev"
-sudo ip route add default via 192.168.8.1 dev "$netdev"
+#ip link set dev "$netdev" up
+#ip addr add 192.168.8.2/24 brd + dev "$netdev"
+#ip route add default via 192.168.8.1 dev "$netdev"
 #echo nameserver 192.168.8.1
 #sleep 1s
 #sudo dhclient $netdev
@@ -26,11 +27,11 @@ rm -rf /home/e/.cache/thumbnails/*
 rm -rf /home/e/.cache/fontconfig
 rm -rf /run/user/1000/at*
 #sudo rm 
-sudo rm -rf /var/lib/dhcp/*
+#sudo rm -rf /var/lib/dhcp/*
 #sudo /etc/init.d/networking restart
-sleep 2s
-ipaddr=$(ip addr)
-sudo -u e -g e notify "$ipaddr"
+#sleep 2s
+#ipaddr=$(ip addr)
+#sudo -u e -g e notify "$ipaddr"
 #sudo ifbr0
 #sudo ip addr
 #sudo ip link set eth0 up

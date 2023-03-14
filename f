@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$HOME/.bashrc"
 
-url=$*
+url=$1
 if [[ -z "$url" ]]; then
 	url="about:blank"
 fi
@@ -14,7 +14,7 @@ shift
 #cmder="$@"
 
 
-termcmd="sh -c \"tor -f $HOME/torrc & openbox & ff -new-tab $url\""
+termcmd="tor -f ~/torrc & firefox -new-tab $url"
 #termcmd="tor -f ${HOME}/torrc & openbox & ff -new-tab $url"
 #netdev="eth0"
 #netdev=br0
@@ -39,6 +39,15 @@ netfilter6="/home/e/.firejail/rejectipv6.net"
 #if ! firejail --ls="$pid" ~; then
 #	firejail --name="$pid" --profile=firefox --x11=xephyr --net="${netdev}" --netfilter=1olocal --netfilter6=/etc/firejail/nolocal6.net --dns=192.168.8.1 --private="~/twitter" --noroot --caps.drop=all --disable-mnt --private-tmp --nodbus --private-dev --machine-id --noautopulse --nou2f --nodvd --notv --novideo --ipc-namespace -- openbox &
 
+# clean up local home cache
+rm -rf "$HOME/.cache/google-chrome"
+rm -rf "$HOME/.cache/chromium"
+rm -rf "$HOME/.cache/mesa_shader_cache"
+rm -rf "$HOME/.cache/mozilla"
+rm -rf $HOME/.cache/thumbnails/*
+rm -rf "$HOME/.cache/fontconfig"
+rm -rf "$HOME/.cache/cs_backgrounds"
+rm -rf /run/user/1000/at*
 
 # clean up firejail working/private-home directory
 firejaildir="$HOME/firejail/twitter"
@@ -70,7 +79,7 @@ args=(--name="$pid" \
 #	--ip=192.168.8.11 \
 	--dns=192.168.8.1 \
 	--private="~/firejail/${pid}" \
-	--private-bin=ff,firefox,firefox-bin,uxterm,xterm,bash,sh,blackbox,openbox,openbox-session,tor,which,pkill,retor \
+	--private-bin=ff,firefox,firefox-bin,uxterm,xterm,bash,sh,blackbox,openbox,openbox-session,tor,which,pkill \
 	--shell=none \
 #	--private-cache \
 	--nonewprivs \
@@ -92,8 +101,10 @@ args=(--name="$pid" \
 	--novideo \
 	--ipc-namespace \
 	--env=OPENURI="$url" \
+	--env=LANG="C.UTF-8" \
+#  --env=GTK3_MODULES="" \
 #	uxterm -e "$termcmd")
-	uxterm)
+	openbox --sm-disable --startup uxterm)
 
 echo firejail "${args[@]}"
 echo ---------------------------------
@@ -109,4 +120,3 @@ firejail "${args[@]}"
 #firejail --join="$pid" "$@"
 #firejail --join="$pid" firefox -P "$@" &
 #firejail --join="$pid" firefox "$@" &
-

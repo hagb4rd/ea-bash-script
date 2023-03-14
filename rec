@@ -1,0 +1,12 @@
+#!/bin/bash
+args=($*)
+PIDFILE="/tmp/rec.pid"
+echo "$$" > "$PIDFILE"
+if [[ "${#args}" =~ 0 ]]; then
+  clipbrd=$(xsel -ob)
+  args+=("${clipbrd:-record}")
+fi
+
+trap 'rm -rf "$PIDFILE"; mp3 "${args[@]}"; trap - INT; kill -s INT "$$"' INT
+
+arecord -vv --format=cd /tmp/record.wav

@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+var fs=require("node:fs/promises")
+var es=require("event-stream")
+var cp=require("child_process")
+var path=require("path")
+var vm=require("vm")
+var net=require("net")
+var qs=require("querystring")
+var stream=require("stream")
+var getArgs=()=>process.argv.slice(2)
+var compileFunction=(s)=>vm.compileFunction(`var str=[...arguments].join(); var fn=${s}; return fn(str);`)
+var mapStream=function mapStream(fn) { return es.pipe(es.split(),es.map((data,cb)=>cb(null,fn(data)+"\n"))); };
+var filter=async function(fn) { var members=[es.split(),es.map((data,cb)=>fn(data)?cb(null,data+"\n"):cb(null))]; return es.pipe.apply(members); }
+//var $ = require('ea-lib')
+
+//run
+var transform=compileFunction(getArgs().join()||"(s)=>String(s).toUpperCase()")
+
+process
+	.openStdin()
+	.pipe(mapStream(transform))
+	.pipe(process.stdout)

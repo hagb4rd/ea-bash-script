@@ -1,0 +1,9 @@
+#!/bin/bash
+switch=$1;
+re='-'
+if [[ $switch =~ $re ]]; then
+  shift
+  while read line; do printf "'%s' " "$line"; done
+fi
+
+printf "'%s' " $*

@@ -1,0 +1,5 @@
+#!/bin/bash
+PIDFILE="/tmp/rec.pid"
+read RECPID < "$PIDFILE"
+RECPGID=$(pgid $RECPID)
+kill -s INT -- "-${RECPGID}"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dirs=($*)
+#while read line; do dirs+=($line); done
+
+for d in "${dirs[@]}"; do path=realpath "$d"; if [[ -d "$path" ]]; then printf "'%s' " "$path"; else printf '[%s] ' "$d"; fi; done
+#for d in $*; do [[ -d "$d" ]] && printf %s\\n "$d"; done

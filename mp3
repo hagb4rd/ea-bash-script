@@ -1,0 +1,4 @@
+#!/bin/bash
+title="$*"
+target="${HOME}/Music/${title}.mp3"
+ffmpeg -i /tmp/record.wav "$target" && clipboard "$target"

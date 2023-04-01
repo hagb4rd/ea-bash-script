@@ -1,2 +1,3 @@
 #!/bin/bash
-netbox wget --connect-timeout 5 --dns-timeout 5 --max-redirect 0 -t 1 --https-only $*
+# --compression=gzip
+wget -c -nc  -E --connect-timeout 5 --dns-timeout 5 --max-redirect 1 -t 1 --show-progress $*

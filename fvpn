@@ -45,8 +45,8 @@ rm -rf /run/user/1000/at*
 firejaildir="$HOME/firejail/twitter"
 
 #restore local .tor data-dictionary
-#rm -rf "$firejaildir/.tor"
-#cp -a "$verbose" "$HOME/.tor" "$firejaildir"
+rm -rf "$firejaildir/.tor"
+cp -a "$verbose" "$HOME/.tor" "$firejaildir"
 
 dnscryptbackup="/home/e/Downloads/backup/dnscrypt/linux-x86_64"
 dnscryptdir="${firejaildir}/dnscrypt"
@@ -62,20 +62,20 @@ rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 "$HOME/.local/bin/f-restore"
 netdev=eth0
 args=(--name="$pid" \
-	--protocol=unix,inet,inet6 \
+#	--protocol=unix,inet,inet6 \
 	--profile=firefox \
 #	--noprofile \
 #	--noprofile \
   --x11=xephyr \
   --xephyr-screen=1280x1024 \
 #	"--interface=$netdev" \
-	"--net=$netdev" \
+#	"--net=$netdev" \
 #	"--netfilter" \
-	"--netfilter=${netfilter}" \
-	"--netfilter6=${netfilter6}" \
+#	"--netfilter=${netfilter}" \
+#	"--netfilter6=${netfilter6}" \
 #  --defaultgw=10.16.0.1 \
 #  --ip=10.18.0.11 \
-	--defaultgw=192.168.8.1 \
+#	--defaultgw=192.168.8.1 \
 # --ip="2a02:3035:40f:3b86:10:2030:4050:2"
 #  "--dns=fe80::210:20ff:fe30:4050" \
 #	--ip=192.168.8.11 \
@@ -112,7 +112,8 @@ args=(--name="$pid" \
 #  --env=GTK3_MODULES="" \
 #	uxterm -e "$termcmd")
 #	openbox --sm-disable --startup "$termcmd")
-   openbox-session)
+#   firefox -new-tab "'$url'")
+    openbox-session)
 
 echo firejail "${args[@]}"
 echo ---------------------------------

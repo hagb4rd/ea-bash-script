@@ -15,7 +15,7 @@ tar -xvf "$HOME/Downloads/backup/haloce/firejail/jailhalo.tar.gz" -C "$HOME/fire
 #cd "$dir"
 #--private-tmp --noroot --caps.drop=all --disable-mnt --noautopulse 
 #firejail --noprofile --name=haloce --net=$netdev --netfilter=/home/e/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
-args=(--noprofile \
+args=(--profile=wine \
 	--name=haloce \
 	--protocol=unix,inet,inet6 \
 	--private="$private" \
@@ -23,17 +23,17 @@ args=(--noprofile \
 	--net=$netdev \
 	--netfilter="$netfilter" \
 	--netfilter6="$netfilter6" \
-	--dns=8.8.8.8 \
-#	--defaultgw=192.168.8.1 \
-#	--ip=192.168.8.59 \
+	--dns=192.168.8.1 \
+	--defaultgw=192.168.8.1 \
+#	--ip=192.168.8.6 \
 	--caps.drop=all \
 	--noroot \
 	--private-dev \
 	--private-tmp \
-#	--private-bin=wine,haloce_1.10_cracked.exe \
+#	--private-bin=sh,wine,w,wineserver,wineserver-stable,wine,haloce_1.10_cracked.exe \
 	--nonewprivs \
 	--nodbus \
-	--shell=none \
+#	--shell=none \
 	--nosound \
 	--nogroups \
 	--nodvd \
@@ -43,7 +43,7 @@ args=(--noprofile \
 	--ipc-namespace \
 	--deterministic-exit-code \
 	--disable-mnt \
-	--memory-deny-write-execute \
+#	--memory-deny-write-execute \
 	--env=WINEDEBUG=-all \
 	--env=WINEARCH="$WINEARCH" \
 	--env=WINEPREFIX="$WINEPREFIX" \

@@ -1,0 +1,7 @@
+#!/bin/bash
+size=$1
+shift
+sizefilter='s=>{ var xs=s.split(" "); if(!(xs[2]&&xs[2].includes("x"))) return false; var size=xs[2].split("x").map(n=>Number(n)); return (size[0]*size[1]<'"$size"'); }'
+identify "$@" | filter "$sizefilter"
+
+#filter-images-size 80000 **/*.jpg **/*.jpeg **/*.webp **/*.gif **/*.png **/*.gif | while read a b c d; do [[ -f "$a" ]] && rm "$a"; done

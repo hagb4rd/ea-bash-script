@@ -1,0 +1,3 @@
+#!/bin/bash
+#netstat -tupne 2> /dev/null | tail -n +3 | mapf 's=>s.replace(/\s{2,}/g, " ")' | mapf 's=>[...s.matchAll(/\d+\.\d+\.\d+\.\d/g)].join("\n")' | sort -u | while read  line;  do printf '%s ' "$line"; done
+netstat -tupne 2> /dev/null | tail -n +2 | mapf 's=>s.replace(/\s{2,}/g, " ")' | mapf 's=>[...s.matchAll(/\d+\.\d+\.\d+\.\d/g)].join("\n")' | sort -u | while read  line;  do org=$(whois "$line" | grep -i -f "$HOME/.grepwhois" -); printf '[%s]\n%s\n\n' "$line" "$org"; done

@@ -10,11 +10,19 @@ var stream=require("stream")
 var getArgs=()=>process.argv.slice(2)
 var compileFunction=(s)=>vm.compileFunction(`var str=[...arguments].join(); var fn=${s}; return fn(str);`)
 var mapStream=function mapStream(fn) { return es.pipe(es.split(),es.map((data,cb)=>cb(null,fn(data)+"\n"))); };
-var filter=async function(fn) { var members=[es.split(),es.map((data,cb)=>fn(data)?cb(null,data+"\n"):cb(null))]; return es.pipe.apply(members); }
+var filter=function(fn) { return es.pipe(es.split(),es.map((data,cb)=>fn(data)?cb(null,data+"\n"):cb(null))); };
 //var $ = require('ea-lib')
 
 //run
-var predicate=compileFunction(getArgs().join()||"(s)=>["md","markdown"].some(ext=>String(s).includes(ext)))"
+/* 
+USAGE: cat file | filter '(s)=>["bad","ananas"].some(ext=>String(s).includes(ext)))' 
+
+filters each line using a predicate function (a function returning a boolean value: true/false) 
+in this case any line that contains the keywords "bad" or "ananas"
+*/
+
+
+var predicate=compileFunction(getArgs().join()||"(s)=>String(s).trim().length>0")
 
 process
 	.openStdin()

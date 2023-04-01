@@ -1,0 +1,6 @@
+#!/bin/bash
+file=curltwitter
+netbox --noprofile sh -c 'curl --request GET --location "https://api.twitter.com/2/tweets/search/recent?tweet.fields=context_annotations&max_results=100&query='"$@"'" --header "Authorization: Bearer $BEARER_TOKEN" -o "curltwitter" > /dev/null 2>&1 && cat curltwitter'
+echo "$file"
+echo '------------'
+#highlight "$file"

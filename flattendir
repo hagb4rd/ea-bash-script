@@ -1,0 +1,5 @@
+#!/bin/bash
+echo 'flattendir: moves files passed stdio (1 per line) to current directory, and encodeURIComponent renames them to reflect on original full path'
+echo ---
+echo 'EXAMPLE p **/*.jpg | flattendir'
+ mapf '(s)=>`${s} ${encodeURIComponent(String(s))}`' | while read a b; do mv -v "$a" "$b"; done

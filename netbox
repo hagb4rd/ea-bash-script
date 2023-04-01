@@ -1,6 +1,9 @@
 #!/bin/bash
-args=(	--net=eth0 \
-	--dns=192.168.8.1 \
+args=(	--noprofile \
+	--net=eth0 \
+	--dns=8.8.8.8 \
+	--ip=192.168.8.129 \
+	--defaultgw=192.168.8.1 \
 	--netfilter=/home/e/.firejail/nolocal.net \
 	--netfilter6=/home/e/.firejail/rules-ipv6.net \
 	--nogroups \
@@ -17,7 +20,6 @@ args=(	--net=eth0 \
 	--ipc-namespace \
 	--nosound \
 	--nodbus \
-	--deterministic-exit-code \
-	 "$@")
+	--deterministic-exit-code "$@")
 #netbox --noprofile curl $*
 firejail "${args[@]}"

@@ -1,0 +1,2 @@
+#!/bin/bash
+du -d 1  "$*" | sort -k 1,2 -r

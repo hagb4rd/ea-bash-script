@@ -38,6 +38,6 @@ args=(firejail \
 	--private-cwd="$SERVERPATH" \
 	#http-server -a "$SERVERIP" -p "$SERVERPORT" 
 #  sh -c 'firefox http://127.0.0.1:8000 > /dev/null 2>&1 & python3 -m http.server')
-  sh -c 'google-chrome http://127.0.0.1:8000 > /dev/null 2>&1 & python3 -m http.server')
+  sh -c 'firefox http://127.0.0.1:8000 > /dev/null 2>&1 & python3 -m http.server')
 
 "${args[@]}"

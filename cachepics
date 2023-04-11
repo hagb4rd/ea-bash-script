@@ -1,0 +1,20 @@
+#!/bin/bash
+pixelsize=$((300*300))
+
+cachedirentries=(~/firejail/openbox/.cache/mozilla/firefox/1rymm6oy.twitter/cache2/entries/*)
+
+stagedir="$HOME/Pictures/.thumbstage"
+targetdir="$HOME/Pictures/thumb"
+
+mkdir -p "$stagedir" 2> /dev/null
+mkdir -p "$targetdir" 2> /dev/null
+
+#xs=($(p2pp))
+
+#p "${cachedirentries[@]}" "$@" | \
+    
+sanitize \
+| filter-images-size 90000 \
+| convertjpg \
+| checksumdb \
+| clipboard

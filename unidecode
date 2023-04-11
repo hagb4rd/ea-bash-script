@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var fs=require("node:fs/promises")
+var es=require("event-stream")
+var cp=require("child_process")
+var path=require("path")
+var vm=require("vm")
+var net=require("net")
+var qs=require("querystring")
+var stream=require("stream")
+var getArgs=()=>process.argv.slice(2)
+var unidecode=require("unidecode")
+console.log(unidecode(getArgs().join(" ")));

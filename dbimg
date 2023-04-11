@@ -1,0 +1,2 @@
+#!/bin/bash
+while read f; do sum=$(sha1sum < "$f");  targetdir="$HOME/Pictures/.sha1sum"; mkdir -p "$targetdir"; target="$targetdir/$sum"; mv -v "$f" "$target"; ln -s "$target" "$f"; done

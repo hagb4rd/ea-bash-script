@@ -20,7 +20,7 @@ two=(
 
 
 #ffmpeg ${one[*]} && ffmpeg ${two[*]} && ffmpeg ${three[*]} && rm "$2.firstpass.avi" && rm "$2.secondpass.avi"
-ffmpeg ${one[*]} && ffmpeg ${two[*]} && rm "$2.firstpass.avi" && rm "$2.secondpass.avi"
+ffmpeg "${one[@]}" < /dev/null && ffmpeg "${two[@]}" < /dev/null && rm "$2.firstpass.avi" && rm "$2.secondpass.avi"
 
 
 

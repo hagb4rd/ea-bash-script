@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+var fs=require('fs');
+var path=require('path');
+var util=require('util')
+var {execSync,exec,spawn}=require('child_process');
+var es=require('event-stream');
+
+
+var dropquotes=(x)=>x=>x.startsWith('"')&&x.endsWith('"')?x.slice(1,-1):x
+
+
+//spawn(process.argv[3], process.argv.slice(3)).stdout
+process.openStdin()
+	.pipe(es.split(/\n/))
+	.pipe(es.map((data,cb)=>{
+		var xs=data.replace(/(\s)+/g,"\t").split(/\t/).map(x=>dropquotes(x));
+		if(data.length) {
+			cb(null,xs)
+		} else {
+			cb(null)
+		}
+	}))
+	.pipe(es.stringify())
+	.pipe(process.stdout)
+
+fhynxfhyjdt

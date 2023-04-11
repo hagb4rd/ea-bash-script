@@ -1,0 +1,3 @@
+#!/bin/bash
+export profile=~/firejail/twitter/.cache/mozilla/firefox/1rymm6oy.twitter
+echo "cd $profile" | -sh

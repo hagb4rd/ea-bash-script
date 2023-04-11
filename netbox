@@ -1,11 +1,12 @@
 #!/bin/bash
-args=(	--noprofile \
-	--net=eth0 \
+
+args=(--noprofile \
+	--net=br0 \
 	--dns=8.8.8.8 \
-	--ip=192.168.8.129 \
-	--defaultgw=192.168.8.1 \
-	--netfilter=/home/e/.firejail/nolocal.net \
-	--netfilter6=/home/e/.firejail/rules-ipv6.net \
+#	--ip=192.168.8.129 \
+#	--defaultgw=192.168.8.1 \
+	--netfilter=$HOME/.firejail/nolocal.net \
+	--netfilter6=$HOME/.firejail/rules-ipv6.net \
 	--nogroups \
 	--nonewprivs \
 	--disable-mnt \

@@ -1,0 +1,6 @@
+#!/bin/bash
+filter-file | while read i; do 
+  #output line: 9fe056e235c14297c7397a3b643c9d6e59d46282 */home/e/firejail/openbox/.cache/mozilla/firefox/1rymm6oy.twitter/cache2/entries/020C6E3D611435303CEED3F953CA34B215E65E3B
+  sha1sum -b "$i"
+done
+

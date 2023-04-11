@@ -1,0 +1,11 @@
+#!/bin/bash
+targetdir="$HOME/Pictures/thumbs/"
+mkdir -p "$targetdir"
+
+
+filter-file | checksum | while read sum f; do 
+  targetfile="${targetdir}${checksum}.jpg"; 
+  oldname="${f:1}"
+  printf %s\\n 'mv -f '"$oldname"' '"$targetfile"' > /dev/null 2>&1 && ln -s '"$targetfile"' '"$oldname"
+  #printf '%s %s\n' "$targetfile" "$oldname"; 
+done

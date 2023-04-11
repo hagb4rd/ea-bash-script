@@ -1,6 +1,12 @@
 #!/bin/bash
 # clean up firejail working/private-home directory
-firejaildir="$HOME/firejail/twitter"
+firejaildir="$1"
+
+if [[ ! -d $firejaildir ]]; then
+  notify "Missing Argument Error\nf-restore <firejaildir>"
+  exit 1
+fi
+
 verbose="-v"
 profile="${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
 profilebackup="$HOME/Downloads/backup/.mozilla/firefox/profile.twitter"
@@ -18,8 +24,12 @@ cachebackup="$HOME/Downloads/backup/.cache/mozilla"
 rm -rf "${profile}.bak"
 cp -a "$verbose" "$profile" "${profile}.bak"
 
+
+cp -f "$profile/places.sqlite" "$profilebackup/places.sqlite"
+
 rm -rf "$profile"
 cp -a "$verbose" "$profilebackup" "$profile"
 
-rm -rf "$cache"
+rm -rf "$firejaildir/.cache"
+mkdir -p "$firejaildir/.cache"
 cp -a "$verbose" "$cachebackup" "$cache"

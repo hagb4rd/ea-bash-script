@@ -1,0 +1,2 @@
+#!/bin/bash
+{ comma=""; printf '%s' '['; while IFS=$'\n' read line; do printf '%s"%s"\n' "$comma" "${line[*]}"; comma=","; done; printf '%s' "]"; }

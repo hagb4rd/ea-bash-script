@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -in "$@" ~/Documents/* ~/Documents/**/* ~/git/**/*.md ~/git/**/*.html

@@ -1,2 +1,4 @@
 #!/bin/bash
-zenity --notification  --window-icon=update.png  --text "$*"
+#zenity --notification  -window-icon=update.png  --text "$*"
+textarray+=("$@")
+while n=$'\n'; IFS=$n read -d '' text; do textarray+=($text); done; zenity --notification --text="${text[@]}"; p "${text[@]}"

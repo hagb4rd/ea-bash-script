@@ -1,2 +1,2 @@
 #!/bin/bash
-nc termbin.com 9999
+netbox nc termbin.com 9999

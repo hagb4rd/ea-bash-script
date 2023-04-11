@@ -21,11 +21,19 @@ fi
 
 # --min-dimension 256x256
 
+# args=(--scale-down --sort "mtime" --scroll-step "50" -Z -R \
+# 	--action1 ';[delete]mv -f %F /home/e/Pictures/_deleted/' \
+# 	--action2 ';[twitter]cp -f %F /home/e/firejail/openbox/%N && { echo /home/e/firejail/openbox/%N | clipboard }'   \
+# 	--action3 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \
+# 	--action4 ";[drawing]drawing %F" \
+#   --geometry 720x900+720+0 \
+#   --start-at "$f")
 
-args=(-Z \
+
+args=(--scale-down --scroll-step 50 -S mtime -R -Z --auto-zoom \
 #  -p \
 	--action1 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \
-	--action2 ";[twitter]cp -f %F /home/e/firejail/twitter/%N && clipboard /home/e/firejail/twitter/%N" \
+	--action2 ";[twitter]cp -f %F /home/e/firejail/openbox/%N && clipboard /home/e/firejail/openbox/%N" \
 	--action3 ";[beauty]cp -f %F /home/e/firejail/twitter/%N" \
 	--action4 ";[drawing]drawing %F" \
   --geometry 720x900+720+0 \

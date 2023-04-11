@@ -1,6 +1,16 @@
 #!/bin/bash
-target="$1";
-target="${target:-$HOME/Pictures}";
+#target=$1;
+#target="${target:-$HOME/Pictures}";
 #IFS= while read line; do convert "$line" "${line}.jpg" && rm "$line"; done
-find "${target}" -type f -name "*webp" -exec convimg jpg '{}' \;
-find "${target}" -type f -name "*png" -exec convimg jpg '{}' \;
+#cd "$target"
+#p $target/* $target/**/*  | filter-file | sanitize
+#p $target/*.png $target/*.webp $target/*.tif $target/**/*.png $target/**/*.webp $target/**/*.tif **/* | filter-file | while read line; do convert -verbose "$line" -quality 90 "${line%.*}.jpg" 2> /dev/null && rm "$line"; done
+while read line; do 
+        newname="${line%.*}.jpg"; 
+        convert -verbose "$line" -quality 90 "$newname" > /dev/null 2>&1 
+        [[ -f $newname ]] && printf %s\\n "$newname"; 
+done
+#| sanitize | while read f; do convert "$f" "${f}.jpg" && rm "$f"; done
+#popd
+#find "${target}" -type f -name "*webp" -exec convimg jpg '{}' \;
+#find "${target}" -type f -name "*png" -exec convimg jpg '{}' \;

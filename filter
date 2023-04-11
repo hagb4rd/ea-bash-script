@@ -8,21 +8,25 @@ var net=require("net")
 var qs=require("querystring")
 var stream=require("stream")
 var getArgs=()=>process.argv.slice(2)
-var compileFunction=(s)=>vm.compileFunction(`var str=[...arguments].join(); var fn=${s}; return fn(str);`)
-var mapStream=function mapStream(fn) { return es.pipe(es.split(),es.map((data,cb)=>cb(null,fn(data)+"\n"))); };
-var filter=function(fn) { return es.pipe(es.split(),es.map((data,cb)=>fn(data)?cb(null,data+"\n"):cb(null))); };
-//var $ = require('ea-lib')
+var unidecode=this.unidecode=require("unidecode")
+var { compileFn, mapStream, filter } = require('./mapfilter');
+
 
 //run
 /* 
-USAGE: cat file | filter '(s)=>["bad","ananas"].some(ext=>String(s).includes(ext)))' 
+USAGE:
+  cat file | filter '(s)=>["bad","ananas"].some(ext=>String(s).includes(ext)))' 
 
-filters each line using a predicate function (a function returning a boolean value: true/false) 
-in this case any line that contains the keywords "bad" or "ananas"
+  filters each line using a predicate function (a function returning a boolean value: true/false) 
+  in this case any line that contains the keywords "bad" or "ananas"
+
+  cat file | filter | mapf 's=>s.toUpperCase()'
+
+  filters (by default empty lines) and then maps each line parsing a given function s=>transform(s) 
 */
 
+var predicate=compileFn(getArgs().join()||"(s)=>String(s).trim().length>0")
 
-var predicate=compileFunction(getArgs().join()||"(s)=>String(s).trim().length>0")
 
 process
 	.openStdin()

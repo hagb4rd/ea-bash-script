@@ -2,13 +2,7 @@
 source "$HOME/.bashrc"
 
 url=$1
-if [[ -z "$url" ]]; then
-	url="about:blank"
-  openboxstartup="firefox --no-remote -P"
-else 
-  openboxstartup="firefox -new-tab '$url'"
-fi
-openboxstartup="sh -c 'firefox --no-remote'"
+
 echo URL: "$url"
 
 
@@ -63,9 +57,7 @@ rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 netdev=eth0
 args=(--name="$pid" \
 	--protocol=unix,inet,inet6 \
-	--profile=firefox \
-#	--noprofile \
-#	--noprofile \
+	--noprofile
   --x11=xephyr \
 #  --xephyr-fullscreen \
   --xephyr-screen=1680x1050 \
@@ -84,7 +76,7 @@ args=(--name="$pid" \
 	--dns=192.168.8.1 \
 	--private="~/firejail/${pid}" \
 	--private-cwd="$HOME" \
-  --private-bin="firefox,firefox-bin,xterm,uxterm,sh,bash,blackbox,openbox,openbox-session,tor,which" \
+#  --private-bin="google-chrome,xterm,uxterm,sh,bash,blackbox,openbox,openbox-session,tor,which" \
 #	--shell=none \
 #	--private-cache \
 	--nonewprivs \

@@ -1,11 +1,31 @@
 #!/bin/bash
+rl(){
+	local count=0
+	cat "$1" - | while read line; do 
+		if [[ "x" = x$line ]] && ((count>1)); then 
+			exit 0
+		elif [[ -z $line ]]; then
+			((count++))
+		else 
+			((count=0))
+		fi
+		printf %s\\n "$line" 
+	done
+}
+
+
 if which "$1"; then 
 	fullpath=$(which "$1");
+	xed "$fullpath" || nano "$fullpath"
 else
 	fullpath="$HOME/.local/bin/$1"
-	echo '#!/bin/bash' >  "$fullpath"
-	chmod +x "$fullpath"
+
+	if [[ ! -f $fullpath ]]; then
+		touch "$fullpath"
+		chmod +x "$fullpath"
+		echo '#!/bin/bash' >  "$fullpath"
+		cat "$fullpath" - > "$fullpath"
+	fi
 fi
-
-nano "$fullpath"
-
+#cp -f "$fullpath" "${fullpath%/*}/bin/${fullpath##*/}"
+#cat "$fullpath" - > "$fullpath"

@@ -6,7 +6,9 @@ if [[ "${#args}" =~ 0 ]]; then
   clipbrd=$(xsel -ob)
   args+=("${clipbrd:-record}")
 fi
+filename=$(zenity --entry --text="title" --entry-text="${args[@]}")
 
-trap 'rm -rf "$PIDFILE"; mp3 "${args[@]}"; trap - INT; kill -s INT "$$"' INT
+
+trap 'rm -rf "$PIDFILE"; mp3 "$filename"; trap - INT; kill -s INT "$$"' INT
 
 arecord -vv --format=cd /tmp/record.wav

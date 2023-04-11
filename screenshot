@@ -1,9 +1,2 @@
 #!/bin/bash
-dir="$HOME/Pictures/screenshot"
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir" 2>  /dev/null
-fi
-hsh=$(hhash)
-filename="${dir}/${hsh}.png"
-fileconv="$HOME/firejail/twitter/${hsh}.jpg"
-scrot --focused "$filename" && convert "$filename" "$fileconv" && zenity --notification --text="Clipboard:\n $fileconv" && printf %s "$fileconv" | xsel -ib
+scrot ~/Pictures/screenshot/$(hhash).jpg

@@ -1,0 +1,28 @@
+#!/bin/bash
+# bridge setup   
+ip link del br0
+sleep 1s
+brctl addbr br0   
+ifconfig br0 10.10.20.1/24 up  
+sleep 1s
+
+#ip link add dev br0 type bridge
+#ip link set dev br0 up
+#ip addr add 10.10.20.0/24 brd + dev br0
+
+# enable ipv4 forwarding   
+echo "1" > /proc/sys/net/ipv4/ip_forward  
+
+# netfilter cleanup   
+iptables --flush   
+iptables -t nat -F   
+iptables -X   
+iptables -Z   
+iptables -P INPUT ACCEPT   
+iptables -P OUTPUT ACCEPT   
+iptables -P FORWARD ACCEPT  
+# netfilter network address translation   
+iptables -t nat -A POSTROUTING -o eth0 -s 10.10.20.0/24 -j MASQUERADE
+
+#host port 80 forwarded to sandbox port 80   
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 10.10.20.10:80

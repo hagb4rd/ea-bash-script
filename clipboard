@@ -1,4 +1,4 @@
 #!/bin/bash
-args=($*)
-printf '%s ' "${args[@]}" | xsel -ib
-zenity --notification --text="Clipboard:\n ${args[@]}"
+xsel -ib
+#output=$(xsel -ob)
+xsel -ob | notify

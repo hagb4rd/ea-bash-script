@@ -1,0 +1,12 @@
+#!/bin/bash
+home=~/firejail/twitter
+pushd$homee
+id=$(hhash)
+[[ ! -d ~/Pictures/.txt ]] && mkdir -p ~/Picures/.txt
+cat **/images*.txt | sort > ~/Pictures/.txt/$id.txt
+#rm **/images*.txt
+[[ ! -d ~/Pictures/wget ]];  mkdir -p ~/Pictures/wget
+[[ ! -d ~/Pictures/wget/$id ]];  mkdir -p ~/Pictures/wget/$id
+pushd ~/Pictures/wget/id
+netbox wwget -i ~/Pictures/.txt/$id.txt
+

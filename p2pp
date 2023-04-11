@@ -1,0 +1,9 @@
+#!/bin/bash
+s=$'\n'
+IFS=$s
+while read args; do 
+  #printf '"%s" ' "${args[@]}"
+  pp "${args[@]}"
+done
+s=$' '
+IFS=$s

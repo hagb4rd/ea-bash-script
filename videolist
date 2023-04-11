@@ -1,0 +1,11 @@
+#!/bin/bash
+o="$HOME/git/http/video/videolist.js"; 
+
+vlist() {
+  filter-file | mapf 's=>encodeURI(String(s))' | json
+}
+
+printf '%s' 'var videolist=' > "$o"; 
+
+p $HOME/Videos/*.mp4 $HOME/Videos/mp4/porn-mp4/*.mp4 $HOME/Pictures/gif/**/*.mp4 "$@" | vlist  >>  "$o"
+cat "$o"

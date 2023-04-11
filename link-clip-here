@@ -1,0 +1,13 @@
+#!/bin/bash
+targetdir="$1"
+dir="${targetdir:-$HOME/Desktop}"
+if [[ ! -d $dir ]]; then
+   echo USAGE: link-clip-here DIRECTORY 2>&1
+   echo to create shortcuts from full paths stored in clipboard, one a line 2>&1
+   echo -- tempon: debug ---
+   echo "$dir"
+   exit 1
+fi
+xsel -ob | while read f; do
+  [[ -f $f ]] && ln -s -t "$dir" 
+done

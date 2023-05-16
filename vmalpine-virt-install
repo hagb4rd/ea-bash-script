@@ -1,0 +1,19 @@
+#!/bin/bash
+# This script created by AQEMU
+dir=/var/lib/vmalpine
+args=(-machine accel=kvm \
+#  -soundhw ac97 \
+	-m 1024 \
+	-hda "${dir}/alpine.qcow2" \
+#  -cdrom "/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/alpine.iso" \
+#  -boot c \
+#	-virtfs local,id=shared_folder_dev_0,path=/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b,security_model=none,mount_tag=shared0 \
+	-net nic,macaddr=52:54:00:f4:78:8a,model=virtio \
+	-net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup \
+#  -net nic \
+#  -net user,hostfwd=tcp::2222-:22 \
+	-rtc base=localtime \
+	-pflash "/var/lib/vmalpine/OVMF.fd" \
+	-name "alpine")
+#/usr/bin/qemu-system-x86_64 "${args[@]}"
+echo virt-install "${args[@]}"

@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-mnt='/target'
+mnt='/mnt/target'
 
 # /
 # cryptsetup luksOpen /dev/sdb3 crypt
@@ -14,7 +14,7 @@ mnt='/target'
 # mount /dev/sda5 $mnt/home
 
 # Bind mount various virtual filesystems:
-for i in /dev /dev/pts /proc /sys /sys/firmware/efi/efivars /run; do mount --rebind $i $mnt$i; done
+for i in /dev /dev/pts /proc /sys /sys/firmware/efi/efivars /run; do mkdir -p $mnt$i; mount --bind $i $mnt$i; done
 
 # Chroot into the broken system:
 # chroot $mnt

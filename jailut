@@ -7,7 +7,7 @@ windir="C:\\GOG Games\\Unreal Tournament GOTY\\System"
 #cd "$dir"
 #--private-tmp --noroot --caps.drop=all --disable-mnt --noautopulse 
 #firejail --noprofile --name=haloce --net=$netdev --netfilter=/home/e/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
-firejail --noprofile --name=haloce "--private=/home/e/firejail/haloce" --net=eth0 --netfilter=/home/e/.firejail/halo.net --protocol=unix,inet,inet6  --netfilter6=/home/e/.firejail/halo6.net --dns=8.8.8.8 --private-dev --private-tmp --nonewprivs --nodbus "--private-cwd=${dir}" --shell=none --nogroups --nodvd --noautopulse --notv  --novideo  --caps.drop=all --ipc-namespace --deterministic-exit-code --memory-deny-write-execute --env=WINEDEBUG=-all wine UnrealTournament.exe
+firejail --profile=wine --name=haloce "--private=/home/e/firejail/haloce" --net=br0 --netfilter=/home/e/.firejail/nolocal.net --protocol=unix,inet,inet6  --netfilter6=/home/e/.firejail/rejectipv6.net --dns=8.8.8.8 --private-dev --private-tmp --nonewprivs --nodbus "--private-cwd=${dir}" --nogroups --nodvd --noautopulse --notv  --novideo  --caps.drop=all --ipc-namespace --deterministic-exit-code --env=WINEDEBUG=-all wine UnrealTournament.exe
 sleep 3s
 rm /home/e/firejail/haloce/.wine/dosdevices/com*
 rm /home/e/firejail/haloce/.wine/dosdevices/lpt*

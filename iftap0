@@ -1,0 +1,7 @@
+#!/bin/bash
+tuntap=tap0
+user=e
+mode=tap
+ip tuntap add dev $tuntap mode $mode user $user
+ip link set dev $tuntap up
+ip link set dev $tuntap master br0

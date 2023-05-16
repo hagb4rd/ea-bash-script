@@ -1,0 +1,23 @@
+#!/bin/bash
+size=$1
+defaultsize=$((300*300))
+size="${size:-$defaultsize}"
+shift
+sizefilter='s=>{ var xs=s.split(" "); if(!(xs[2]&&xs[2].includes("x"))) return false; var size=xs[2].split("x").map(n=>Number(n)); return (size[0]*size[1]<'"$size"'); }'
+#IFS=$'\n' read  -a -d '' line;  
+#line=($(p2pp))
+#printf '"%s" ' "${line[@]}"; \
+id() {
+    while read line; do 
+     identify "$line" 2> /dev/null
+    done
+}
+
+id | filter "$sizefilter" #| while read a b c; do echo "$a"; done
+
+#identify ${line[@]} #\
+#    | filter "$sizefilter" 2> /dev/null \
+#    | while read name size rest; do 
+#        [[ -f "$name" ]] && printf %s\\n "$name"; 
+#      done 
+#filter-images-size 80000 **/*.jpg **/*.jpeg **/*.webp **/*.gif **/*.png **/*.gif | while read a b c d; do [[ -f "$a" ]] && rm "$a"; done

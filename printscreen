@@ -11,6 +11,6 @@ if [[ ! -d "$dir" ]]; then
 fi
 hsh=$(hhash)
 filename="${dir}/${hsh}.png"
-fileconv="$HOME/firejail/twitter/${hsh}.jpg"
+fileconv="$HOME/firejail/openbox/${hsh}.jpg"
 scrot -s -f  "$filename" && convert "$filename" "$fileconv" && zenity --notification --text="Clipboard:\n $fileconv" && printf %s "$fileconv" | xsel -ib
 

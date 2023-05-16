@@ -1,3 +1,3 @@
 #!/bin/bash 
 cachedirentries=(~/firejail/openbox/.cache/mozilla/firefox/1rymm6oy.twitter/cache2/entries/*)
-p "${cachedirentries[@]}" | cachepics
+for f in "${cachedirentries[@]}"; do printf %s\\n "$f"; done | cachepics

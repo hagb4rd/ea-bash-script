@@ -1,0 +1,13 @@
+lockfileVersion: '6.0'
+
+dependencies:
+  unidecode:
+    specifier: ^0.1.8
+    version: 0.1.8
+
+packages:
+
+  /unidecode@0.1.8:
+    resolution: {integrity: sha512-SdoZNxCWpN2tXTCrGkPF/0rL2HEq+i2gwRG1ReBvx8/0yTzC3enHfugOf8A9JBShVwwrRIkLX0YcDUGbzjbVCA==}
+    engines: {node: '>= 0.4.12'}
+    dev: false

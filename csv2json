@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var s=process.argv.slice(2).join(",")
+var re=/"[^"]*"/g; 
+var d=','; 
+var xs=s.replace(re,(x)=>{ return x.replaceAll(d,"{{delimiter}}}"); }).split(d).map(e=>e.replaceAll("{{delimiter}}}",d));
+console.log(JSON.stringify(xs))

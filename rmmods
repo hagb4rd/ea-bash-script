@@ -1,16 +1,17 @@
 #!/bin/bash
 #sudo=sudo
-$sudo rmmod mei_hdcp
-$sudo rmmod mei_me
-$sudo rmmod mei
-$sudo rmmod option
-$sudo rmmod btrfs
-$sudo rmmod raid6_pq
-$sudo rmmod xor
-$sudo rmmod option
-$sudo rmmod usb_wwan
-$sudo rmmod usbserial
-$sudo rmmod uas
+sleep 4s
+rmmod mei_hdcp
+rmmod mei_me
+rmmod mei
+rmmod option
+rmmod btrfs
+rmmod raid6_pq
+rmmod xor
+rmmod option
+rmmod usb_wwan
+rmmod usbserial
+rmmod uas
 #sudo ifbr0
 #netdev=enx001e101f0000
 export netdev=eth0
@@ -28,9 +29,11 @@ rm -rf /home/e/.cache/fontconfig
 rm -rf /run/user/1000/at*
 #sudo rm 
 #sudo rm -rf /var/lib/dhcp/*
-/etc/init.d/networking restart
+#/etc/init.d/networking restart
 sleep 2s
 /usr/local/sbin/setup-bridge
+sleep 1s
+#/usr/local/sbin/vmalpine
 #ipaddr=$(ip addr)
 #sudo -u e -g e notify "$ipaddr"
 #sudo ifbr0

@@ -1,0 +1,13 @@
+#!/bin/bash
+for dev in "$@"; do  
+  if [[ ! -d "$dev" ]]; then 
+    syspath=$(udevadm info -q path -n  "$dev" 2> /dev/null)
+    echo " "
+    echo ----------------------------------------
+    echo "$dev"
+    echo "$syspath"
+    echo ----------------------------------------
+    udevadm info -a -p "$syspath"
+  fi
+done
+  

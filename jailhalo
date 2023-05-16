@@ -5,9 +5,9 @@ export WINEARCH="win32"
 private="$HOME/firejail/halo"
 dir="${WINEPREFIX}/drive_c/Program Files/Microsoft Games/Halo Custom Edition"
 windir="C:\\Program Files\\Microsoft Games\\Halo Custom Edition"
-netdev=eth0
+netdev=br0
 netfilter="$HOME/.firejail/nolocal.net"
-netfilter6="$HOME/.firejail/halo6.net"
+netfilter6="$HOME/.firejail/rejectipv6.net"
 
 
 rm -rf "$private"
@@ -17,16 +17,18 @@ tar -xvf "$HOME/Downloads/backup/haloce/firejail/jailhalo.tar.gz" -C "$HOME/fire
 #firejail --noprofile --name=haloce --net=$netdev --netfilter=/home/e/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
 args=(--profile=wine \
 	--name=haloce \
+#  --apparmor \
 	--protocol=unix,inet,inet6 \
 	--private="$private" \
 	--private-cwd="${dir}" \
 	--net=$netdev \
 	--netfilter="$netfilter" \
 	--netfilter6="$netfilter6" \
-	--dns=192.168.8.1 \
-	--defaultgw=192.168.8.1 \
+	--dns=1.1.1.1 \
+#	--defaultgw=192.168.8.1 \
 #	--ip=192.168.8.6 \
 	--caps.drop=all \
+  --noinput \
 	--noroot \
 	--private-dev \
 	--private-tmp \
@@ -48,6 +50,7 @@ args=(--profile=wine \
 	--env=WINEARCH="$WINEARCH" \
 	--env=WINEPREFIX="$WINEPREFIX" \
     sh -c 'wine haloce_1.10_cracked.exe & wine AutoHotkey.exe taxi.ahk')
+#   wine haloce.exe)
 
 #( firejail "${args[@]}"	wine haloce.exe && firejail --shutdown=haloce ) &
 #( firejail "${args[@]}" wine haloce_1.10_cracked.exe && firejail --shutdown=haloce ) &

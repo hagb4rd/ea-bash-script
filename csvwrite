@@ -2,7 +2,7 @@
 var es=require('event-stream')
 var args=process.argv.slice(2).join(' ').split(/(,|\b)/).map(arg=>arg.replaceAll(/^\"|\"$/g, ""));
 
-if(!args.length)
+//if(!args.length)
 	//args=[1,2,3,4,5,6,7,8,9,9,10]
 
 var csv;
@@ -19,6 +19,7 @@ if(opts.header) {
 }
 */
 //process.stdout.write("\n");
+var head="";
 
 process.openStdin()
 	.pipe(es.split())
@@ -27,20 +28,20 @@ process.openStdin()
 				var parsed=JSON.parse(data)
 				if(typeof (parsed) == "object") {
 				
-					
-					var head="";
-					
 					if(!headersSent) {
 						/*
 						var opts = args.length 
 							? ({ header: args.map(arg=>({ id: arg, title: arg })) }) 
 							: ({ header: Object.keys(parsed).map(arg=>({ id: arg, title: arg })) })
 						/* */
-						var opts = { header: Object.keys(parsed).map(arg=>({ id: arg, title: arg })) };
+						var opts = { header: Object.keys(args).map(arg=>({ id: arg, title: arg })) };
 						csv = createCsvStringifier(opts);
 						head=csv.getHeaderString();
 						headersSent=true;				
-					}				
+					} else {
+            head=""
+          }
+          				
 					var csvString=head+csv.stringifyRecords([parsed]);
 					cb(null, csvString);
 					

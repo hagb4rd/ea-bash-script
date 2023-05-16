@@ -1,2 +1,2 @@
 #!/bin/bash
-udevadm info -q path -n $*
+udevadm info -q path -n "$@"

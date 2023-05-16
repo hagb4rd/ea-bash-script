@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var ddg=async(q)=>{
+  var uri="https://html.duckduckgo.com/html/"
+
+
+  var body=encodeURIComponent(JSON.stringify({
+      q: q||"test"
+   }));;
+
+  var fetchOpts = { 
+    method: "post",
+    headers: {
+      "content-type": "application/json",
+      "content-length": body.length
+    },
+    body: body
+  };
+
+  var resp=await fetch(uri, fetchOpts);
+  if(resp.ok) {
+    var text=await resp.text();     
+  }
+  return text;
+}

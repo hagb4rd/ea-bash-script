@@ -1,6 +1,6 @@
 {
   "name": "ea-bash-script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a collection of bash script",
   "main": "list-json.js",
   "bin": {
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/hagb4rd/ea-bash-script/issues"
   },
-  "homepage": "https://github.com/hagb4rd/ea-bash-script#readme"
+  "homepage": "https://github.com/hagb4rd/ea-bash-script#readme",
+  "dependencies": {
+    "unidecode": "^0.1.8"
+  }
 }

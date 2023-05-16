@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "$HOME"
+netbox --private-home="node,jslave,.local" --private-cwd="~/jslave" --caps.drop=all --noroot --nonewprivs --private-dev --disable-mnt --nodbus --ipc-namespace --protocol="inet" node repl.js --botstart

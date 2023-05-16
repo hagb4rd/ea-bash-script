@@ -1,23 +1,23 @@
 #!/bin/bash
-source "$HOME/.bashrc"
+#source "$HOME/.bashrc"
 
 #netdev="none"
 url=$1
 if [[ -z "$url" ]]; then
-	url=""
+	url="about:blank"
   openboxstartup="firefox --no-remote -P"
 else 
   openboxstartup="firefox -new-tab '$url'"
 fi
 openboxstartup="sh -c 'firefox --no-remote'"
 echo URL: "$url"
-
+pid="openbox"
 # clean up firejail working/private-home directory
-firejaildir="$HOME/firejail/openbox"
+firejaildir="$HOME/firejail/$pid"
 mkdir -p "$HOME/firejail"
 mkdir -p "$firejaildir"
 
-pid="openbox"
+
 netfilter="/home/e/.firejail/nolocal.net"
 netfilter6="/home/e/.firejail/rejectipv6.net"
 #netfilter="/home/e/.firejail/rules-ipv4.net"
@@ -25,15 +25,14 @@ netfilter6="/home/e/.firejail/rejectipv6.net"
 #netfilter6="/home/e/.firejail/nolocal6.net"
 #shift
 shift
-
-
+firefoxcmd="firefox --profile /home/e/.mozilla/firefox/1rymm6oy.twitter $url"
+#firefox
 netdev=br0
 args=(--name="$pid" \
-#	--protocol=unix,inet,inet6 \
+	--protocol=unix,inet,inet6 \
 #  --noprofile \
 	--profile=firefox \
-#	--noprofile \
-#	--noprofile \
+  --apparmor \
   --x11=xephyr \
   --xephyr-screen=1680x1050 \
 #	"--interface=$netdev" \
@@ -50,13 +49,14 @@ args=(--name="$pid" \
 # --ip="2a02:3035:40f:3b86:10:2030:4050:2"
 #  "--dns=fe80::210:20ff:fe30:4050" \
 #	--ip=192.168.8.11 \
+  --dns=10.10.20.22 \
 #	--dns=8.8.8.8 \
-	--dns=8.8.8.8 \
 	--private-cwd="$HOME" \
   --noinput \
 	--noroot \
 	--private="~/firejail/${pid}" \
-  --private-bin="firefox,firefox-bin,xterm,uxterm,sh,bash,blackbox,openbox,openbox-session,tor,which" \
+#  --private-bin="firefox,firefox-bin,xterm,uxterm,sh,bash,blackbox,openbox,openbox-session,which" \
+  --private-bin="firefox,firefox-bin,bash,sh,openbox,openbox-session,which" \
 #	--shell=none \
 #	--private-cache \
 	--nonewprivs \
@@ -84,23 +84,19 @@ args=(--name="$pid" \
 #  --env=GTK3_MODULES="" \
 #	uxterm -e "$termcmd")
 #	openbox --sm-disable --startup "$termcmd")
-   openbox --sm-disable --startup "uxterm -e 'tor -f torrc'")
+#   openbox --sm-disable --startup "uxterm -e 'tor -f torrc'")
+   openbox --sm-disable --startup "$firefoxcmd")
+
+#   openbox --sm-disable --startup "firefox --no-remote")
 
 echo firejail "${args[@]}"
 echo ---------------------------------
 
 if ! firejail --ls=$pid ~; then
-    # $termcmd is passed to uxterm -e $termcmd
-  #termcmd="openbox --sm-disable --startup \"$openboxstartup\" & tor -f $HOME/torrc"
-  #termcmd="tor -f $HOME/torrc & openbox --sm-disable --startup \"$openboxstartup\""
-  #termcmd="uxterm"
-  termcmd="$openboxstartup"
 
-  #termcmd="tor -f ${HOME}/torrc & openbox & ff -new-tab $url"
-  #verbose=""
 
-  #if ! firejail --ls="$pid" ~; then
-  #	firejail --name="$pid" --profile=firefox --x11=xephyr --net="${netdev}" --netfilter=1olocal --netfilter6=/etc/firejail/nolocal6.net --dns=192.168.8.1 --private="~/twitter" --noroot --caps.drop=all --disable-mnt --private-tmp --nodbus --private-dev --machine-id --noautopulse --nou2f --nodvd --notv --novideo --ipc-namespace -- openbox &
+  # archive and presort downloaded files
+  "$HOME/.local/bin/f-archive" "$firejaildir"
 
   # clean up local home cache
   rm -rf "$HOME/.cache/google-chrome"
@@ -114,8 +110,8 @@ if ! firejail --ls=$pid ~; then
 
 
   #restore local .tor data-dictionary
-  rm -rf "$firejaildir/.tor"
-  cp -a "$verbose" "$HOME/.tor" "$firejaildir"
+  #rm -rf "$firejaildir/.tor"
+  #cp -a "$verbose" "$HOME/.tor" "$firejaildir"
 
   dnscryptbackup="/home/e/Downloads/backup/dnscrypt/linux-x86_64"
   dnscryptdir="${firejaildir}/dnscrypt"
@@ -127,17 +123,21 @@ if ! firejail --ls=$pid ~; then
   #rm -rf "${firejaildir}/.config"
   rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 
+  rm -rf "${firejaildir}/cnd"
+  cp -a $HOME/git/http/cdn "${firejaildir}"
+
   # __TEMPOFF
   "$HOME/.local/bin/f-restore" "$firejaildir"
-  firejail "${args[@]}" &
-  sleep 5s
+  firejail "${args[@]}"
+else 
+  firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" -private-window "$url" < /dev/null
 fi
 
-if [[ ! -z $url ]]; then 
-  firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" --new-tab "$url"
-fi
 #if [[ ! -z $url ]]; then 
-#  firejail --join=$pid google-chrome --proxy-server="socks://localhost:9050" "$url"
+#firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" --new-tab "$url" 
+#fi
+#if [[ ! -z $url ]]; then 
+#firejail --join=$pid google-chrome --proxy-server="socks://localhost:9050" "$url"
 #fi
 
 

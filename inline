@@ -1,9 +1,35 @@
-#!/bin/bash
-switch=$1;
-re='-'
-if [[ $switch =~ $re ]]; then
-  shift
-  while read line; do printf "'%s' " "$line"; done
-fi
+#!/usr/bin/env node
+var fs=require("node:fs/promises")
+var cp=require("child_process")
+var path=require("path")
+var vm=require("vm")
+var net=require("net")
+var qs=require("querystring")
+var stream=require("stream")
+var getArgs=()=>process.argv.slice(2)
+var unidecode=this.unidecode=require("unidecode")
+var { readLines, inline, compileFn, mapStream, filter, splitToLines } = require('./streammapfilter');
 
-printf "'%s' " $*
+
+//run
+/* 
+USAGE:
+  cat file | filter '(s)=>["bad","ananas"].some(ext=>String(s).includes(ext)))' 
+
+  filters each line using a predicate function (a function returning a boolean value: true/false) 
+  in this case any line that contains the keywords "bad" or "ananas"
+
+  cat file | filter | mapf 's=>s.toUpperCase()'
+
+  filters (by default empty lines) and then maps each line parsing a given function s=>transform(s) 
+*/
+
+
+/*
+process.openStdin()
+  .pipe(inline())
+  .pipe(process.stdout)
+/* */
+(async()=>{
+ console.log(await readLines());
+})();

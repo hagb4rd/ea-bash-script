@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 var fs=require("node:fs/promises")
-var es=require("event-stream")
 var cp=require("child_process")
 var path=require("path")
 var vm=require("vm")
 var net=require("net")
 var qs=require("querystring")
-var stream=require("stream")
+var stream = require("node:stream");
+var { Readable, filter, compose, map } = require("node:stream");
+var { compile, split, join } = require("./streammapfilter");
 var getArgs=()=>process.argv.slice(2)
-var unidecode=this.unidecode=require("unidecode")
-var { compileFn, mapStream, filter } = require('./mapfilter');
+var unidecode=require("unidecode")
+
 
 
 //run
@@ -25,10 +26,18 @@ USAGE:
   filters (by default empty lines) and then maps each line parsing a given function s=>transform(s) 
 */
 
-var predicate=compileFn(getArgs().join()||"(s)=>String(s).trim().length>0")
+var predicate=(compile(getArgs().join()||"(s)=>String(s).trim().length>0"));
+
+var predicateAll = (args) => (data) => { 
+  if(!args.length)
+    args.push("(s)=>String(s).trim().length>0");
+  return args.map(s=>compile(s)).every(check=>check(data)); 
+};
 
 
-process
-	.openStdin()
-	.pipe(filter(predicate))
+//Readable.from(process.openStdin())
+process.openStdin()
+  .compose(split("\r?\n"))
+  .filter(predicateAll(getArgs()))
+  .compose(join("\n"))
 	.pipe(process.stdout)

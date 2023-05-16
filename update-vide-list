@@ -1,0 +1,2 @@
+#!/bin/bash
+cho "var videolist=" > $HOME/git/http/video/videolist.js;  p $HOME/Videos/mp4/porn-mp4/* /media/e/bbR7qvRSTN4BmaJ1/porn/**/* |  p2json  >> $HOME/git/http/video/videolist.js

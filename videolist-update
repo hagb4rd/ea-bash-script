@@ -1,0 +1,5 @@
+#!/bin/bash
+videofile="$HOME/git/http/video/videolist.js"
+echo "var videolist=" > "$videofile"
+json "$@" >> "$videofile"
+cat "$videofile"

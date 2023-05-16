@@ -1,0 +1,4 @@
+#!/bin/bash
+# This script created by AQEMU
+dir=/var/lib/vmalpine
+/usr/bin/qemu-system-x86_64  -soundhw ac97 -machine accel=kvm -m 1024 -hda "${dir}/alpine.qcow2" -net nic,macaddr=52:54:00:f4:78:8a,model=virtio -net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup -rtc base=localtime -virtfs local,id=shared_folder_dev_0,path=/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b,security_model=none,mount_tag=shared0 -pflash "/var/lib/vmalpine/OVMF.fd" -name "alpine" $*

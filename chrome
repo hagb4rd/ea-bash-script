@@ -1,1 +1,2 @@
-firejail --name=chromium --noprofile --net=none --protocol=unix chromium
+#!/bin/bash
+google-chrome --proxy-server="socks://localhost:9050"

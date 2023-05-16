@@ -3,7 +3,7 @@
 firejaildir="$1"
 
 if [[ ! -d $firejaildir ]]; then
-  notify "Missing Argument Error\nf-restore <firejaildir>"
+  notify 'Missing Argument Error: f-restore <firejaildir>'
   exit 1
 fi
 
@@ -22,7 +22,7 @@ cachebackup="$HOME/Downloads/backup/.cache/mozilla"
 
 
 rm -rf "${profile}.bak"
-cp -a "$verbose" "$profile" "${profile}.bak"
+#cp -a "$verbose" "$profile" "${profile}.bak"
 
 
 cp -f "$profile/places.sqlite" "$profilebackup/places.sqlite"

@@ -1,9 +1,2 @@
 #!/bin/bash
-giffile=~/git/http/video/gif2.js; 
-echo "var gifList=" > "$giffile"; 
-#echo "var gifList=" > "$giffile"; 
-p /home/e/Pictures/gif/**/*.gif | p2json >> "$giffile"; 
-
-videolist=~/git/http/video/videolist.js; 
-echo "var videolist=" > "$videolist"; 
-p /home/e/Videos/mp4/porn-mp4/* /home/e/Videos/mp4/*  /media/e/bbR7qvRSTN4BmaJ/porn/*.* | p2json >> "$videolist";
+echo "var videolist=" > /home/e/git/http/video/videolist.js;  p /home/e/Videos/mp4/porn-mp4/* /media/e/bbR7qvRSTN4BmaJ1/porn/**/* |  p2json  >> /home/e/git/http/video/videolist.js

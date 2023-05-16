@@ -1,0 +1,9 @@
+#!/bin/bash
+trashcan=/tmp/trash
+targetdir="${1:-$trashcan}"
+mkdir -p "$trashcan" 2> /dev/null
+while read line; do
+  if [[ -f "$line" ]];
+    mv -v -t "$targetdir" "$line"
+  fi
+done

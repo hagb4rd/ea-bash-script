@@ -1,0 +1,31 @@
+#!/bin/bash
+# clean up firejail working/private-home directory
+firejaildir="$1"
+mdir="$HOME/Documents/md"
+mkdir -p "$mdir" 2> /dev/null
+
+h() {
+  local h2='#--------------------------------------------------------'
+  local h1='#========================================================'
+
+  echo $h1
+  echo "#\t$*"
+  echo $h2
+}
+
+
+if [[ ! -d $firejaildir ]]; then
+  notify "Missing Argument Error\nf-archive <firejaildir>"
+  exit 1
+fi
+
+cd "$firejaildir"
+
+
+# markdown library
+h removing markdown duplicates
+p **/*.md | filter-file | filter 's=>/\(\d+\)\.md$/.test(s)' | remove-all
+h sanitizing markdown files
+p **/*.md | filter-file | sanitize
+h moving markdown documents to $mdir
+p **/*.md | filter-file | remove-all "$mdir"

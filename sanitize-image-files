@@ -1,0 +1,14 @@
+#!/bin/bash
+while read line; do       
+      result=($(identify "$line" 2> /dev/null)); 
+      format=".${result[1]}"; 
+      name="${result[0]}";
+      size="${result[2]}";
+      target="${name%.*}""$format"; 
+      if [[ ! -z "$format" ]] && [[ ! "$name" = "$target" ]]; then 
+         mv "$name" "$target" 2> /dev/null
+      fi
+      if [[ -f "$target" ]]; then 
+        echo "$target"; 
+      fi
+    done | sanitize

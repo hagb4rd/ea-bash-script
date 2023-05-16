@@ -1,22 +1,28 @@
 #!/bin/bash
 file="$1"
 
-if [[ -z "$file" ]]; then
+if [[ ! -f "$file" ]]; then
 	file="${HOME}/Pictures/_exported/1.jpg"
 fi
 
-f=$(realpath "$file")
-echo "$f"
+imgrealpath=$(realpath "$file")
 
-if [[ -d "$f" ]]
-	then d="$f"
-elif [[ -f "$f" ]] 
-	then startat="--start-at $f"
- 	d=$(dirname "$f")
+
+if [[ -d "$file" ]]; then 
+  d="$file"
+elif [[ -f "$file" ]];	then 
+  startat="--start-at $file"
+ 	d=$(dirname "$file")
 else 
 	d="${HOME}/Pictures/_exported"
 	f="${HOME}/Pictures/_exported"
 fi    
+
+
+#echo file: "$file" 
+#echo realpath: "$imgrealpath"
+#echo dir: "$d"
+#exit 0;
 
 
 # --min-dimension 256x256
@@ -38,7 +44,8 @@ args=(--scale-down --scroll-step 200 -S mtime -R -Z --auto-zoom \
   --action4 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \	
   --action5 ";[drawing]drawing %F" \
   --geometry 720x900+720+0 \
-  --start-at "$f")
+  --start-at "$file" \
+  "$d")
 
 
 feh "${args[@]}" 

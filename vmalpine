@@ -11,7 +11,7 @@ if [[ -d "$mountdir" ]]; then
 fi
 
 args=(-machine accel=kvm \
-#-nographic \
+#  -nographic \
   #-monitor unix:/root/monitor.sock,server,nowait \
 #	-monitor stdio \
 	#-vga none \
@@ -20,7 +20,7 @@ args=(-machine accel=kvm \
 	-hda "${dir}/alpine.qcow2" \
 #  -cdrom "/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/alpine.iso" \
 #  -boot c \
-	-virtfs local,id=shared_folder_dev_0,path="${mountdir}",security_model=none,mount_tag=shared0 \
+#	-virtfs local,id=shared_folder_dev_0,path="${mountdir}",security_model=none,mount_tag=shared0 \
 	-net nic,macaddr=52:54:00:f4:78:8a,model=virtio \
 	-net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup \
 # 	-netdev bridge,br=br0,id=n1,helper=/lib/qemu/qemu-bridge-helper -device virtio-net,netdev=n1
@@ -30,5 +30,6 @@ args=(-machine accel=kvm \
   -drive if=pflash,format=raw,readonly=on,file=/var/lib/vmalpine/OVMF.fd \
   -drive if=pflash,format=raw,file=/var/lib/vmalpine/OVMF_VARS.fd \
 #	-pflash "/var/lib/vmalpine/OVMF.fd" \
-	-name "alpine")
+	-name "alpine" \
+	"$@")
 /usr/bin/qemu-system-x86_64 "${args[@]}"

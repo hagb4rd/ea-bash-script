@@ -1,11 +1,12 @@
 #!/bin/bash
 # clean up firejail working/private-home directory
-firejaildir="$1"
+#firejaildir="$1"
+firejaildir="/home/e/firejail/openbox"
 
-if [[ ! -d $firejaildir ]]; then
-  notify 'Missing Argument Error: f-restore <firejaildir>'
-  exit 1
-fi
+#if [[ ! -d $firejaildir ]]; then
+#  notify 'Missing Argument Error: f-restore <firejaildir>'
+#  exit 1
+#fi
 
 verbose="-v"
 profile="${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"

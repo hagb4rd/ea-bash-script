@@ -1,30 +1,37 @@
 #!/bin/bash
 # enable ipv4 forwarding
+# enable ipv4 forwarding
 echo "1" > /proc/sys/net/ipv4/ip_forward
 
-# netfilter cleanup
+#localnet=10.10.20.0/24
+localnet=192.168.1.0/24
+
+
+
+ netfilter cleanup
 iptables --flush
 iptables -t nat -F
 iptables -X
 iptables -Z
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
-iptables -P FORWARD ACCEPT
+iptables -P FORWARD DROP
 # netfilter network address translation
-iptables -t nat -A POSTROUTING -o eth0 -s 10.10.20.0/24 -j MASQUERADE
-#iptables -t nat -A POSTROUTING -o eth0 -s 10.10.30.0/24 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o eth0 -s "$localnet" -j MASQUERADE
 
-#iptables -A INPUT -i lo -s 127.0.0.0/8 -j ACCEPT
-#iptables -A OUTPUT -o lo -d 127.0.0.0/8 -j ACCEPT
-#iptables -A INPUT -s 127.0.0.0/8 -j DROP
-#iptables -A OUTPUT -d 127.0.0.0/8 -j DROP
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
 
+iptables -A INPUT -s "$localnet" -p tcp --sport 22 -j ACCEPT
+iptables -A OUTPUT -d "$localnet" -p tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -d "$localnet" -j ACCEPT
+iptables -A FORWARD -s "$localnet" -j ACCEPT
 
-iptables -A INPUT -s 10.10.20.0/24 -p tcp --sport 22 -j ACCEPT
-iptables -A OUTPUT -d 10.10.20.0/24 -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -j DROP
+iptables -A OUTPUT -j DROP
+iptables -A FORWARD -j DROP
 
 ip6tables --flush
-ip6tables -t nat -F
 ip6tables -X
 ip6tables -Z
 ip6tables -P INPUT DROP
@@ -34,7 +41,8 @@ ip6tables -A INPUT -j DROP
 ip6tables -A OUTPUT -j DROP
 ip6tables -A FORWARD -j DROP
 
-
+#iptables-restore /etc/iptables.save
+#ip6tables-restore /etc/ip6tables.save
 iptables-save
 ip6tables-save
 

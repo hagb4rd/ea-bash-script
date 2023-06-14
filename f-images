@@ -1,6 +1,6 @@
 #!/bin/bash
 home=~/firejail/twitter
-pushd$homee
+pushd "$home"
 id=$(hhash)
 [[ ! -d ~/Pictures/.txt ]] && mkdir -p ~/Picures/.txt
 cat **/images*.txt | sort > ~/Pictures/.txt/$id.txt

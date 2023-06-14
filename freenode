@@ -1,0 +1,4 @@
+#!/bin/bash
+#db=(/home/e/Documents/irccloud-export-170954-2022-06-18-21-41-18/431968-freenode/*.txt)
+db=(/home/e/git/ea-stream/freenode-logs.txt)
+grep -h "$@" "${db[@]}"

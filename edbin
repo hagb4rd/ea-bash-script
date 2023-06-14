@@ -16,7 +16,7 @@ rl(){
 
 if which "$1"; then 
 	fullpath=$(which "$1");
-	xed "$fullpath" || nano "$fullpath"
+	nano "$fullpath"
 else
 	fullpath="$HOME/.local/bin/$1"
 

@@ -2,11 +2,11 @@
 
 args=(--noprofile \
 	--net=br0 \
-	--dns=8.8.8.8 \
 #	--ip=192.168.8.129 \
 #	--defaultgw=192.168.8.1 \
 	--netfilter=$HOME/.firejail/nolocal.net \
 	--netfilter6=$HOME/.firejail/rules-ipv6.net \
+	--dns=192.168.1.22 \
 	--nogroups \
 	--nonewprivs \
 	--disable-mnt \

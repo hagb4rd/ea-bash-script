@@ -1,2 +1,2 @@
 #!/bin/bash
-netbox --noprofile node $HOME/git/ea-gptchat/index.mjs "$*"
+netbox --noprofile node $HOME/git/ea-gptchat/openai.js "$@"

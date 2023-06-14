@@ -1,5 +1,15 @@
 #!/bin/bash
 file="$1"
+deleteddir="$HOME/Pictures/_deleted"
+deletedfile="$HOME/Pictures/__delete.txt"
+
+delete() {
+  mkdir -p "$deleteddir" 2> /dev/null
+  while read line; do 
+    mv -f -v "$line" "$deleteddir";
+  done
+}
+
 
 if [[ ! -f "$file" ]]; then
 	file="${HOME}/Pictures/_exported/1.jpg"
@@ -38,7 +48,7 @@ fi
 
 args=(--scale-down --scroll-step 200 -S mtime -R -Z --auto-zoom \
 #  -p \
-	--action1 ";[delete]rm %F && echo removing %F | clipboard" \
+	--action1 ";[delete]echo %F >> $deletedfile && echo removing %F | clipboard" \
 	--action2 ";[openbox]cp -f %F /home/e/firejail/openbox/%N && echo /home/e/firejail/openbox/%N | clipboard" \
 	--action3 ";[assets]cp -f %F /home/e/Pictures/assets/%N" \
   --action4 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \	
@@ -49,3 +59,9 @@ args=(--scale-down --scroll-step 200 -S mtime -R -Z --auto-zoom \
 
 
 feh "${args[@]}" 
+delete < "$deletedfile"
+rm -rf "$deletedfile"
+toucn "$deletefile"
+echo DONE
+
+

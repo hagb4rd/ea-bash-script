@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var fs=require("node:fs/promises");
+var path=require("node:path");
+
+var walkdir = async function*(pathdir) { var dir = await fs.opendir(pathdir); for await (var dirent of dir) { if(dirent.isDirectory()) { yield* walkdir(path.join(pathdir, dirent.name)); } else { yield dirent; }}}
+
+var p="/home/e/Documents"
+
+for await(var f of walkdir(p)) { console.log(f); }

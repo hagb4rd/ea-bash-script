@@ -1,0 +1,3 @@
+#!/bin/bash
+source gamma-base
+gamma_reset

@@ -1,0 +1,14 @@
+#!/bin/bash
+pid="${1:-openbox}"
+args=(--apparmor.print="$pid" \
+  --caps.print="$pid" \
+  --cpu.print="$pid" \
+  --dns.print="$pid" \
+  --fs.print="$pid" \
+  --net.print="$pid" \
+  --netfilter.print="$pid" \
+  --netfilter6.print="$pid" \
+  --profile.print="$pid" \
+#  --seccomp.print="$pid" \
+  --protocol.print="$pid")
+firejail "${args[@]}"

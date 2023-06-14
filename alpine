@@ -1,13 +1,37 @@
 #!/bin/bash
 # This script created by AQEMU
 dir=/var/lib/vmalpine
-args=(-soundhw ac97 \
-	-machine accel=kvm \
-	-m 1024 \
+mountdir="/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b"
+mkdir -p "$mountdir" 2> /dev/null
+mount /dev/sda4 "$mountdir"
+#chown -hR e:e "$mountdir"
+
+if [[ -d "$mountdir" ]]; then
+  virtfs=("-virtfs" "local,id=shared_folder_dev_0,path=${mountdir},security_model=none,mount_tag=shared0")
+fi
+
+args=(-machine accel=kvm \
+#  -nographic \
+#  -display none \
+  -monitor unix:/root/vmalpine.sock,server,nowait \
+#	-monitor stdio \
+	#-vga none \
+#  -soundhw ac97 \
+	-m 512 \
 	-hda "${dir}/alpine.qcow2" \
+#  -cdrom "/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/alpine.iso" \
+#  -boot c \
+	-virtfs local,id=shared_folder_dev_0,path="${mountdir}",security_model=none,mount_tag=shared0 \
+#	-netdev tap,id=blah0,ifname=tap0,br=br0,script=/usr/local/sbin/qemu-ifup -device e1000,netdev=blah0,mac=52:54:98:76:54:32 \
 	-net nic,macaddr=52:54:00:f4:78:8a,model=virtio \
 	-net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup \
-	-rtc base=localtime \
-	-pflash "/var/lib/vmalpine/OVMF.fd" \
+# 	-netdev bridge,br=br0,id=n1,helper=/lib/qemu/qemu-bridge-helper -device virtio-net,netdev=n1
+#  -net nic \
+#  -net user,hostfwd=tcp::2222-:22 \
+#	-rtc base=localtime \
+  -drive if=pflash,format=raw,readonly=on,file=/var/lib/vmalpine/OVMF.fd \
+  -drive if=pflash,format=raw,file=/var/lib/vmalpine/OVMF_VARS.fd \
+#	-pflash "/var/lib/vmalpine/OVMF.fd" \
 	-name "alpine")
 /usr/bin/qemu-system-x86_64 "${args[@]}"
+

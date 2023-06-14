@@ -12,6 +12,8 @@ rmmod option
 rmmod usb_wwan
 rmmod usbserial
 rmmod uas
+rmmod x86_pkg_temp_thermal
+rmmod br_netfilter
 #sudo ifbr0
 #netdev=enx001e101f0000
 export netdev=eth0

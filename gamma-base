@@ -3,8 +3,10 @@
 # -gamma_inc
 # -gamma_dec
 
-gamma=10
+defaultgamma=10
+gamma="$defaultgamma"
 gammafile="$HOME/.gamma"
+
 
 
 read_gamma() {
@@ -35,6 +37,15 @@ gamma_dec() {
 	gamma=$((gamma-1))
 	xgamma -gamma $(print_gamma $gamma) && write_gamma
 }
+
+gamma_reset() {
+	gamma="$defaultgamma"
+	xgamma -gamma $(print_gamma $gamma) && write_gamma
+}
+
+
+
+
 
 if [[ ! -f "$gammafile" ]]; then
 	write_gamma

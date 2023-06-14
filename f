@@ -19,13 +19,13 @@ mkdir -p "$firejaildir"
 
 
 netfilter="/home/e/.firejail/nolocal.net"
-#netfilter6="/home/e/.firejail/rejectipv6.net"
+netfilter6="/home/e/.firejail/rejectipv6.net"
 #netfilter="/home/e/.firejail/rules-ipv4.net"
-netfilter6="/home/e/.firejail/rules-ipv6.net"
+#netfilter6="/home/e/.firejail/rules-ipv6.net"
 #netfilter6="/home/e/.firejail/nolocal6.net"
 #shift
 shift
-firefoxcmd="firefox --profile /home/e/.mozilla/firefox/1rymm6oy.twitter $url"
+firefoxcmd="firefox --no-remote --profile /home/e/.mozilla/firefox/1rymm6oy.twitter $url"
 #firefox
 netdev=br0
 args=(--name="$pid" \
@@ -50,7 +50,7 @@ args=(--name="$pid" \
 #  "--dns=fe80::210:20ff:fe30:4050" \
 #	--ip=192.168.8.11 \
   --dns=1.1.1.1 \
-	--dns=8.8.8.8 \
+#	--dns=8.8.8.8 \
 	--private-cwd="$HOME" \
   --noinput \
 	--noroot \
@@ -71,7 +71,6 @@ args=(--name="$pid" \
 	--nou2f \
 	--nodvd \
 #	--nosound \
-	--apparmor \
 #	--no3d \
 	--notv \
 	--novideo \
@@ -124,10 +123,11 @@ if ! firejail --ls=$pid ~; then
   rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 
   rm -rf "${firejaildir}/cnd"
-  cp -a $HOME/git/http/cdn "${firejaildir}"
+  #cp -a $HOME/git/http/cdn "${firejaildir}"
 
   # __TEMPOFF
   "$HOME/.local/bin/f-restore" "$firejaildir"
+  cp /home/e/Downloads/backup/.mozilla/firefox/prefs.f.js "$firejaildir/.mozilla/firefox/1rymm6oy.twitter/prefs.js"
   firejail "${args[@]}"
 else 
   firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" -private-window "$url" < /dev/null

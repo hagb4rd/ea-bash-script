@@ -2,10 +2,10 @@
 #export HOME=/home/fernando
 export WINEPREFIX="$HOME/.wine";
 export WINEARCH="win32"
-private="$HOME/firejail/halo"
-dir="${WINEPREFIX}/drive_c/Program Files/Microsoft Games/Halo Custom Edition"
-windir="C:\\Program Files\\Microsoft Games\\Halo Custom Edition"
-netdev=br0
+private="$HOME/firejail/haloce"
+dir="${WINEPREFIX}/drive_c/GOG Games/System Shock 2"
+windir="C:\\GOG Games\\System Shock 2"
+netdev=none
 netfilter="$HOME/.firejail/halo.net"
 netfilter6="$HOME/.firejail/rejectipv6.net"
 #netfilter6="$HOME/.firejail/rules-ipv6.net"
@@ -13,7 +13,7 @@ archive=/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/jailhalo.tar.gz
 #archive="$HOME/Downloads/backup/haloce/firejail/jailhalo.tar.gz"
 if [[ -z $1 ]]; then 
   #cmd=(sh -c 'wine haloce_1.10_cracked.exe & wine AutoHotkey.exe taxi.ahk')
-  cmd=(sh -c 'wine haloce_1.10_cracked.exe -console & wine AutoHotkey.exe taxi.ahk')
+  cmd=(wine SS2.exe)
 else
   cmd="$@"
 fi
@@ -24,17 +24,17 @@ fi
 #cd "$dir"
 #--private-tmp --noroot --caps.drop=all --disable-mnt --noautopulse 
 #firejail --noprofile --name=haloce --net=$netdev --netfilter=/home/e/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
-args=(--name=haloce \
+args=(--name=jailshock \
   --profile=wine \
 #	--noprofile \
 #  --apparmor \
-	--protocol=unix,inet,inet6 \
+	--protocol=unix \
 	--private="$private" \
 	--private-cwd="${dir}" \
-	--net=$netdev \
-	--netfilter="$netfilter" \
-	--netfilter6="$netfilter6" \
-	--dns=1.1.1.1 \
+	--net=none \
+#	--netfilter="$netfilter" \
+#	--netfilter6="$netfilter6" \
+#	--dns=1.1.1.1 \
 #  --dns=8.8.8.8 \
 #	--defaultgw=192.168.8.1 \
 #	--ip=192.168.8.6 \
@@ -47,12 +47,12 @@ args=(--name=haloce \
 	--nonewprivs \
 	--nodbus \
 #	--shell=none \
-	--nosound \
+#	--nosound \
 	--nogroups \
 	--nodvd \
 	--noautopulse \
 	--notv \
-	--novideo \
+#	--novideo \
 	--ipc-namespace \
 	--deterministic-exit-code \
 	--disable-mnt \

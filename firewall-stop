@@ -2,6 +2,10 @@
 # enable ipv4 forwarding
 echo "1" > /proc/sys/net/ipv4/ip_forward
 
+#iptables-save > /etc/iptables.save
+#ip6tables-save > /etc/ip6tables.save
+
+
 # netfilter cleanup
 iptables --flush
 iptables -t nat -F
@@ -24,7 +28,6 @@ iptables -t nat -A POSTROUTING -o eth0 -s 10.10.20.0/24 -j MASQUERADE
 #iptables -A OUTPUT -d 10.10.20.0/24 -p tcp --dport 22 -j ACCEPT
 
 ip6tables --flush
-ip6tables -t nat -F
 ip6tables -X
 ip6tables -Z
 ip6tables -P INPUT ACCEPT
@@ -33,9 +36,5 @@ ip6tables -P FORWARD ACCEPT
 #ip6tables -A INPUT -j DROP
 #ip6tables -A OUTPUT -j DROP
 #ip6tables -A FORWARD -j DROP
-
-
-iptables-save
-ip6tables-save
 
 echo FIREWALL STOPPED

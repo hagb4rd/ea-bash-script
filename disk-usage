@@ -1,0 +1,8 @@
+#!/bin/bash
+dir="${1:-$PWD}"
+du -d 0  -d 1 -x "$dir" \
+  | sort -k 1nr \
+  | awk '{ print $2 }' \
+  | while read line; do
+      du -d 0 -h -x "$line"
+    done

@@ -8,6 +8,9 @@ if [[ ! -d $dir ]]; then
    echo "$dir"
    exit 1
 fi
-xsel -ob | while read f; do
-  [[ -f $f ]] && ln -s -t "$dir" 
-done
+f="$(xsel -ob)"
+echo ln -s "$f" "$dir"/"$(filename "$f")"
+ln -s "$f" "$dir"/"$(filename "$f")"
+#while read f; do
+#		echo ln -s "$f" "$dir/$(filename $f)"
+#done

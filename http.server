@@ -1,2 +1,5 @@
 #!/bin/bash
-cd /tmp/shared0/git/http && (python3.7 -m http.server --bind localhost 9150) < /dev/null
+bind=127.0.0.1
+port="${2:-8000}"
+publichtml="${1:-/home/e/git/http}"
+python3.8 -m http.server -d $"publichtml" --bind "$bind" "$port"

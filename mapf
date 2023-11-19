@@ -7,7 +7,7 @@ var net=require("net")
 var qs=require("querystring")
 var stream = require("node:stream");
 var { Readable, filter, compose, map } = require("node:stream");
-var { compile, split, join } = require("./streammapfilter");
+var { readLine, compile, split, join } = require("./streammapfilter");
 var getArgs=()=>process.argv.slice(2)
 
 //run
@@ -32,8 +32,7 @@ var compileAll = (args) => (data) => {
   return args.map(s=>compile(s)).reduce((aggr,next)=>next(aggr), data); 
 };
 
-process.openStdin()
-  .compose(split("\r?\n"))
+Readable.from(readLine(process.openStdin()))
   .map(compileAll(getArgs()))
   .compose(join("\n"))
 	.pipe(process.stdout)

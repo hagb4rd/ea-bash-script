@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -z $1 ]]; then
+  nano "$logs_gpt"
+else
+  grep -B 10 -A 50 "$@" "$logs_gpt"
+fi

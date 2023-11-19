@@ -1,0 +1,1 @@
+firejail --net=eth0 --protocol=unix,inet --netfilter=~/.firejail/nolocal.net --x11=xephyr chromium --temp-profile

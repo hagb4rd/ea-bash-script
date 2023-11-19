@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#alias sudo ip netns tor-namespace='sudo ip netns exec tor-namespace'
+
+NSGATEWAY="10.10.10.1"
+NSADDRESS="10.10.10.10"
+NSNETWORK="10.10.10.0/24"
+
+#1. Create a new network namespace:
+#  ```
+   sudo ip netns add tor-namespace
+#   ```
+#
+#2. Create a virtual network interface pair:
+#   ```
+   sudo ip link add veth0 type veth peer name veth1
+#   ```
+#
+#3. Move `veth1` to the new network namespace:
+#   ```
+    sudo ip link set veth1 netns tor-namespace
+    sudo ip link set lo netns tor-namespace
+#   ```
+#
+#4. Set up IP addresses for the virtual interfaces:
+#   ```
+    sudo ip addr add $NSGATEWAY/24 brd + dev veth0
+    sudo ip netns exec tor-namespace ip addr add $NSADDRESS/24 brd + dev veth1
+#   ```
+#
+#5. Enable the virtual interfaces:
+#   ```
+    sudo ip link set veth0 up
+    sudo ip netns exec tor-namespace ip link set veth1 up
+    sudo ip netns exec tor-namespace ip link lo up
+    sleep 2s
+#   ```
+#
+#6. Set up routing:
+#   ```
+#		sudo ip netns exec tor-namespace iptables -P INPUT DROP
+#		sudo ip netns exec tor-namespace iptables -A INPUT -i lo -j ACCEPT
+#		sudo ip netns exec tor-namespace iptables -A OUTPUT -o lo -j ACCEPT
+
+    sudo ip netns exec tor-namespace ip route add default via "$NSGATEWAY"
+    sudo ip netns exec tor-namespace firewall-stop
+    sudo iptables -t nat -A POSTROUTING -s "$NSNETWORK" -o eth0 -j MASQUERADE
+    sudo sysctl net.ipv4.ip_forward=1
+#   ```
+#
+#   Replace `<your_physical_interface>` with the name of your physical network interface (e.g., eth0).
+#
+#7. Run the Tor daemon in the new network namespace:
+#   ```
+#   sudo ip netns exec tor-namespace tor
+#   ```
+#
+sudo ip netns exec tor-namespace ip addr
+sudo ip netns exec tor-namespace ip route
+sudo ip netns exec tor-namespace iptables -L -n -v -t nat
+sudo ip netns exec tor-namespace tor -f /etc/tor/torrc
+
+

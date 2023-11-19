@@ -1,2 +1,7 @@
 #!/bin/bash
-netbox --noprofile node $HOME/git/ea-gptchat/openai.js "$@"
+#curl https://api.openai.com/v1/completions \
+#  -H "Content-Type: application/json" \
+#  -H 'Authorization: Bearer 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' \
+#  -H 'OpenAI-Organization: org-5IWsG4lMgUEzQO6vogfq41qE' \
+#  -d '{"model": "text-davinci-003", "prompt":"what questions can i ask you?", "temperature": 0, "max_tokens": 40}'
+netbox bash -c "'gptchat | tee -a '"$HOME"'/Documents/logs/chatgpt.txt'"

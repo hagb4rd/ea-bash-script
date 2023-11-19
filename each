@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ -z $1 ]]; then
+	echo 'USAGE: each [command]; // executes command FILE on each file in cd recursively; try "each  echo"'
+	exit 1;
+fi
+
+
+find "$PWD" -type f 2> /dev/null | filter-file | while read f; do "$@" "$f" 2> /dev/null; done
+

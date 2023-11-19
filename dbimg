@@ -1,9 +1,12 @@
 #!/bin/bash
+targetdir="$HOME/.sha1sum"; 
+mkdir -p "$targetdir"; 
+
 while read f; do 
-    sum=$(sha1sum < "$f");  
-    targetdir="$HOME/Pictures/.sha1sum"; 
-    mkdir -p "$targetdir"; 
-    target="$targetdir/$sum"; 
-    mv -v "$f" "$target"; 
-    ln -s "$target" "$f"; 
+    if [[ -f $f ]] && [[ ! -L $f ]]; then 
+      sum=$(sha1sum -b < "$f" | awk '{ print $1 }');     
+      target="$targetdir/$sum"; 
+      mv -v "$f" "$target"; 
+      ln -s "$target" "$f"; 
+    fi
 done

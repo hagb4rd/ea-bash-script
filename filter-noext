@@ -1,0 +1,2 @@
+#!/bin/bash
+filter 's=>{ var rx=/.*\.[a-zA-Z]{3,4}$/; return !rx.test(s); }'

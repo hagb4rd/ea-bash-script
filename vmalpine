@@ -1,9 +1,9 @@
 #!/bin/bash
 # This script created by AQEMU
 dir=/var/lib/vmalpine
-mountdir="/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b"
-mkdir -p "$mountdir" 2> /dev/null
-mount /dev/sda4 "$mountdir"
+#mountdir="/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b"
+#mkdir -p "$mountdir" 2> /dev/null
+#mount /dev/sda4 "$mountdir"
 #chown -hR e:e "$mountdir"
 
 if [[ -d "$mountdir" ]]; then
@@ -21,7 +21,7 @@ args=(-machine accel=kvm \
 	-hda "${dir}/alpine.qcow2" \
 #  -cdrom "/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/alpine.iso" \
 #  -boot c \
-	-virtfs local,id=shared_folder_dev_0,path="${mountdir}",security_model=none,mount_tag=shared0 \
+#	-virtfs local,id=shared_folder_dev_0,path="${mountdir}",security_model=none,mount_tag=shared0 \
 #	-netdev tap,id=blah0,ifname=tap0,br=br0,script=/usr/local/sbin/qemu-ifup -device e1000,netdev=blah0,mac=52:54:98:76:54:32 \
 	-net nic,macaddr=52:54:00:f4:78:8a,model=virtio \
 	-net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup \

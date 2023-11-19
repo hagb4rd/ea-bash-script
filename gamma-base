@@ -2,54 +2,52 @@
 # sourced by
 # -gamma_inc
 # -gamma_dec
+# -gamma_reset
 
+#setup
 defaultgamma=10
-gamma="$defaultgamma"
+mingamma=5
+maxgamma=19
 gammafile="$HOME/.gamma"
-
-
-
-read_gamma() {
-	read x < "$gammafile"
-	gamma="$x"
-}
-
-write_gamma() {
-	printf "$gamma" > "$gammafile"
-}
-
-
-print_gamma() {
+#private 
+print_float() {
 	local gamma=$1
 	a=$((gamma/10))
 	b=$((gamma%10))
 	printf '%s.%s' "$a" "$b"
 }
-
+store() {
+    fgamma=$(print_float $gamma)
+	xgamma -gamma $fgamma && printf "$gamma" > "$gammafile"
+	echo "gamma $fgamma" | clipboard
+}
+restore() {
+    if [[ ! -f $gammafile ]]; then
+        gamma_reset    
+    fi
+	read x < "$gammafile"
+	gamma="$x"
+}
+# interface
 gamma_inc() {
-	read_gamma
+	restore
 	gamma=$((gamma+1))
-	xgamma -gamma $(print_gamma $gamma) && write_gamma
+	if [[ $gamma -gt $maxgamma ]]; then
+		gamma=$maxgamma
+	fi
+	store
 }
-
 gamma_dec() {
-	read_gamma
+	restore
 	gamma=$((gamma-1))
-	xgamma -gamma $(print_gamma $gamma) && write_gamma
+	if [[ $gamma -lt $mingamma ]]; then
+		gamma=$mingamma
+	fi
+	store
 }
-
 gamma_reset() {
 	gamma="$defaultgamma"
-	xgamma -gamma $(print_gamma $gamma) && write_gamma
+	store
 }
-
-
-
-
-
-if [[ ! -f "$gammafile" ]]; then
-	write_gamma
-else
-	read_gamma
-fi
-
+#init
+restore

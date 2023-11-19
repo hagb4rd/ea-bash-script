@@ -3,11 +3,18 @@ rx='kill'
 
 if [[ -z "$1" ]]; then
 	firejail --tree
-elif [[ $rx =~ $1 ]]; then
+elif [[ "$1" = "kill" ]]; then
+
 	echo shutting down firejail containers
 	echo ----------------------------------
 	firejail --list
 	firejail --list | while IFS=: read  a b c d; do firejail --shutdown="$a"; done
 else
-	firejail "$*"
+	echo shutting down firejail containers
+	echo ----------------------------------
+	for pid in "$@"; do
+		echo firejail --shutdown="$pid"
+		firejail --shutdown="$pid"
+	done
+
 fi

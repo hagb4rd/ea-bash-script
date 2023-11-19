@@ -1,0 +1,4 @@
+#!/bin/bash
+cp ~/.npmrc ./
+npm login --scope=@NAMESPACE --auth-type=legacy --registry=https://npm.pkg.github.com
+

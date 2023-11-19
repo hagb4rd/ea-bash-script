@@ -4,11 +4,12 @@ default='s=>String(s)';
 custom="${custom:-$default}";
 #custom="'$custom'";
 #exit 0;
-transliterate(){ mapf 's=>{ var u=require("unidecode"); var p=String(s).split("/"); var f=p.splice(-1)[0].split(".");  var path=p.length>1?p.join("/")+"/":""; var ext=`.${f.length>1?f.splice(-1)[0]:""}`.toLowerCase(); var basename=u(f.join(".")).replaceAll(/[^a-zA-Z0-9\.]+/g, "-").replace(/^[-]+/,"").replace(/[-]+$/,"").toLowerCase(); return `${path}${basename}${ext} ${s}`; }'; };
+transliterate(){ mapf 's=>{ var u=require("unidecode"); var p=String(s).split("/"); var f=p.splice(-1)[0].split(".");  var parent=p.length>1?p.join("/").replaceAll(" ","\ "):""; var ext=`.${f.length>1?f.splice(-1)[0]:""}`.toLowerCase(); var basename=u(f.join(".")).replaceAll(/[^a-zA-Z0-9\.]+/g, "-").replaceAll(/^[-]*|[-]*$/g,"").replaceAll(/[-]{2,}/g,"-").toLowerCase(); var fullPath=`${parent}/${basename}`; if(ext) fullPath+=`${ext}`; return `${fullPath} ${String(s).replaceAll(" ","\ ")}`; }'; };
 #transliterateCustom(){ mapf "'"$1"'"; };
 filter-file \
   | transliterate \
   | while read newname file; do 
+  	#echo "[$newname] [$file]"; 
       if [[ -f $newname ]]; then
         #printf '[%s][%s]\n' "$file" "$newname";
         tmpfilesum=($(sha1sum -b "$file"))

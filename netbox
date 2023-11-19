@@ -1,26 +1,74 @@
 #!/bin/bash
 
+cmd="${1:-bash}"
+
+shift
+
+if [[ -z $1 ]]; then
+	cmd=(bash)
+else 
+	cmd=("$@")
+fi
+
+
+#netdev=br0
+#netdev=eth0
 args=(--noprofile \
-	--net=br0 \
-#	--ip=192.168.8.129 \
-#	--defaultgw=192.168.8.1 \
-	--netfilter=$HOME/.firejail/nolocal.net \
-	--netfilter6=$HOME/.firejail/rules-ipv6.net \
-	--dns=192.168.1.22 \
+#	--protocol=netlink,inet,inet6 \
+	--protocol=netlink,unix,inet,inet6 \
+	--net=$netdev \
+#	--ip=10.10.20.21 \
+#	--defaultgw=10.10.20.1 \
+	--netfilter=$HOME/.firejail/nolocal_.net \
+#	--netfilter=/usr/local/etc/firejail/nolocal_.net \
+	--netfilter6=/usr/local/etc/firejail/rejectipv6.net \
+#	--netfilter6=$HOME/.firejail/rules-ipv6.net \
+#	--netfilter6=$HOME/.firejail/rejectipv6.net \
+	--dns=8.8.8.8 \
 	--nogroups \
 	--nonewprivs \
 	--disable-mnt \
 	--private-tmp \
 	--seccomp \
 	--caps.drop=all \
-	--private-dev \
+#	--private-dev \
 	--private-tmp \
-	--disable-mnt \
 	--noroot \
 	--nogroups \
-	--ipc-namespace \
+#	--ipc-namespace \
 	--nosound \
+	--noautopulse \
 	--nodbus \
-	--deterministic-exit-code "$@")
+	--deterministic-exit-code \
+	--env=JAIL=netbox \
+	--env=GVFS_DISABLE_FUSE=1 \
+	--env=LANG="C.UTF-8" \
+#	--env=GIO_USE_VFS=local \
+	--rmenv=DESKTOP_SESSION \
+	--rmenv=GNOME_TERMINAL_SCREEN \
+	--rmenv=GNOME_TERMINAL_SERVICE \
+	--rmenv=XDG_SEAT_PATH \
+	--rmenv=GDMSESSION \
+	--rmenv=XDG_DATA_DIRS \
+	--rmenv=GTK3_MODULES \
+	--rmenv=XDG_RUNTIME_DIR \
+	--rmenv=XDG_SESSION_PATH \
+	--rmenv=XDG_SESSION_DESKTOP \
+	--rmenv=XDG_SESSION_ID \
+	--rmenv=XDG_CURRENT_DESKTOP \
+	--rmenv=XDG_VTNR=7 \
+	--rmenv=XDG_CURRENT_DESKTOP \
+	--rmenv=DBUS_SYSTEM_BUS_ADDRESS \
+	--rmenv=DBUS_SESSION_BUS_ADDRESS \
+	--rmenv=GNOME_TERMINAL_SCREEN \
+	--rmenv=SHLVL \
+	--rmenv=GJS_DEBUG_OUTPUT \
+	--rmenv=SESSION_MANAGER \
+	--rmenv=GH_TOKEN \
+	--rmenv=XDG_GREETER_DATA \
+	--rmenv=GTK_MODULES \
+	--rmenv=KDE_FORK_SLAVES \
+	--rmenv=PROMPT_COMMAND \
+	--env=PATH="/usr/sbin:/usr/bin:/sbin:/bin:/home/e/.local/bin:/usr/lib/node/bin")
 #netbox --noprofile curl $*
-firejail "${args[@]}"
+firejail "${args[@]}" -- "${cmd[@]}"

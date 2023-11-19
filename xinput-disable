@@ -1,0 +1,24 @@
+#!/bin/bash
+#xinput disable 6 #power button
+#xinput disable 7 #video bus
+#xinput disable 8 #power button
+#xinput disable 8 #power button
+#xinput disable 11 #video bus
+#xinput disable 12 #video bus
+#xinput disable 13 #video bus
+#xinput disable 14 #video bus
+#xinput disable 15 #video bus
+#xinput disable 16 #video bus
+#xinput disable 17 #video bus
+#xinput disable 18 #video bus
+
+#xinput disable 11 #szh keyb system control
+#xinput disable 10 #szh mouse consumer control
+#xinput list | filter 's=>s.includes("System Control")||(s.includes("Consumer Control")&&s.includes("pointer"))' | mapf 's=>{ var re=new RegExp(".*id=(\\d+).*"); var m=String(s).match(re); return String(m).replaceAll("\n","").split(",")[1]+"\n"; }' | filter 's=>/\d+/.test(s)' | while read id; do xinput disable "$id"; done
+
+for x in {6..18}; do
+	[[ ! $x -eq "9" ]] \
+	&& [[ ! $x -eq "13" ]] \
+	&& xinput disable "$x"
+#	&& printf '%s ' "$x"
+done

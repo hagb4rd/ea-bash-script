@@ -7,7 +7,7 @@ for dev in "$@"; do
     echo "$dev"
     echo "$syspath"
     echo ----------------------------------------
-    udevadm info -a -p "$syspath"
+    udevadm info -aa -p "$syspath"
   fi
 done
   

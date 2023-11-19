@@ -1,2 +1,2 @@
-#!/bin/sh
-irssi -c liberachat
+#!/bin/bash
+PID=liberator HOSTNAME=palladium.libera.chat PRIVATE='--private-home=".tor,.irssi,.local,torrc,.bashrc,.profile"' torbox socat-libera-tor

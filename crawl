@@ -1,0 +1,5 @@
+#!/bin/bash
+#netbox ssh -i .ssh/cao_key crawl@crawl.develz.org
+#netbox ssh -i .ssh/cao_key terminal@crawl.kelbi.org
+#netbox ssh -i .ssh/cao_key joshua@crawl.akrasiac.org
+netbox ssh -i .ssh/cao_key terminal@underhound.eu -p 23

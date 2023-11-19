@@ -1,0 +1,6 @@
+#!/bin/bash
+socat TCP-LISTEN:6697 SOCKS4A:127.0.0.1:libera75jm6of4wxpxt4aynol3xjmbtxgfyjpu34ss4d7r7q2v5zrpyd.onion:6697,socksport=9050 &
+#socat TCP4-LISTEN:6697 SOCKS4A:127.0.0.1:palladium.libera.chat:6697,socksport=9050 &
+#socat openssl-listen:6697 SOCKS4A:127.0.0.1:libera75jm6of4wxpxt4aynol3xjmbtxgfyjpu34ss4d7r7q2v5zrpyd.onion:6697,socksport=9050 &
+sleep 1s
+netstat -tulpn

@@ -1,0 +1,10 @@
+#!/bin/bash
+#cd "$HOME"
+#netbox --private-home="node,jslave,.local" --private-cwd="~/jslave" --caps.drop=all --noroot --nonewprivs --private-dev --disable-mnt --nodbus --ipc-namespace --protocol="inet" node repl.js --botstart
+#gnome-terminal --profile "$terminal" --geometry 100x64+0+0 -- moon -t /home/e/.local/bin/jslave 
+
+terminal="${1:-sea}"
+wmctrl -a "$terminal" ||  gnome-terminal -t "$terminal" --profile "$terminal" --geometry 100x64+0+0 --
+#gnome-terminal --profile blue --geometry 100x64+840+0 -- 
+
+wmctrl -r :ACTIVE: -N sea

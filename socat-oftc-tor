@@ -1,0 +1,6 @@
+#!/bin/bash
+torstart
+#socat TCP-LISTEN:6697 SOCKS4A:127.0.0.1:libera75jm6of4wxpxt4aynol3xjmbtxgfyjpu34ss4d7r7q2v5zrpyd.onion:6697,socksport=9050 &
+socat TCP4-LISTEN:6667 SOCKS4A:127.0.0.1:oftcnet6xg6roj6d7id4y4cu6dchysacqj2ldgea73qzdagufflqxrid.onion:6667,socksport=9050 &
+sleep 2s
+irssi -c OFTC

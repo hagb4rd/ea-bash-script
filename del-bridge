@@ -1,0 +1,5 @@
+#!/bin/bash
+echo 'netdev=eth0' > /etc/environment.d/50-netdev-br0.conf
+export netdev=eth0
+rmmods
+netfilter

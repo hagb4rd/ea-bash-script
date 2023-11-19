@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#nic0=10.10.20.1/24
+#nic1=10.10.20.22/24
+#netaddy=10.10.20.0/24
+
+nic0=192.168.1.1/24
+nic1=192.168.1.100/24
+netaddy=192.168.1.0/24
+
+#nic0=192.168.8.117/24
+#nic1=192.168.8.118/24
+#netaddy=192.168.8.0/24
+
+export netns="${netns:-tor-namespace}"
+ip netns add "$netns"
+ip link add veth0 type veth peer name veth1
+ip link set veth1 netns "$netns"
+ip addr add "$nic0" brd + dev veth0
+ip netns exec "$netns" ip addr add "$nic1" brd + dev veth1
+ip netns exec "$netns" iptables-restore /usr/local/etc/firejail/nolocal.net
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -s "$netaddy" -o eth0 -j MASQUERADE
+

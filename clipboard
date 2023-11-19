@@ -1,4 +1,4 @@
 #!/bin/bash
 xsel -ib
 #output=$(xsel -ob)
-xsel -ob | notify
+xsel -ob | notify --title [clip]

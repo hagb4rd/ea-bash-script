@@ -1,0 +1,2 @@
+#!/bin/bash
+firejail --net=eth0 --protocol=unix,inet,inet6 chromium --temp-profile

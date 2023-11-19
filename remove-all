@@ -1,9 +1,29 @@
 #!/bin/bash
-trashcan=/tmp/trash
-targetdir="${1:-$trashcan}"
-mkdir -p "$trashcan" 2> /dev/null
-while read line; do
-  if [[ -f "$line" ]];
-    mv -v -t "$targetdir" "$line"
+
+trashfile(){
+  sleep 10s
+  local line="$1"
+  if [[ -L "$line" ]]; then
+  	real="$(realpath "$line")"
+	  if [[ -e "$real" ]]; then
+	    rm "$line"
+	    mv "$real" "$line";
+  	fi
   fi
-done
+  if [[ -e "$line" ]]; then
+	  gio trash "$line"
+  fi
+	return 0
+}
+
+param="$*"
+if [[ -z "$param" ]]; then
+	while read line; do
+	  trashfile "$f" &
+	done
+else
+	for f in "$@"; do
+	  trashfile "$f" &
+	done
+fi
+

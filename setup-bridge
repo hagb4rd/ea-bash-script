@@ -1,27 +1,5 @@
 #!/bin/bash
-# bridge setup   
-#ip link del br0
-#br0ip=10.10.20.1/24
-br0ip=192.168.1.1/24
-
-sleep 1s
-brctl addbr br0
-ifconfig br0 "$br0ip" up
-sleep 1s
-
-#/usr/local/sbin/qemu-ifup
-
-
-#ip link add dev br0 type bridge
-#ip link set dev br0 up
-#ip addr add 10.10.20.0/24 brd + dev br0
-
-# enable ipv4 forwarding
-echo "1" > /proc/sys/net/ipv4/ip_forward
-
-/usr/local/sbin/firewall-start
-
-
-
-#host port 80 forwarded to sandbox port 80   
-#iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 10.10.20.10:80
+echo 'netdev=br0' > /etc/environment.d/50-netdev-br0.conf
+export netdev=br0
+rmmods
+netfilter

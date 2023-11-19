@@ -1,0 +1,26 @@
+#!/bin/bash
+moveFile="$1"
+preselectDir="${2:-$HOME/Pictures/assets}"
+targetDir=$(zenity --file-selection --directory --filename="$preselectDir")
+
+errormsg() {
+  local msg="$*"
+  if [[ -z $msg ]]; then
+    echo 'Usage: move-to-directory FILE [OPTIONAL PRESELECTED TARGETDIRECTORY]' 1>&2
+  else
+  	echo "$msg" 1>&2
+  fi
+}
+
+if [[ ! -f moveFile ]]; then
+	errormsg
+	exit 1;
+fi
+
+if [[ ! -d targetDir ]]; then
+	errormsg
+	exit 1;
+fi
+
+sleep 10s;
+mv "$moveFile" "$targetDir"

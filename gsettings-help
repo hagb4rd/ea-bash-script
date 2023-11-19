@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "GIO TOOLS (gsettings, gapplication, gdbus, gresource)"
+echo "============================================================"
+
+
+
+gsettings list-schemas
+gsettings list-schemas | while read schema; do printf '\n[%s]\n-----------\n' $schema; gsettings list-keys $schema | while read key; do printf '%s: %s\n' $key "$(gsettings describe $schema $key)"; done; done;
+
+echo more info on GIO tools -- "$HOME/Documents/gsettings-help-text"
+echo --------
+cat  "$HOME/Documents/gsettings-help-text"
+

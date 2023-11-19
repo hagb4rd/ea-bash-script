@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ -z $1 ]]; then 
+  echo 'usage: shut <pass>' 
+  exit 1
+fi
+pw=$(hashh 128)
+printf '%s\n%s\n' "$pw" "$pw" | passwd "$1"
+unset pw
+

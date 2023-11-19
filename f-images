@@ -1,12 +1,13 @@
 #!/bin/bash
-home=~/firejail/twitter
-pushd "$home"
+home=$HOME/firejail/openbox
+cd "$home"
 id=$(hhash)
-[[ ! -d ~/Pictures/.txt ]] && mkdir -p ~/Picures/.txt
-cat **/images*.txt | sort > ~/Pictures/.txt/$id.txt
-#rm **/images*.txt
-[[ ! -d ~/Pictures/wget ]];  mkdir -p ~/Pictures/wget
-[[ ! -d ~/Pictures/wget/$id ]];  mkdir -p ~/Pictures/wget/$id
-pushd ~/Pictures/wget/id
-netbox wwget -i ~/Pictures/.txt/$id.txt
+[[ ! -d $HOME/Pictures/.txt ]] && mkdir -p $HOME/Picures/.txt
+cat **/images*.txt | sort | tee "$HOME/Pictures/.txt/$id.txt"
+rm **/images*.txt
+exit 0;
+[[ ! -d $HOME/Pictures/new ]];  mkdir -p $HOME/Pictures/new
+[[ ! -d $HOME/Pictures/new/$id ]];  mkdir -p $HOME/Pictures/new/$id
+cd $HOME/Pictures/new/id
+netbox wwget -i $HOME/Pictures/.txt/$id.txt
 

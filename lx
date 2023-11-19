@@ -1,5 +1,24 @@
 #!/bin/bash
 
+#export proxy=socks5://127.0.0.1:9050
+export proxy=localhost:9050
+export WWW_HOME='https://duckduckgo.com'
+
+args=(-accept_all_cookies \
+	-anonymous \
+	-book \
+	-rlogin \
+	-telnet \
+	-show_rate \
+	-nobrowse \
+	-noreverse \
+	-force_html \
+	-ftp \
+	"-homepage=$WWW_HOME")
+
+
+
+
 declare -A search=( \
 	[g]='https://google.com/search?q=' \
 	[d]='https://html.duckduckgo.com/html/?q=' \
@@ -7,22 +26,20 @@ declare -A search=( \
 
 searchengine=$1
 
-url=${search[$searchengine]}
-if [[ ! -z_$url ]]; then
-#	url=${search[g]};
-	echo "[ $1 ] ${url}"
-	shift;
-else
- echo 'starting lynx $*'
+if [[ ! -z $searchengine ]]; then
+	url="${search[$searchengine]}"
+	if [[ ! -z $url ]]; then
+		shift
+	else
+		url="${search[d]}"
+	fi
+	query="$url$*"
 fi
 
-
-query="$url$*"
-
-echo 'torsocks lynx "$query"'
-# || lynx "$query"'
-
-TORSOCKS_USERNAME=eagle1 TORSOCKS_PASSWORD=foxforcefive torsocks lynx "$query"
+#TORSOCKS_USERNAME=eagle1 TORSOCKS_PASSWORD=foxforcefive torsocks lynx "$query"
+#lynx -socks5-proxy=localhost:9050 https://duckduckgo.com
+echo lynx -socks5-proxy="$proxy" "$query"
+lynx -socks5-proxy="$proxy" "${args[@]}" "$query"
 #lynx "$query"
 
 

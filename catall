@@ -1,0 +1,21 @@
+#/bin/bash
+prntfile() {
+	local f=$1;
+	if [[ -f "$f" ]]; then
+		printf %s\\n ""
+		printf %s\\n "$f";
+		printf %s\\n "----------------------------------"
+		cat "$f";
+	fi
+}
+
+kittykat()
+{
+  if [[ -z $1 ]]; then
+	while read f; do prntfile "$f"; done 
+  else
+	for f in "$@"; do prntfile "$f"; done
+  fi
+}
+
+kittykat "$@" | less

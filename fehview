@@ -46,13 +46,17 @@ fi
 #   --start-at "$f")
 
 
-args=(--scale-down --scroll-step 200 -S mtime -R -Z --auto-zoom \
+args=(--scale-down --scroll-step 25 -S mtime -R -Z --auto-zoom \
 #  -p \
-	--action1 ";[delete]echo %F >> $deletedfile && echo removing %F | clipboard" \
+#	--action1 ";[delete]ln -s %F /home/e/.trash/$(hhash) && echo deleted:\n%F" \
+  --action1 ";[delete]remove-all %F &" \
 	--action2 ";[openbox]cp -f %F /home/e/firejail/openbox/%N && echo /home/e/firejail/openbox/%N | clipboard" \
-	--action3 ";[assets]cp -f %F /home/e/Pictures/assets/%N" \
-  --action4 ";[export]cp -f %F /home/e/Pictures/_exported/%N" \	
+	--action3 ";[assets]cp -f %F /home/e/Pictures/starlets/%N | echo  /home/e/Pictures/starlets/%N | clipboard" \
+#	--action3 ";[assets]cp -f %F /srv/img/%N && echo  /srv/img/%N | clipboard" \
+  --action4 ";[moveto]move-to-directory %F &" \
   --action5 ";[drawing]drawing %F" \
+  --action6 ";[renamegui]renamegui %F &" \
+	--action7 ";[newwindow]fehview %F &" \
   --geometry 720x900+720+0 \
   --start-at "$file" \
   "$d")
@@ -61,7 +65,7 @@ args=(--scale-down --scroll-step 200 -S mtime -R -Z --auto-zoom \
 feh "${args[@]}" 
 delete < "$deletedfile"
 rm -rf "$deletedfile"
-toucn "$deletefile"
+touch "$deletefile"
 echo DONE
 
 

@@ -1,0 +1,38 @@
+#!/bin/bash
+# This script created by AQEMU
+
+#hdimage_prefix="/media/e/18362.116-X"
+hdimage_prefix="/media/e/DA044973044953A3"
+#hdimage_prefix="$HOME/.aqemu"
+#hdimage_prefix="/media/e/qemuimg"
+hdimage="$hdimage_prefix/win10.vhd"
+#hdimage="/media/e/Windows/win10.vhd"
+#msrimage="$hdimage_prefix/msr.vhd"
+
+args=(-machine accel=kvm \
+#  -monitor stdio \
+  -m 3000 \
+  -drive if=pflash,format=raw,readonly=on,file="/usr/share/ovmf/OVMF.fd" \
+#  -drive if=pflash,format=raw,file=$HOME/.aqemu/OVMF_VARS.fd \
+#  -cdrom "/dev/sr0" \
+  -cdrom "/opt/win10.iso" \
+#  -hda "/media/e/Koffer/SOL4/Backup 2021-02-07 114645/753e892e-e4c7-11e6-abc9-806e6f6e6963.vhd"
+#	 -hda "/mnt/windows/win10.img" \ 
+#  -device usb-host,hostbus=2,hostaddr=3 \
+#  -blockdev driver=raw,node-name=disk0,file.driver=file,file.filename="/dev/sdb" \
+#  -blockdev driver=raw,node-name=disk1,file.driver=file,file.filename="$hdimage" \
+#   -net nic,macaddr=52:54:00:f4:78:8a,model=virtio \
+#   -net tap,ifname=tap0,script=/usr/local/sbin/qemu-ifup \
+#    -blockdev driver=raw,node-name=hda,file.driver=raw,file.filename=/dev/sdb \
+    -drive file=/dev/sdb,driver=raw \
+#   -raw /dev/sdb \
+#  -hda "$hdimage" \
+#  -drive driver=raw,file="$hdimage" \
+#  -hdb "$msrimage" \
+  -boot once=d,menu=off \
+#  -net nic \
+#  -net user \
+ # -rtc base=utc \
+  -name "Windows")
+
+/usr/bin/qemu-system-x86_64  "${args[@]}"

@@ -1,0 +1,3 @@
+#!/bin/bash
+freenode -e '<Sorella>' -e kiki -e earend1 -e GreenJello -e cake -e cantelope -e earendel -e 
+tsc -e deepblu -e jslave -e m0 "$@"

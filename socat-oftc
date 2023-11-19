@@ -1,0 +1,3 @@
+#!/bin/bash
+#socat TCP4-LISTEN:6667 SOCKS4A:127.0.0.1:oftcnet6xg6roj6d7id4y4cu6dchysacqj2ldgea73qzdagufflqxrid.onion:6667,socksport=9050
+socat TCP4-LISTEN:6667 SOCKS4A:localhost:oftcnet6xg6roj6d7id4y4cu6dchysacqj2ldgea73qzdagufflqxrid.onion:6667,socksport=9050

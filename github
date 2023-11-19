@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -i ~/.ssh/github_rsa -vT git@github.com

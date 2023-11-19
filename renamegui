@@ -1,0 +1,13 @@
+#!/bin/bash
+
+alt="$(xsel -ob)"
+file="${1:-$alt}"
+
+if [[ -e "$file" ]]; then
+	filename="$(zenity --width=1200 --height=120 --entry --text="rename $file" --entry-text="$file")"
+	sleep 10s
+	mv "$file" "$filename" && ( echo "$filename" | clipboard )
+else
+	echo "$file file does not exist" 1>&2
+	exit 1
+fi

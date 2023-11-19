@@ -1,0 +1,4 @@
+#!/bin/bash
+mimetype="${1:-mime}"
+cp /home/e/Template/mime-type.xml /usr/share/mime/packages/$1.xml
+nano /usr/share/mime/packages/$1.xml

@@ -1,14 +1,14 @@
-#!/bin/bash
+!/bin/bash
 # enable ipv4 forwarding
 # enable ipv4 forwarding
 echo "1" > /proc/sys/net/ipv4/ip_forward
 
-#localnet=10.10.20.0/24
-localnet=192.168.1.0/24
+#localnet=10.0.0.0/8
+localnet=192.168.0.0/16
 
 
 
- netfilter cleanup
+# netfilter cleanup
 iptables --flush
 iptables -t nat -F
 iptables -X
@@ -17,15 +17,41 @@ iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 # netfilter network address translation
-iptables -t nat -A POSTROUTING -o eth0 -s "$localnet" -j MASQUERADE
+iptables -t nat -A POSTROUTING -s $localnet -j MASQUERADE
 
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A OUTPUT -o lo -j ACCEPT
+#iptables -A INPUT -i lo -s 127.0.0.1 -p tcp --sport 9229 -j ACCEPT
+#iptables -A OUTPUT -o lo -d 127.0.0.1 -p tcp --dport 9229 -j ACCEPT
+#iptables -A INPUT -i lo -p tcp --sport 80 -j ACCEPT
+#iptables -A OUTPUT -o lo  -p tcp --dport 80 -j ACCEPT
 
-iptables -A INPUT -s "$localnet" -p tcp --sport 22 -j ACCEPT
-iptables -A OUTPUT -d "$localnet" -p tcp --dport 22 -j ACCEPT
+#iptables -A INPUT -i lo -j DROP
+#iptables -A OUTPUT -o lo -j DROP
+
+#iptables -A INPUT -s "$localnet" -p tcp --sport 22 -j ACCEPT
+#iptables -A OUTPUT -d "$localnet" -p tcp --dport 22 -j ACCEPT
+
+
+#iptables -A FORWARD -i lo -j DROP
+#iptables -A FORWARD -o lo -j DROP
+
+
+#iptables -A FORWARD -s $localnet -d $localnet -j DROP
+#iptables -A FORWARD -d 192.168.8.0/24 -j DROP
+#iptables -A FORWARD -s 192.168.8.0/24 -j DROP
+#iptables -A FORWARD -d 10.10.20.1 -j DROP
+#iptables -A FORWARD -s 10.10.20.1 -j DROP
+iptables -A FORWARD -d "$localnet" -j LOG --prefix "[forward to:]"
 iptables -A FORWARD -d "$localnet" -j ACCEPT
+
+
+#iptables -A FORWARD -d 10.10.20.19 -j ACCEPT
+#iptables -A FORWARD -d 10.10.20.20 -j ACCEPT
+#iptables -A FORWARD -d 10.10.20.21 -j ACCEPT
+iptables -A FORWARD -s "$localnet" -j LOG --prefix "[forward from:]"
 iptables -A FORWARD -s "$localnet" -j ACCEPT
+#iptables -A FORWARD -s 10.10.20.19 -j ACCEPT
+#iptables -A FORWARD -s 10.10.20.20 -j ACCEPT
+#iptables -A FORWARD -s 10.10.20.21 -j ACCEPT
 
 iptables -A INPUT -j DROP
 iptables -A OUTPUT -j DROP
@@ -37,9 +63,14 @@ ip6tables -Z
 ip6tables -P INPUT DROP
 ip6tables -P OUTPUT DROP
 ip6tables -P FORWARD DROP
+#ip6tables -A INPUT -i lo -p tcp --sport 80 -j ACCEPT
+#ip6tables -A OUTUT -o lo -p tcp --dport 80 -j ACCEPT
 ip6tables -A INPUT -j DROP
 ip6tables -A OUTPUT -j DROP
 ip6tables -A FORWARD -j DROP
+
+
+ip r del 169.254.0.0/16
 
 #iptables-restore /etc/iptables.save
 #ip6tables-restore /etc/ip6tables.save

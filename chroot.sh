@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-mnt='/mnt/target'
+mnt="$1"
 
 # /
 # cryptsetup luksOpen /dev/sdb3 crypt

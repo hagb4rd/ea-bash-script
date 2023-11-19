@@ -5,6 +5,8 @@ echo "1" > /proc/sys/net/ipv4/ip_forward
 #iptables-save > /etc/iptables.save
 #ip6tables-save > /etc/ip6tables.save
 
+localnet="192.168.8.0/24"
+
 
 # netfilter cleanup
 iptables --flush
@@ -15,7 +17,13 @@ iptables -P INPUT ACCEPT
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD ACCEPT
 # netfilter network address translation
-iptables -t nat -A POSTROUTING -o eth0 -s 10.10.20.0/24 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -o eth0 -s $localnet -j MASQUERADE
+#iptables -A INPUT -s 127.0.0.0/8 -j DROP
+#iptables -A OUTPUT -d 127.0.0.0/8 -j DROP
+#iptables -A INPUT -i lo -j DROP
+#iptables -A OUTPUT -o lo -j DROP
+
+#iptables -t nat -A POSTROUTING -o eth0 -s 10.10.20.0/24 -j MASQUERADE
 #iptables -t nat -A POSTROUTING -o eth0 -s 10.10.30.0/24 -j MASQUERADE
 
 #iptables -A INPUT -i lo -s 127.0.0.0/8 -j ACCEPT
@@ -33,8 +41,12 @@ ip6tables -Z
 ip6tables -P INPUT ACCEPT
 ip6tables -P OUTPUT ACCEPT
 ip6tables -P FORWARD ACCEPT
+#iptables -A INPUT -i lo -j DROP
+#iptables -A OUTPUT -o lo -j DROP
 #ip6tables -A INPUT -j DROP
 #ip6tables -A OUTPUT -j DROP
 #ip6tables -A FORWARD -j DROP
+
+rm /tmp/fw.lock
 
 echo FIREWALL STOPPED

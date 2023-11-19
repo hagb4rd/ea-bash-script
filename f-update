@@ -1,11 +1,12 @@
 #!/bin/bash
 # clean up firejail working/private-home directory
-firejaildir="$HOME/firejail/twitter"
+firejaildir="$HOME/firejail/openbox"
 
-profile="${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
-profilebackup="$HOME/Downloads/backup/.mozilla/firefox/profile.twitter"
+profilename="${1:-profile.twitter}"
+profile="${firejaildir}/.mozilla/firefox/$profilename"
+profilebackup="/media/e/backup/.mozilla/firefox/$profilename"
 cache="${firejaildir}/.cache/mozilla"
-cachebackup="$HOME/Downloads/backup/.cache/mozilla"
+cachebackup="/media/e/backup/.cache/mozilla"
 
 rm -rf "${profilebackup}.bak"
 cp -a "$verbose" "$profilebackup" "${profilebackup}.bak"

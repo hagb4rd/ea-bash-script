@@ -1,3 +1,21 @@
 #!/bin/bash
-echo "var videolist=" > /home/e/git/http/video/videolist.js;  p /media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/mp4/* /media/e/bbR7qvRSTN4BmaJ1/porn/**/* "$@" |  p2json  >> /home/e/git/http/video/videolist.js
-cat /home/e/git/http/video/videolist.js
+videolist="/home/e/git/http/video/videolist.js"
+cp -f "$videolist" "${videolist}.bak"
+echo "var videolist=" > "$videolist";  
+filterfiles() {
+#   while read f; do [[ ! -L "$f" ]] && [[ ! -d  "$f" ]] && printf %s\\n "$f"; done
+   while read f; do [[ ! -d  "$f" ]] && printf %s\\n "$f"; done
+}
+
+#p $HOME/Video/** /media/e/bbR7qvRSTN4BmaJ/porn/** "$@" | filter-file |  p2json  >> "$videolist"
+#p $PWD/* $PWD/*/** | while read f; do [[ ! -L "$f" ]] && [[ ! -d  "$f" ]] && printf %s\\n "$f"; done |  p2json  >> "$videolist"
+places=($HOME/Videos/*)
+#/media/e/Koffer/porn/*)
+#/media/e/3BFD1A5A47E4FC25/video/*)
+#  $HOME/Videos/**/* \
+#  /media/e/bbR7qvRSTN4BmaJ/porn/* \
+#  /media/e/bbR7qvRSTN4BmaJ/porn/**/*) \
+#  /home/e/Pictures/**/*.mp4  \
+#  /home/e/Pictures/.mp4 \
+( p "$@" && p "${places[@]}" ) | filterfiles | p2json >> "$videolist" 
+cat "$videolist"

@@ -1,0 +1,2 @@
+#!/bin/bash
+pactl list modules short | awk '{!Lines[$2]++} END {asorti(Lines, Sorted); for (Line in Sorted) print(Sorted[Line])}'

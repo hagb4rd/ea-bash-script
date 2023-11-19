@@ -1,10 +1,17 @@
 #!/usr/bin/env node
+var {walk,walkAsync}=require("ea-1ibs");
 
-var fs=require("node:fs/promises");
-var path=require("node:path");
+var targetDir=process.argv.slice(2).join(" ");
 
-var walkdir = async function*(pathdir) { var dir = await fs.opendir(pathdir); for await (var dirent of dir) { if(dirent.isDirectory()) { yield* walkdir(path.join(pathdir, dirent.name)); } else { yield dirent; }}}
+//[...walk(target)].forEach(entry=>console.log(entry));
 
-var p="/home/e/Documents"
+(async()=>{ 
+	for await (var entry of walkAsync(targetDir||process.cwd())) {
+		var jsonString=JSON.stringify(entry);
+		process.stdout.write(jsonString.replaceAll(/\n/g,"")+"\n");
+//		console.log(jsonString);
+//		try { var json=JSON.parse(jsonString); } catch(e) { console.log(e);	}
+		
+	} 
+})()
 
-for await(var f of walkdir(p)) { console.log(f); }

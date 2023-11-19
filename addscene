@@ -1,0 +1,18 @@
+#!/bin/bash
+scenesfile="$HOME/Desktop/scenes.txt"
+if [[ -z $1 ]]; then
+	if [[ ! -z $DISPLAY ]]; then
+		text=$(xsel -ob)
+		text = $(zenity --entry --text="addscene" --width=1000 --height=120 --entry-text="$text") || exit 1;
+	else
+		while read line; do
+			printf %s\\n "$line" >> "$scenesfile"
+		done
+	fi
+else
+	text="$*"
+fi
+echo "$text" >> "$scenesfile"
+if [[ ! -z $DISPLAY ]]; then
+	printf %s\\n "$text" | clipboard
+fi

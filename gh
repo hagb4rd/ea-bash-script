@@ -1,2 +1,2 @@
 #!/bin/bash
-netbox ~/gh/bin "$@"
+~/gh/bin/gh "$@"

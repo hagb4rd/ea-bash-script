@@ -1,0 +1,7 @@
+#!/bin/bash
+terminal="${1:-blue}"
+
+wmctrl -a "$terminal" || gnome-terminal --window --name "$terminal" --active --profile "$terminal" --geometry 100x64+0+0 --title "$terminal"
+sleep 1s
+#wmctrl -r "~" -N "$terminal"
+wmctrl -r :ACTIVE: -N "$terminal"

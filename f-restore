@@ -8,11 +8,12 @@ firejaildir="/home/e/firejail/openbox"
 #  exit 1
 #fi
 
-verbose="-v"
-profile="${firejaildir}/.mozilla/firefox/1rymm6oy.twitter"
-profilebackup="$HOME/Downloads/backup/.mozilla/firefox/profile.twitter"
-cache="${firejaildir}/.cache/mozilla"
-cachebackup="$HOME/Downloads/backup/.cache/mozilla"
+verbose=""
+profilename="${1:-profile.twitter}"
+profile="${firejaildir}/.mozilla/firefox/${profilename}"
+profilebackup="/opt/backup/.mozilla/firefox/${profilename}"
+cache="${firejaildir}/.cache"
+cachebackup="/opt/backup/.cache/mozilla"
 
 ##rm -rf "$firejaildir/.tor"
 #cp -a "$verbose" "$HOME/.tor" "$firejaildir"
@@ -22,15 +23,18 @@ cachebackup="$HOME/Downloads/backup/.cache/mozilla"
 #rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 
 
-rm -rf "${profile}.bak"
+#rm -rf "${profile}.bak"
 #cp -a "$verbose" "$profile" "${profile}.bak"
 
 
-cp -f "$profile/places.sqlite" "$profilebackup/places.sqlite"
+#cp -f "$profile/places.sqlite" "$profilebackup/"
 
-rm -rf "$profile"
-cp -a "$verbose" "$profilebackup" "$profile"
+if [[ -d "$profilebackup" ]]; then
+    echo cp -a "$verbose" "$profilebackup" "${profile%/*}"
+    rm -rf "$profile"    
+    cp -a "$verbose" "$profilebackup" "${profile%/*}"
+    rm -rf "$firejaildir/.cache"
+    mkdir -p "$firejaildir/.cache"
+    cp -a "$verbose" "$cachebackup" "$cache"
+fi
 
-rm -rf "$firejaildir/.cache"
-mkdir -p "$firejaildir/.cache"
-cp -a "$verbose" "$cachebackup" "$cache"

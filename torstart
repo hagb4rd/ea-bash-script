@@ -1,0 +1,14 @@
+#!/bin/bash
+if [[ -e $HOME/.torpid ]]; then
+	read PID < $HOME/.torpid
+	if [[ -e /proc/$PID ]]; then
+		kill $PID;
+		echo restarting tor..
+	fi
+fi
+tor -f $HOME/torrc > $HOME/tor.log 2>&1 &
+PID=$!
+echo $PID > $HOME/.torpid
+sleep 7s
+cat $HOME/tor.log
+

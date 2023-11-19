@@ -1,0 +1,8 @@
+#!/bin/bash
+iptables-save
+ip6tables-save
+ip route
+ip -6 route
+ip6tables -L -n -v
+iptables -L -n -v && iptables -L -n -v -t nat
+#iptables -L -n -v && iptables -L -n -v -t nat

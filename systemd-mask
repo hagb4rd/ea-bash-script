@@ -1,0 +1,3 @@
+#!/bin/bash
+typ="${1:-user}"
+while read target; do ln -s /dev/null "/etc/systemd/$typ/$target"; done

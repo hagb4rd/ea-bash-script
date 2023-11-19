@@ -1,0 +1,30 @@
+#!/bin/bash
+
+trashfile(){
+  local line="$1"
+  if [[ -L "$line" ]]; then
+	real="$(realpath "$line")"
+	if [[ -e "$real" ]]; then
+	  rm "$line";
+	  mv "$real" "$line";
+	fi
+  fi
+  if [[ -e "$line" ]]; then
+	  gio trash "$line"
+	  echo "deleted:\n$line" | notify
+	  return 0
+  else
+	  return 1
+  fi
+}
+
+param="$*"
+if [[ -z "$param" ]]; then
+	while read line; do
+	  trashfile "$f"
+	done
+else
+	for f in "$@"; do
+	  trashfile "$f"
+	done
+fi

@@ -7,57 +7,68 @@ if [[ -z "$url" ]]; then
 	url="about:blank"
   openboxstartup="firefox --no-remote -P"
 else 
-  openboxstartup="firefox -new-tab '$url'"
+  openboxstartup="firefox -new-window $url"
 fi
-openboxstartup="sh -c 'firefox --no-remote'"
+#openboxstartup="sh -c "'firefox --no-remote '"$url"
 echo URL: "$url"
 pid="openbox"
+pidfile="$HOME/$pid.pid"
+#pid="$(hhash)"
 # clean up firejail working/private-home directory
 firejaildir="$HOME/firejail/$pid"
-mkdir -p "$HOME/firejail"
-mkdir -p "$firejaildir"
-
+#backupdir="$HOME/backup/.mozilla/firefox"
+backupdir="/opt/backup/.mozilla/firefox"
+mkdir -p "$HOME/firejail" 2> /dev/null
+mkdir -p "$firejaildir" 2> /dev/null
 
 netfilter="/home/e/.firejail/nolocal.net"
-netfilter6="/home/e/.firejail/rejectipv6.net"
+#netfilter="/usr/local/etc/firejail/nolocal_.net"
+netfilter6="/usr/local/etc/firejail/rejectipv6.net"
 #netfilter="/home/e/.firejail/rules-ipv4.net"
 #netfilter6="/home/e/.firejail/rules-ipv6.net"
+#netfilter6="/home/e/.firejail/ipv6-tables.net"
 #netfilter6="/home/e/.firejail/nolocal6.net"
 #shift
-shift
-firefoxcmd="firefox --no-remote --profile /home/e/.mozilla/firefox/1rymm6oy.twitter $url"
+
+profilename="profile.twitter"
+termcmd="firefox-bin --noremote --profile $HOME/.mozilla/firefox/$profilename -new-tab $url"
+#termcmd="xterm -e 'ffox'"
+#firefoxcmd="firefox-bin --no-remote -P --profile $HOME/.mozilla/firefox/${profilename} -new-tab $url"
+#firefoxcmd="firefox-bin --no-remote -P -new-tab $url"
+#firefoxcmd="firefox-bin --no-remote -P -new-tab $url"
 #firefox
-netdev=br0
+netdev=eth0
+
 args=(--name="$pid" \
-	--protocol=unix,inet,inet6 \
-#  --noprofile \
-	--profile=firefox \
-  --apparmor \
+  --noprofile \
+	--protocol=netlink,unix,inet,inet6 \
+#	--profile=firefox \
+#	--profile=openbox \
+#  --apparmor \
   --x11=xephyr \
   --xephyr-screen=1680x1050 \
 #	"--interface=$netdev" \
 #  --writable-var \
 	"--net=$netdev" \
-#	"--netfilter" \
 	"--netfilter=${netfilter}" \
 	"--netfilter6=${netfilter6}" \
-#  --defaultgw=192.168.8.1 \
-#  --ip=10.18.0.11 \
-#	--defaultgw=192.168.8.1 \
-#  --ip=dhcp \ 
+#   --ip=192.168.8.175 \
+#  --ip=dhcp \
 #  --ip6=dhcp \
-# --ip="2a02:3035:40f:3b86:10:2030:4050:2"
+#  "--ip=2a02:3035:40f:3b86:10:2030:4050:2"
 #  "--dns=fe80::210:20ff:fe30:4050" \
-#	--ip=192.168.8.11 \
-  --dns=1.1.1.1 \
-#	--dns=8.8.8.8 \
+    --defaultgw=192.168.8.1 \
+    --ip=192.168.8.139 \
+    --dns=8.8.8.8 \
 	--private-cwd="$HOME" \
   --noinput \
 	--noroot \
 	--private="~/firejail/${pid}" \
 #  --private-bin="firefox,firefox-bin,xterm,uxterm,sh,bash,blackbox,openbox,openbox-session,which" \
-  --private-bin="firefox,firefox-bin,bash,sh,openbox,openbox-session,which" \
+    --private-bin="firefox-bin,openbox,openbox-session" \
+#    --private-bin="dhclient,firefox-bin,openbox,openbox-session,pulseaudio" \
 #	--shell=none \
+	--seccomp \
 #	--private-cache \
 	--nonewprivs \
 	--nogroups \
@@ -70,32 +81,65 @@ args=(--name="$pid" \
 	--noautopulse \
 	--nou2f \
 	--nodvd \
-#	--nosound \
-#	--no3d \
+	--nosound \
+	--no3d \
 	--notv \
 	--novideo \
 	--ipc-namespace \
+	--restrict-namespaces \
 	--env=OPENURI="$url" \
-  --env=QT_ACCESSIBILITY=0 \
-#  --env=LC_CALL=C \
-#  --env=LC_ALL="C.UTF-8" \
+	--env=JAIL=openbox \
+  	--env=QT_ACCESSIBILITY=0 \
+  	--env=LC_CALL=C \
+	--env=LC_ALL="C.UTF-8" \
+#	--env=LC_ALL="C" \
 	--env=LANG="C.UTF-8" \
+	--env=GVFS_DISABLE_FUSE=1 \
+#	--env=GIO_USE_VFS=local \
+#	--env=GTK_IM_MODULE=xim \
+	--rmenv=DESKTOP_SESSION \
+	--rmenv=GNOME_TERMINAL_SCREEN \
+	--rmenv=GNOME_TERMINAL_SERVICE \
+	--rmenv=XDG_SEAT_PATH \
+	--rmenv=GDMSESSION \
+	--rmenv=XDG_DATA_DIRS \
+	--rmenv=GTK3_MODULES \
+	--rmenv=XDG_RUNTIME_DIR \
+	--rmenv=XDG_SESSION_PATH \
+	--rmenv=XDG_SESSION_DESKTOP \
+	--rmenv=XDG_SESSION_ID \
+	--rmenv=XDG_CURRENT_DESKTOP \
+	--rmenv=XDG_VTNR \
+	--rmenv=XDG_CURRENT_DESKTOP \
+	--rmenv=DBUS_SYSTEM_BUS_ADDRESS \
+	--rmenv=DBUS_SESSION_BUS_ADDRESS \
+	--rmenv=GNOME_TERMINAL_SCREEN \
+	--rmenv=SHLVL \
+	--rmenv=GJS_DEBUG_OUTPUT \
+	--rmenv=SESSION_MANAGER \
+	--rmenv=GH_TOKEN \
+	--rmenv=XDG_GREETER_DATA \
+	--rmenv=GTK_MODULES \
+	--rmenv=KDE_FORK_SLAVES \
+	--rmenv=PROMPT_COMMAND \
 #  --env=GTK3_MODULES="" \
 #	uxterm -e "$termcmd")
-#	openbox --sm-disable --startup "$termcmd")
-#   openbox --sm-disable --startup "uxterm -e 'tor -f torrc'")
-   openbox --sm-disable --startup "$firefoxcmd")
+	openbox --sm-disable --startup "$termcmd")
+#   openbox --sm-disable --startup "xterm -e 'ffox'")
+#   openbox --sm-disable --startup "ffox $1")
+#   openbox --sm-disable --startup "xterm")
+#openbox --sm-disable --startup "firefox-bin")
 
 #   openbox --sm-disable --startup "firefox --no-remote")
 
 echo firejail "${args[@]}"
 echo ---------------------------------
 
-if ! firejail --ls=$pid ~; then
+if ! (firejail --ls=$pid ~ > /dev/null 2>&1); then
 
 
   # archive and presort downloaded files
-  "$HOME/.local/bin/f-archive" "$firejaildir"
+  #"$HOME/.local/bin/f-archive" "$firejaildir"
 
   # clean up local home cache
   rm -rf "$HOME/.cache/google-chrome"
@@ -120,23 +164,31 @@ if ! firejail --ls=$pid ~; then
   #rm $firejaildir/.Xauthority
   #rm -rf "${firejaildir}/.local"
   #rm -rf "${firejaildir}/.config"
-  rm -rf "${firejaildir}/.mozilla/firefox/Crash*"
 
   rm -rf "${firejaildir}/cnd"
   #cp -a $HOME/git/http/cdn "${firejaildir}"
 
   # __TEMPOFF
-  "$HOME/.local/bin/f-restore" "$firejaildir"
-  cp /home/e/Downloads/backup/.mozilla/firefox/prefs.f.js "$firejaildir/.mozilla/firefox/1rymm6oy.twitter/prefs.js"
-  firejail "${args[@]}"
-else 
-  firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" -private-window "$url" < /dev/null
+  #"$HOME/.local/bin/f-restore" "${profilename}"
+   cp "$backupdir/${profilename}.js" "$firejaildir/.mozilla/firefox/${profilename}/user.js"
+  #echo env GTK_IM_MODULE=xim /usr/bin/firejail "${args[@]}"
+#  env GTK_IM_MODULE=xim /usr/bin/firejail "${args[@]}"
+	 #env GTK_IM_MODULE=xim firejail "${args[@]}"
+   firejail "${args[@]}" &
+   PID=$!
+   echo $PID > $pidfile
+else
+	read PID < $pidfile
+	wmctrl -a firejail
+  firejail --join=$pid firefox-bin --private-window "$url" > /dev/null 2>&1 &
+#    firejail --join=$pid firefox-bin -new-tab "$url" &
+  #firejail --join="$pid" "$firefoxcmd"
 fi
 
-#if [[ ! -z $url ]]; then 
+#if [[ ! -z $url ]]; then
 #firejail --join=$pid firefox --profile "$HOME/.mozilla/firefox/1rymm6oy.twitter" --new-tab "$url" 
 #fi
-#if [[ ! -z $url ]]; then 
+#if [[ ! -z $url ]]; then
 #firejail --join=$pid google-chrome --proxy-server="socks://localhost:9050" "$url"
 #fi
 

@@ -1,0 +1,5 @@
+#!/bin/bash
+#scrot ~/Pictures/screenshot/$(hhash).jpg
+fname="$HOME/Pictures/$(hhash).jpg"
+gnome-screenshot -a -f "$fname"
+echo "$fname" | clipboard

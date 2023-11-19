@@ -1,0 +1,44 @@
+#!/bin/bash
+args=($@)
+isFile() {
+  [[ -f "$*" ]] && printf '%s\n' "$*";
+}
+isNotFile() {
+  [[ ! -f "$*" ]] && printf '%s\n' "$*"; 
+}
+isDir() {
+  [[ -d "$*" ]] && printf '%s\n' "$*"; 
+}
+isNotDir() {
+  [[ ! -d "$*" ]] && printf '%s\n' "$*";
+}
+hasOption() {
+ local option="$1"
+ local found="0"
+ for param in "${args[@]}"; do
+  #printf '%s:%s\n' "$param" "$option";
+  [[ "$param" = "$option" ]] && found="1";
+ done
+ echo "$found"; 
+}
+println() {
+  printf '%q\n' "$@"
+}
+
+not=$(hasOption -not)
+files=$(hasOption -f)
+dirs=$(hasOption -d)
+
+#if neitther set -f nor -d set -f as default
+if ! ((files)) && ! ((dirs)); then
+  files="1"
+fi
+
+#echo "not: $not files: $files dirs: $dirs"
+#exit 0;
+
+while read f; do
+  if [[ -d $f ]]; then
+    println "$f";
+  fi
+done

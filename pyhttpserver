@@ -2,11 +2,12 @@
 p=$1
 d=$2
 p="${p:-3000}"
-d="${d:-$HOME/git/http}"
+#d="${d:-$HOME/git/http}"
+d="${d:-/srv}"
 
-args=(python3 -m http.server -b 127.0.0.1 -d "$d" "$p")
+args=(-b 127.0.0.1 -d "$d" "$p")
 
 echo "${args[@]}"
 echo ------------
-"${args[@]}"
+python3 -m http.server "${args[@]}"
 

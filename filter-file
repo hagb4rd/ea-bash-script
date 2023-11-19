@@ -21,8 +21,8 @@ hasOption() {
  done
  echo "$found"; 
 }
-println() { 
-  printf '%s\n' "$*"
+println() {
+  printf '%q\n' "$@"
 }
 
 not=$(hasOption -not)
@@ -37,22 +37,8 @@ fi
 #echo "not: $not files: $files dirs: $dirs"
 #exit 0;
 
-while read f; do 
-  if ((not)); then
-    if ((files)) && ((dirs)); then
-      [[ ! -d "$f" ]] && [[ ! -f "$f" ]] && println "$f";
-    elif ((files)); then
-      [[ ! -f "$f" ]] && println "$f";
-    elif ((dirs)); then
-      [[ ! -d "$f" ]] && println "$f";
-    fi
-  else
-    if ((files)) && ((dirs)); then
-      [[ -d "$f" ]] && [[ -f "$f" ]] && println "$f";
-    elif ((files)); then
-      [[ -f "$f" ]] && println "$f";
-    elif ((dirs)); then
-      [[ -d "$f" ]] && println "$f";
-    fi 
+while read f; do
+  if [[ -f $f ]]; then
+    println "$f";
   fi
 done

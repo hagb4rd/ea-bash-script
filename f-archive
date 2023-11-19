@@ -1,6 +1,8 @@
 #!/bin/bash
 # clean up firejail working/private-home directory
-firejaildir="$1"
+firejaildir="$HOME/firejail/openbox"
+
+profilename="${1:-profile.twitter}"
 mdir="$HOME/Documents/md"
 mkdir -p "$mdir" 2> /dev/null
 

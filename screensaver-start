@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#You can monitor screensaver changes:
+# dbus-monitor --session "type='signal',interface='org.cinnamon.ScreenSaver'"
+
+
+#Or watch for a specific screensaver signal:
+# dbus-monitor --session "type='signal',interface='org.cinnamon.ScreenSaver',member='SessionIdleChange
+
+#dbus-send --session \
+#          --dest=org.cinnamon.ScreenSaver \
+#          --type=method_call \
+#          --print-reply \
+#          --reply-timeout=20000 \
+#          /org/cinnamon/ScreenSaver \
+#          org.cinnamon.ScreenSaver.GetSessionIdleTime
+
+
+dbus-send --session \
+          --dest=org.cinnamon.ScreenSaver \
+          --type=method_call \
+          --print-reply \
+          --reply-timeout=20000 \
+          /org/cinnamon/ScreenSaver \
+          org.cinnamon.ScreenSaver.SetActive \
+          boolean:true

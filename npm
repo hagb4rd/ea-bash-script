@@ -1,4 +1,0 @@
-#!/bin/bash
-npmexec="/home/e/node/bin/npm"
-netbox --noprofile "$npmexec" "$@"
-

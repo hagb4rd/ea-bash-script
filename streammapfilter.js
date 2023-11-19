@@ -74,12 +74,37 @@ var filter = exports.filter = function(fn) {
 /* */
 
 var readLine = exports.readLine = async function*(source) {
+	var rest="";
   for await (var chunk of source) {
    var lines = String(chunk).split(/\r?\n/);
+   lines[0]=rest+lines[0];
+   rest=lines.pop()
    for (var line of lines) {
     yield line;
    }
   }
+}
+
+var splt=exports.splt=(stream)=>{ 
+	var next,buffer; 
+	var stream=new require("node:stream").Transform({
+  transform(chunk, encoding, callback) {
+  	callback(null, chunk)
+    // ...
+  }
+});
+	stream.on("readable", ()=>{
+		while(null !== (next=stream.read(1))) {		
+			if(next.toString()=="\n") {
+					stream.write(buffer+"\n");
+					buffer="";
+			} else {
+				buffer += next.toString();
+			}
+		}
+
+	})
+	return stream;
 }
 
 var split = exports.split = (expression) => async function*(source) {

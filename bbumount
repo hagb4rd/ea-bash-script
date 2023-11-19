@@ -1,0 +1,4 @@
+#!/bin/bash
+umount /dev/mapper/luks-36dea421-101d-45b1-a22b-9816f3c43205
+cryptsetup close luks-36dea421-101d-45b1-a22b-9816f3c43205
+rm -d /media/e/bbR7qvRSTN4BmaJ

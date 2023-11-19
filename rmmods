@@ -1,43 +1,134 @@
 #!/bin/bash
 #sudo=sudo
 sleep 4s
-rmmod mei_hdcp
-rmmod mei_me
-rmmod mei
-rmmod option
-rmmod btrfs
-rmmod raid6_pq
-rmmod xor
-rmmod option
-rmmod usb_wwan
-rmmod usbserial
-rmmod uas
-rmmod x86_pkg_temp_thermal
-rmmod br_netfilter
-#sudo ifbr0
-#netdev=enx001e101f0000
-export netdev=eth0
-#sudo ip link set $netdev down
-sleep 1s
-#ip link set dev "$netdev" up
-#ip addr add 192.168.8.2/24 brd + dev "$netdev"
-#ip route add default via 192.168.8.1 dev "$netdev"
-#echo nameserver 192.168.8.1 > /etc/resolv.conf
-#sleep 1s
-#sudo dhclient $netdev
+#modprobe -r mei_hdcp
+#modprobe -r mei_me
+#modprobe -r mei
+#modprobe -r ghash_clmulni_intel
+#modprobe -r snd_seq_midi
+#modprobe -r snd_seq_midi_event
+#modprobe -r autofs4
+#modprobe -r cuse
+modprobe -r input_leds
+#modprobe -r intel_rapl_common
+modprobe -r i2c_algo_bit
+#modprobe -r intel_rapl_msr
+#modprobe -r joydev
+#modprobe -r at24
+##modprobe -r  option
+#modprobe -r btrfs
+#modprobe -r raid6_pq
+#modprobe -r  xor
+#modprobe -r lpc_ich
+modprobe -r option
+modprobe -r usb_wwan
+modprobe -r usbserial
+modprobe -r uas
+#modprobe -r x86_pkg_temp_thermal
+modprobe -r i2c_i801
+modprobe -r 8021q
+modprobe -r garp
+#modprobe -r mrp
+#modprobe -r ramoops
+modprobe -r reed_solomon
+#modprobe -r efi_pstore
+#modprobe -r mac_hid
+#modprobe -r wmi_bmof
+#modprobe -r wmi
+#modprobe -r bpfilter
+
+chmod o-rw /dev/net/tun
+
+
 rm -rf /home/e/.cache/mesa_shader_cache
 rm -rf /home/e/.cache/thumbnails/*
 rm -rf /home/e/.cache/fontconfig
 rm -rf /run/user/1000/at*
-#sudo rm 
-#sudo rm -rf /var/lib/dhcp/*
-#/etc/init.d/networking restart
-sleep 2s
-/usr/local/sbin/setup-bridge
-sleep 1s
-#/usr/local/sbin/vmalpine
-#ipaddr=$(ip addr)
-#sudo -u e -g e notify "$ipaddr"
-#sudo ifbr0
-#sudo ip addr
-#sudo ip link set eth0 up
+rm -rf /var/lib/dhcp/*
+
+
+#default tcp/ip configuration
+echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_all
+echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+echo "1" > /proc/sys/net/ipv4/tcp_syncookies
+echo "0" > /proc/sys/net/ipv4/conf/default/accept_redirects
+echo "0" > /proc/sys/net/ipv4/conf/default/accept_source_route
+echo "0" > /proc/sys/net/ipv4/conf/default/send_redirects
+echo "0" > /proc/sys/net/ipv4/conf/default/shared_media
+echo "1" > /proc/sys/net/ipv4/conf/default/disable_xfrm
+echo "1" > /proc/sys/net/ipv4/conf/default/rp_filter
+echo "1" > /proc/sys/net/ipv6/conf/default/disable_ipv6
+
+
+
+
+#flush obce at boot (or after firewall-stop call, which deletes the lock)
+if [[ ! -e /tmp/fw.lock ]]; then
+	iptables --flush
+	iptables -t nat -F
+	iptables -X
+	iptables -Z
+	ip6tables --flush
+	ip6tables -X
+	ip6tables -Z
+        touch /tmp/fw.lock
+fi
+
+
+#if eth0 is hotplugged
+if [[ -d /proc/sys/net/ipv4/conf/eth0 ]]; then
+    echo configuring eth0 ethernet..
+    ip link set eth0 up
+    ip addr add 192.168.8.17/24 brd + dev eth0
+    sleep 1s
+    ip route add default via 192.168.8.1 dev eth0
+    ip route del 169.254.0.0/16
+fi
+
+
+
+# BRIDGE
+# ---
+br0ip=192.168.1.1/24
+
+if [[ $netdev = "br0" ]]; then
+ if [[ ! -d /proc/sys/net/ipv4/conf/br0 ]]; then
+    modprobe br_netfilter
+    echo configuring bridge br0..
+    ip link add dev br0 type bridge
+    ip link set dev br0 up
+    #ip link set dev eth0 master br0
+    ip addr add "$br0ip" brd + dev br0
+    echo "1" > /proc/sys/net/ipv6/conf/br0/disable_ipv6
+    echo "1" > /proc/sys/net/ipv4/ip_forward
+    iptables-restore /root/fwbridge.net
+    ip6tables-restore /root/dropall6.net
+
+ fi
+# no bridge setup here ( $netdev=eth0 or else )
+else
+  if [[ -d /proc/sys/net/ipv4/conf/br0 ]]; then
+    ip link del dev br0
+    if [[ -d /proc/sys/net/ipv4/conf/tap0 ]]; then
+      ip link del dev tap0
+    fi
+  fi
+  modprobe -r br_netfilter
+  echo "0" > /proc/sys/net/ipv4/ip_forward
+  iptables-restore /root/fw.net
+  ip6tables-restore /root/dropall6.net
+fi
+
+
+echo "0" > /proc/sys/net/ipv4/conf/all/accept_redirects
+echo "0" > /proc/sys/net/ipv4/conf/all/accept_source_route
+echo "0" > /proc/sys/net/ipv4/conf/all/secure_redirects
+echo "0" > /proc/sys/net/ipv4/conf/all/send_redirects
+echo "0" > /proc/sys/net/ipv4/conf/all/shared_media
+echo "1" > /proc/sys/net/ipv4/conf/all/disable_xfrm
+echo "1" > /proc/sys/net/ipv4/conf/all/rp_filter
+echo "1" > /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+
+exit 0
+

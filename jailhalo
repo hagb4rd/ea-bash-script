@@ -5,61 +5,86 @@ export WINEARCH="win32"
 private="$HOME/firejail/halo"
 dir="${WINEPREFIX}/drive_c/Program Files/Microsoft Games/Halo Custom Edition"
 windir="C:\\Program Files\\Microsoft Games\\Halo Custom Edition"
-netdev=br0
-netfilter="$HOME/.firejail/halo.net"
+#netfilter="$HOME/.firejail/halo.net"
+netfilter="$HOME/.firejail/nolocal.net"
 netfilter6="$HOME/.firejail/rejectipv6.net"
 #netfilter6="$HOME/.firejail/rules-ipv6.net"
-archive=/media/e/3b7a9ef4-323e-45f8-a59a-658cd708459b/jailhalo.tar.gz
-#archive="$HOME/Downloads/backup/haloce/firejail/jailhalo.tar.gz"
-if [[ -z $1 ]]; then 
-  #cmd=(sh -c 'wine haloce_1.10_cracked.exe & wine AutoHotkey.exe taxi.ahk')
-  cmd=(sh -c 'wine haloce_1.10_cracked.exe -console & wine AutoHotkey.exe taxi.ahk')
+archive=/opt/jailhalo.tar.gz
+if [[ -z $1 ]]; then
+  cmd=('sh' 'haloce.sh');
+#  cmd=('haloce.sh');
+#  cmd=('wine haloce_1.10_cracked.exe -console & wine AutoHotkey.exe taxi.ahk')
+# cmd=(sh -c 'wine haloce_1.10_cracked.exe & wine AutoHotkey.exe taxi.ahk')
+# cmd=(wine haloce_1.10_cracked.exe -console)
 else
   cmd="$@"
 fi
 
 
-#rm -rf "$private"
-#tar -xvf "$archive" -C "$HOME/firejail"
+rm -rf "$private"
+tar -xvf "$archive" -C "$HOME/firejail"
+cp "$HOME/Documents/quotes.txt" $HOME/firejail/halo/.wine/drive_c/Program\ Files/Microsoft\ Games/Halo\ Custom\ Edition/
+cp "$HOME/git/ea-bash-script/haloce.sh" $HOME/firejail/halo/.wine/drive_c/Program\ Files/Microsoft\ Games/Halo\ Custom\ Edition/
+
+#cp "$HOME/.local/bin/haloce.sh" "$dir"
+#exit 0;
 #cd "$dir"
 #--private-tmp --noroot --caps.drop=all --disable-mnt --noautopulse 
-#firejail --noprofile --name=haloce --net=$netdev --netfilter=/home/e/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="/home/e/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
-args=(--name=haloce \
-  --profile=wine \
-#	--noprofile \
-#  --apparmor \
-	--protocol=unix,inet,inet6 \
+#firejail --noprofile --name=haloce --net=$netdev --netfilter=$HOME/.firejail/nolocal.net --dns=8.8.8.8  --private-cwd="$HOME/.wine/drive_c/Program Files/Microsoft Games/Halo Custom Edition" wine start haloce.exe < /dev/null &
+#netdev=eth0
+args=(--name=halo \
+#  --profile=wine \
+	--noprofile \
+#	--apparmor \
+	--protocol=inet,inet6 \
 	--private="$private" \
 	--private-cwd="${dir}" \
 	--net=$netdev \
 	--netfilter="$netfilter" \
 	--netfilter6="$netfilter6" \
-	--dns=1.1.1.1 \
-#  --dns=8.8.8.8 \
-#	--defaultgw=192.168.8.1 \
-#	--ip=192.168.8.6 \
+#	--netlock \
+#	--dns=1.1.1.1 \
+	--dns=8.8.8.8 \
+#	--defaultgw=10.10.20.1 \
+#	--ip=10.10.20.20 \
+#	--seccomp.block-secondary \
+	--restrict-namespaces \
 	--caps.drop=all \
-  --noinput \
+	--noinput \
 	--noroot \
 	--private-dev \
 	--private-tmp \
-#	--private-bin=sh,wine,w,wineserver,wineserver-stable,wine,haloce_1.10_cracked.exe \
+#	--private-bin=sh,wine,w,wineserver32,wineserver64,winefile,winepath,wine-stable,wineboot,wineboot-stable,wine-stable,haloce_1.10_cracked.exe,winepath \
+#	--private-bin=sh,wine,w,winefile,winepath,wine-stable,wineboot,wineboot-stable,wine-stable \
+	--private-bin=sh,wine,w,wine-stable \
 	--nonewprivs \
 	--nodbus \
 #	--shell=none \
-	--nosound \
+#	--nosound \
 	--nogroups \
 	--nodvd \
-	--noautopulse \
+#	--noautopulse \
 	--notv \
 	--novideo \
 	--ipc-namespace \
 	--deterministic-exit-code \
 	--disable-mnt \
 #	--memory-deny-write-execute \
+	--env=JAIL=halo \
 	--env=WINEDEBUG=-all \
 	--env=WINEARCH="$WINEARCH" \
 	--env=WINEPREFIX="$WINEPREFIX" \
+	--env=GVFS_DISABLE_FUSE=1 \
+#        --env=GIO_USE_VFS=local \
+	--rmenv=XDG_GREETER_DATA \
+	--rmenv=GTK_MODULES \
+	--rmenv=GTK3_MODULES \
+	--rmenv=KDE_FORK_SLAVES \
+	--rmenv=PROMPT_COMMAND \
+	--rmenv=GNOME_TERMINAL_SCREEN \
+	--rmenv=GNOME_TERMINAL_SERVICE \
+	--rmenv=DBUS_SYSTEM_BUS_ADDRESS \
+	--rmenv=DBUS_SESSION_BUS_ADDRESS \
 #    sh -c 'wine haloce_1.10_cracked.exe & wine AutoHotkey.exe taxi.ahk')
 #   wine msiexec /uninstall msxmlmenu.msi)
     "${cmd[@]}")
@@ -70,9 +95,7 @@ args=(--name=haloce \
 #( firejail "${args[@]}" wine haloce_1.10_cracked.exe && firejail --shutdown=haloce ) &
 firejail "${args[@]}"
 #sleep 4s
-#rm /home/e/firejail/haloce/.wine/dosdevices/com*
-#rm /home/e/firejail/haloce/.wine/dosdevices/lpt*
-#rm /home/e/firejail/haloce/.wine/dosdevices/d::
-#firejail --join=haloce 
-
-
+#rm $HOME/firejail/haloce/.wine/dosdevices/com*
+#rm $HOME/firejail/haloce/.wine/dosdevices/lpt*
+#rm $HOME/firejail/haloce/.wine/dosdevices/d::
+#firejail --join=haloce

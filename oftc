@@ -1,0 +1,2 @@
+#!/bin/bash
+PID=oftc HOSTNAME=chat.oftc.net torbox socat-oftc-tor

@@ -1,0 +1,4 @@
+#!/bin/bash#!/bin/bash
+mainconf="$HOME/.dosbox/dosbox.conf"dosbox -conf "/home/e/.dosbox/dosbox-0.74-3.conf" -conf 
+"/home/e/dos/BIING/dosbox_single.conf" -no conf="$HOME/DOSGAMES/FRONTIER/dosbox.conf" dosbox 
+-conf "$mainconf" -conf "$conf"

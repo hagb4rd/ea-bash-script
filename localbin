@@ -1,0 +1,3 @@
+#!/bin/bash
+localbindir=$HOME/.local/bin
+cd "$localbindir"
